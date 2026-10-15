@@ -195,49 +195,57 @@ svg.map{display:block;width:100%;height:auto}
 }
 .card.flash{box-shadow:0 0 0 2px var(--persimmon)}
 .thumb{
-  position:relative;aspect-ratio:16/10;max-width:100%;display:flex;align-items:flex-end;
-  padding:10px 12px;overflow:hidden;text-decoration:none;
+  position:relative;aspect-ratio:4/3;max-width:100%;overflow:hidden;
+  background:var(--surface-2);user-select:none;touch-action:pan-y;
 }
-.thumb::after{
-  content:"";position:absolute;inset:0;background:#000;opacity:0;
+.slide{
+  position:absolute;inset:0;width:100%;height:100%;object-fit:cover;
+  opacity:0;transition:opacity .28s ease;
 }
-.thumb:hover::after,.thumb:focus-visible::after{opacity:.16}
-.photo-cta{
-  position:absolute;left:0;right:0;bottom:0;z-index:2;
-  display:flex;justify-content:space-between;align-items:center;gap:8px;
-  padding:5px 12px 6px;font-size:11px;font-weight:600;color:#fff;
-  background:linear-gradient(transparent,rgba(0,0,0,.42));
+.slide.on{opacity:1}
+.ph{
+  position:absolute;inset:0;display:flex;align-items:center;justify-content:center;
 }
-.photo-cta .kr{font-size:clamp(19px,5.5vw,25px)}
-.shot{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;transition:opacity .3s ease;z-index:1}
-.shot.in{opacity:1}
-.thumb.has .ico{z-index:2}
-.thumb.has .photo-cta{background:linear-gradient(transparent,rgba(0,0,0,.7))}
+.ph svg{opacity:.5;color:#fff}
+.nav{
+  position:absolute;top:0;bottom:0;width:38%;z-index:3;border:0;background:transparent;
+  cursor:pointer;opacity:0;transition:opacity .2s ease;
+  display:flex;align-items:center;padding:0 8px;
+}
+.nav.prev{left:0;justify-content:flex-start}
+.nav.next{right:0;justify-content:flex-end}
+.nav span{
+  display:grid;place-items:center;width:26px;height:26px;border-radius:50%;
+  background:rgba(0,0,0,.45);color:#fff;font-size:13px;line-height:1;
+}
+.thumb:hover .nav{opacity:1}
+.dots{
+  position:absolute;left:0;right:0;bottom:7px;z-index:4;
+  display:flex;gap:4px;justify-content:center;pointer-events:none;
+}
+.dots i{
+  width:5px;height:5px;border-radius:50%;background:rgba(255,255,255,.45);
+  box-shadow:0 0 2px rgba(0,0,0,.5);transition:background .2s ease;
+}
+.dots i.on{background:#fff}
+.vibe{
+  position:absolute;top:8px;left:9px;z-index:4;
+  font-size:9.5px;font-weight:700;letter-spacing:.07em;text-transform:uppercase;
+  color:#fff;background:rgba(0,0,0,.52);border-radius:999px;padding:3px 8px;
+}
 .droptip{
-  position:absolute;inset:0;z-index:3;display:none;align-items:center;justify-content:center;
-  background:rgba(0,0,0,.55);color:#fff;font-size:12px;font-weight:600;letter-spacing:.02em;
-  border:2px dashed rgba(255,255,255,.8);border-radius:3px;
+  position:absolute;inset:0;z-index:5;display:none;align-items:center;justify-content:center;
+  background:rgba(0,0,0,.55);color:#fff;font-size:12px;font-weight:600;
+  border:2px dashed rgba(255,255,255,.8);
 }
 .thumb.over .droptip{display:flex}
 .clearpic{
-  position:absolute;top:7px;left:8px;z-index:4;display:none;
+  position:absolute;top:7px;right:8px;z-index:6;display:none;
   font:inherit;font-size:10px;font-weight:600;cursor:pointer;color:#fff;
   background:rgba(0,0,0,.5);border:0;border-radius:999px;padding:3px 8px;
 }
 .thumb.mine:hover .clearpic{display:block}
-.vibe{
-  position:absolute;top:8px;left:9px;z-index:4;display:none;
-  font-size:9.5px;font-weight:700;letter-spacing:.07em;text-transform:uppercase;
-  color:#fff;background:rgba(0,0,0,.52);border-radius:999px;padding:3px 8px;
-}
-.thumb.isvibe .vibe{display:block}
-.thumb.mine .vibe{display:none}
 .localbar{margin-top:14px;padding:11px 14px;border-radius:4px;background:var(--surface);border:1px solid var(--line);border-left:3px solid var(--jade);font-size:13px;color:var(--fg-dim)}
-.thumb .kr{
-  font-family:var(--font-kr);font-weight:700;font-size:clamp(20px,6vw,27px);
-  line-height:1;color:var(--surface);opacity:.96;word-break:keep-all;
-}
-.thumb .ico{position:absolute;top:9px;right:10px;opacity:.55}
 .card-body{padding:13px 14px 15px;display:flex;flex-direction:column;gap:9px;flex:1;min-width:0}
 .card h3{font-family:var(--font-display);font-size:15px;font-weight:600;line-height:1.22;letter-spacing:-.01em}
 .meta{display:flex;flex-wrap:wrap;gap:4px 8px;font-size:11.5px;color:var(--fg-dim);align-items:center}
@@ -312,7 +320,7 @@ footer{margin-top:52px;padding-block:22px 40px;border-top:1px solid var(--line);
       <div class="fact" id="totalFact"><b>—</b><span>мест в списке</span></div>
     </div>
 
-    <div class="localbar"><b>86 карточек со снимками.</b> Плашка с подписью «вайб» значит, что это похожее место, а не именно оно — настоящие фото по кнопке «Фото · Naver». На любую карточку можно перетащить свою картинку мышкой, она сохранится в этом браузере.</div>
+    <div class="localbar"><b>204 фотографий на 92 карточках.</b> Где снимков несколько — листай стрелками или свайпом. Метка «вайб» значит, что это похожее место, а не именно оно. На любую карточку можно перетащить свою картинку мышкой — она встанет первой и сохранится.</div>
 
     <div class="rail">
       <div class="rail-inner">
@@ -436,7 +444,7 @@ footer{margin-top:52px;padding-block:22px 40px;border-top:1px solid var(--line);
 </div>
 
 <script>
-window.__BAKED = {"리움미술관": ["commons/thumb/c/c4/Leeum%2C_Samsung_Museum_of_Art.jpg/960px-Leeum%2C_Samsung_Museum_of_Art.jpg", "place"], "동대문디자인플라자": ["commons/thumb/8/8f/Dongdaemun_Design_Plaza_at_night%2C_Seoul%2C_Korea.jpg/960px-Dongdaemun_Design_Plaza_at_night%2C_Seoul%2C_Korea.jpg", "place"], "서울시립과학관": ["commons/thumb/1/1d/Seoul_Science_Center_02.jpg/960px-Seoul_Science_Center_02.jpg", "place"], "국립항공박물관": ["commons/thumb/e/e0/%EA%B5%AD%EB%A6%BD%ED%95%AD%EA%B3%B5%EB%B0%95%EB%AC%BC%EA%B4%80.jpg/960px-%EA%B5%AD%EB%A6%BD%ED%95%AD%EA%B3%B5%EB%B0%95%EB%AC%BC%EA%B4%80.jpg", "place"], "문화비축기지": ["commons/thumb/a/a5/Mapo_Park_-_Human_Nature.jpg/960px-Mapo_Park_-_Human_Nature.jpg", "place"], "PC방": ["commons/7/70/Korean.culture-PC.bang-01.jpg", "place"], "만화카페": ["commons/thumb/c/cd/Manga_Kissa_5_%286021168063%29.jpg/960px-Manga_Kissa_5_%286021168063%29.jpg", "place"], "잠실야구장": ["commons/thumb/f/fa/Jamsil_Baseball_Stadium_panorama_%28April_28_2017%29.jpg/960px-Jamsil_Baseball_Stadium_panorama_%28April_28_2017%29.jpg", "place"], "따릉이": ["commons/thumb/e/e2/Seoul_Bike_Station.jpg/960px-Seoul_Bike_Station.jpg", "place"], "동묘 벼룩시장": ["commons/thumb/3/3d/Dongmyo_Flea_Market_Jan_2024_03.jpg/960px-Dongmyo_Flea_Market_Jan_2024_03.jpg", "place"], "인왕산": ["commons/thumb/e/ef/Mount_Inwang.jpg/960px-Mount_Inwang.jpg", "place"], "용산전자상가": ["commons/thumb/c/c4/Yongsan_Electronics_Market.jpg/960px-Yongsan_Electronics_Market.jpg", "place"], "세운상가": ["ko/thumb/f/fa/Seoul-SeUnSanGa_001.jpg/960px-Seoul-SeUnSanGa_001.jpg", "place"], "남대문 카메라상가": ["commons/8/8e/An_Alley_in_Namdaemoon_Market_-_panoramio.jpg", "place"], "하늘공원": ["ko/thumb/7/7d/View_Photo_of_Winter_of_Worldcup_Park.jpg/960px-View_Photo_of_Winter_of_Worldcup_Park.jpg", "place"], "선유도공원": ["commons/thumb/7/77/Seoul_Seonyudo_Park.jpg/960px-Seoul_Seonyudo_Park.jpg", "place"], "노들섬": ["commons/thumb/1/18/Nodeulseom_%2814005438206%29.jpg/960px-Nodeulseom_%2814005438206%29.jpg", "place"], "경의선숲길": ["commons/thumb/a/a5/Gyeonguiseon_Forest_Trail_Park_and_Ttaeng-ttaeng_Street_in_Seoul_%28near_Hongdae%2C_1%29.jpg/960px-Gyeonguiseon_Forest_Trail_Park_and_Ttaeng-ttaeng_Street_in_Seoul_%28near_Hongdae%2C_1%29.jpg", "place"], "낙산공원": ["commons/thumb/4/46/KOCIS_Korea_Seoul_Fortress_20130924_11_%289910956885%29.jpg/960px-KOCIS_Korea_Seoul_Fortress_20130924_11_%289910956885%29.jpg", "place"], "서울로7017": ["commons/thumb/e/e3/Seoullo_7017_07.jpg/960px-Seoullo_7017_07.jpg", "place"], "노량진수산시장": ["commons/thumb/7/7c/Korea-Seoul-Noryangjin_Fish_Market-03.jpg/960px-Korea-Seoul-Noryangjin_Fish_Market-03.jpg", "place"], "아차산": ["commons/thumb/8/81/AchasanPost.jpg/960px-AchasanPost.jpg", "place"], "부암동": ["commons/thumb/1/17/Whanki_Museum.jpg/960px-Whanki_Museum.jpg", "place"], "자갈치시장": ["commons/thumb/d/d4/Jagalchi_Market_20200523_019.jpg/960px-Jagalchi_Market_20200523_019.jpg", "place"], "광안리해수욕장": ["ko/thumb/b/b9/P080713002.jpg/960px-P080713002.jpg", "place"], "태종대": ["commons/thumb/4/47/Korea-Busan-Taejongdae-03.jpg/960px-Korea-Busan-Taejongdae-03.jpg", "place"], "해동용궁사": ["commons/thumb/6/6f/%ED%95%B4%EB%8F%99%EC%9A%A9%EA%B6%81%EC%82%AC_%EC%82%AC%EC%B0%B0_%EC%A0%84%EA%B2%BD.jpg/960px-%ED%95%B4%EB%8F%99%EC%9A%A9%EA%B6%81%EC%82%AC_%EC%82%AC%EC%B0%B0_%EC%A0%84%EA%B2%BD.jpg", "place"], "감천문화마을": ["commons/thumb/4/49/Gamcheon_Colored_Houses%2C_Busan%2C_Korea.jpg/960px-Gamcheon_Colored_Houses%2C_Busan%2C_Korea.jpg", "place"], "흰여울문화마을": ["commons/thumb/0/03/Huinnyeoul_culture_village%2C_Busan_on_October_25th%2C_2019.jpg/960px-Huinnyeoul_culture_village%2C_Busan_on_October_25th%2C_2019.jpg", "place"], "오륙도 스카이워크": ["commons/thumb/5/51/Oryukdo%2C_Busan%2C_South_Korea_04.jpg/960px-Oryukdo%2C_Busan%2C_South_Korea_04.jpg", "place"], "금정산 범어사": ["commons/thumb/1/11/Geumjeong_Mountain_-_panoramio.jpg/960px-Geumjeong_Mountain_-_panoramio.jpg", "place"], "송도 케이블카": ["commons/thumb/3/39/Songdo_Beach_-_panoramio.jpg/960px-Songdo_Beach_-_panoramio.jpg", "place"], "سوق واقف": ["commons/thumb/8/8d/DohaOldSouk9020.JPG/960px-DohaOldSouk9020.JPG", "place"], "الكورنيش": ["commons/thumb/b/b1/Doha_skyline_%2812543569904%29.jpg/960px-Doha_skyline_%2812543569904%29.jpg", "place"], "서울공예박물관": ["commons/thumb/b/b3/Seoul_Museum_of_Craft_Art.jpg/960px-Seoul_Museum_of_Craft_Art.jpg", "place"], "국제갤러리": ["commons/thumb/7/79/Seoul-Samcheong.dong-01.jpg/960px-Seoul-Samcheong.dong-01.jpg", "place"], "토탈미술관": ["commons/thumb/2/29/KOCIS_Korea_Pyeongchang_dong_Snow_01_%2811580332465%29.jpg/960px-KOCIS_Korea_Pyeongchang_dong_Snow_01_%2811580332465%29.jpg", "place"], "보라매안전체험관": ["commons/thumb/9/96/20140714_%EB%B3%B4%EB%9D%BC%EB%A7%A4%EA%B3%B5%EC%9B%90.jpg/960px-20140714_%EB%B3%B4%EB%9D%BC%EB%A7%A4%EA%B3%B5%EC%9B%90.jpg", "place"], "뮤지엄김치간": ["commons/thumb/5/53/Korea-Seoul-Kimchi_Field_Museum-01.jpg/960px-Korea-Seoul-Kimchi_Field_Museum-01.jpg", "place"], "한국가구박물관": ["commons/thumb/4/48/Deputy_Secretary_Blinken_Writes_a_Message_in_the_Korea_Furniture_Museum_Guest_Book_%2816297578047%29.jpg/960px-Deputy_Secretary_Blinken_Writes_a_Message_in_the_Korea_Furniture_Museum_Guest_Book_%2816297578047%29.jpg", "place"], "탄산마그네슘": ["commons/thumb/e/e0/Camera_shop_seongsu_seoul_3.jpg/960px-Camera_shop_seongsu_seoul_3.jpg", "place"], "펀시티 건대점": ["commons/thumb/1/1c/Buildings_near_konkuk_university_01.JPG/960px-Buildings_near_konkuk_university_01.JPG", "place"], "스타필드 코엑스몰": ["commons/thumb/f/fe/Starfield_Library_COEX_20240218.jpg/960px-Starfield_Library_COEX_20240218.jpg", "place"], "코우너스": ["commons/thumb/8/8e/A_printing_company_in_Euljiro_printing_alley.jpg/960px-A_printing_company_in_Euljiro_printing_alley.jpg", "place"], "힙지로": ["commons/thumb/c/c9/Night_view_of_Euljiro_1-ga_intersection_and_the_Sogong-dong_Lotte_town.jpg/960px-Night_view_of_Euljiro_1-ga_intersection_and_the_Sogong-dong_Lotte_town.jpg", "place"], "신당동": ["commons/thumb/c/c4/Jung_Sindang-dong_Community_Service_Center.jpg/960px-Jung_Sindang-dong_Community_Service_Center.jpg", "place"], "연희동": ["commons/thumb/5/5b/Yeonhui-dong_Community_Service_Center_Seoul_20140513_164754.jpg/960px-Yeonhui-dong_Community_Service_Center_Seoul_20140513_164754.jpg", "place"], "삼각지": ["commons/thumb/b/b3/Seoul-metro-428-Samgakji-station-platform-20181126-153424.jpg/960px-Seoul-metro-428-Samgakji-station-platform-20181126-153424.jpg", "place"], "광장시장 구제층": ["commons/thumb/8/81/Gwangjang_Market%2C_Seoul_02.jpg/960px-Gwangjang_Market%2C_Seoul_02.jpg", "place"], "하이커 그라운드": ["commons/thumb/4/4a/Cheonggyecheon_stream_at_sunrise_with_trees_in_Seoul.jpg/960px-Cheonggyecheon_stream_at_sunrise_with_trees_in_Seoul.jpg", "place"], "한국만화박물관": ["commons/thumb/0/03/Korea_Manhwa_Museum_20251122_6.jpg/960px-Korea_Manhwa_Museum_20251122_6.jpg", "place"], "트릭아이미술관": ["commons/thumb/c/cf/Trick_Art_Museum_%289407354543%29.jpg/960px-Trick_Art_Museum_%289407354543%29.jpg", "place"], "어린이대공원": ["commons/thumb/2/22/Feral_Pigeon_in_Seoul_Children%27s_Grand_Park_%282%29.jpg/960px-Feral_Pigeon_in_Seoul_Children%27s_Grand_Park_%282%29.jpg", "place"], "쌈지길": ["commons/5/5f/Ssamziegil.jpg", "place"], "익선동": ["commons/thumb/f/f5/Ikseon-dong_%EC%9D%B5%EC%84%A0%EB%8F%99_October_1_2020_5.jpg/960px-Ikseon-dong_%EC%9D%B5%EC%84%A0%EB%8F%99_October_1_2020_5.jpg", "place"], "별마당도서관": ["commons/thumb/0/00/Library_in_Seoul_%2853608020746%29.jpg/960px-Library_in_Seoul_%2853608020746%29.jpg", "place"], "망원시장": ["commons/thumb/e/e8/Mercado_Mangwon_en_Se%C3%BAl.jpg/960px-Mercado_Mangwon_en_Se%C3%BAl.jpg", "place"], "북한산 대남문 코스": ["commons/thumb/2/29/Bukhansan_National_Park_in_autumn.jpg/960px-Bukhansan_National_Park_in_autumn.jpg", "place"], "도봉산 망월사 코스": ["commons/thumb/4/47/Dobongsan_Seoul_South_Korea_Landscape_Photography_%28251858911%29.jpeg/960px-Dobongsan_Seoul_South_Korea_Landscape_Photography_%28251858911%29.jpeg", "place"], "관악산 과천향교 코스": ["commons/thumb/2/26/Yeonjudae_-_Summit_of_Gwanaksan_-_2008-10-25.JPG/960px-Yeonjudae_-_Summit_of_Gwanaksan_-_2008-10-25.JPG", "place"], "스파랜드 센텀시티": ["commons/thumb/4/48/Centum_City%2C_Busan%2C_2014-12-28.jpg/960px-Centum_City%2C_Busan%2C_2014-12-28.jpg", "place"], "부산현대미술관": ["commons/thumb/2/2b/Museum_of_Contemporary_Art_Busan_at_Busan_Biennale_2018.jpg/960px-Museum_of_Contemporary_Art_Busan_at_Busan_Biennale_2018.jpg", "place"], "해운대 블루라인파크": ["commons/thumb/8/8e/Sky_Capsule_train_at_Haeundae_Blueline_Park%2C_Busan.jpg/960px-Sky_Capsule_train_at_Haeundae_Blueline_Park%2C_Busan.jpg", "place"], "متحف قطر الوطني": ["commons/thumb/0/0f/Steps_of_tapestry_in_the_Qatar_National_Museum.jpg/960px-Steps_of_tapestry_in_the_Qatar_National_Museum.jpg", "place"], "متحف الفن الإسلامي": ["commons/thumb/d/d5/Fisherman_on_the_Doha_Corniche_next_to_the_Islamic_Museum.jpg/960px-Fisherman_on_the_Doha_Corniche_next_to_the_Islamic_Museum.jpg", "place"], "مشيرب": ["commons/thumb/3/37/Msheireb_Downtown_Doha_tram_at_night.jpg/960px-Msheireb_Downtown_Doha_tram_at_night.jpg", "place"], "서서울미술관": ["commons/thumb/6/6d/Seoul_Museum_of_Art_%282014%29.jpg/960px-Seoul_Museum_of_Art_%282014%29.jpg", "place"], "타데우스 로팍": ["commons/thumb/1/14/Hannam-dong_and_Seoul_Tower_from_across_the_Han.jpg/960px-Hannam-dong_and_Seoul_Tower_from_across_the_Han.jpg", "place"], "홍제유연": ["commons/thumb/f/f5/Hongjecheon_Artificial_Waterfall_2023-10-31.jpg/960px-Hongjecheon_Artificial_Waterfall_2023-10-31.jpg", "place"], "피크닉": ["commons/thumb/b/b5/N-Seoul-Tower_and_Namsan_Park_%2826876783888%29.jpg/960px-N-Seoul-Tower_and_Namsan_Park_%2826876783888%29.jpg", "place"], "서울숲클라이밍": ["commons/thumb/7/74/Indoor_Climbing_Wall_Bouldering_Mats.jpg/960px-Indoor_Climbing_Wall_Bouldering_Mats.jpg", "vibe"], "클라이밍파크 성수점": ["commons/thumb/7/74/Indoor_Climbing_Wall_Bouldering_Mats.jpg/960px-Indoor_Climbing_Wall_Bouldering_Mats.jpg", "vibe"], "롤러장": ["commons/thumb/d/de/Oaks_Park_Roller_Skating_Rink%2C_2018_-_1.jpg/960px-Oaks_Park_Roller_Skating_Rink%2C_2018_-_1.jpg", "vibe"], "방탈출": ["commons/thumb/a/a8/Escape_Room_-_%22The_Expedition%22_%28Escape_Quest_Bethesda%29.jpg/960px-Escape_Room_-_%22The_Expedition%22_%28Escape_Quest_Bethesda%29.jpg", "vibe"], "코인노래방": ["commons/thumb/9/9b/Karaoke_%282986745144%29.jpg/960px-Karaoke_%282986745144%29.jpg", "vibe"], "은반지 공방": ["commons/thumb/1/17/Silver_ring_and_scorzoneras_by_ASQ.jpg/960px-Silver_ring_and_scorzoneras_by_ASQ.jpg", "vibe"], "자개공예": ["commons/thumb/5/5f/Korean_writing_table%2C_18th_century%2C_lacquer_and_mother_of_pearl%2C_HAA.JPG/960px-Korean_writing_table%2C_18th_century%2C_lacquer_and_mother_of_pearl%2C_HAA.JPG", "vibe"], "모자이크": ["commons/thumb/7/72/Vinyl_collection_at_a_record_store_%28Unsplash%29.jpg/960px-Vinyl_collection_at_a_record_store_%28Unsplash%29.jpg", "vibe"], "셀프사진관": ["commons/thumb/4/47/Photo_booth_in_South_Korea%2C_2001.jpg/960px-Photo_booth_in_South_Korea%2C_2001.jpg", "vibe"], "홍대 빈티지샵": ["commons/b/b2/Uncle_Sam%27s_Vintage_American_Clothing_shop_in_Oxford_-_geograph.org.uk_-_4085533.jpg", "vibe"], "디꾸": ["commons/thumb/d/d0/Leica_M_%28Typ_262%29_back.jpg/960px-Leica_M_%28Typ_262%29_back.jpg", "vibe"], "오리배": ["commons/5/52/Ryde_boating_lake%2C_with_pedal-powered_swans_-_geograph.org.uk_-_2128451.jpg", "vibe"], "라인프렌즈 카카오프렌즈": ["commons/thumb/9/96/LINE_FRIENDS_FLAGSHIP_STORE_Harajuku_%2852650797705%29.jpg/960px-LINE_FRIENDS_FLAGSHIP_STORE_Harajuku_%2852650797705%29.jpg", "vibe"], "실탄사격장": ["commons/thumb/9/94/10_metre_indoor_range_by_Gun_For_Glory_Shooting_Academy_Jabalpur.jpg/960px-10_metre_indoor_range_by_Gun_For_Glory_Shooting_Academy_Jabalpur.jpg", "vibe"], "그라운드시소": ["commons/thumb/e/e4/Amy_Karle_in_%22The_Physical_Mind%22_Immersive_Installation_Art_by_Teun_Vonk_at_FILE_Electronic_Language_International_Festival_2017_S%C3%A3o_Paulo_Brazil.jpg/960px-Amy_Karle_in_%22The_Physical_Mind%22_Immersive_Installation_Art_by_Teun_Vonk_at_FILE_Electronic_Language_International_Festival_2017_S%C3%A3o_Paulo_Brazil.jpg", "vibe"], "주신당": ["commons/thumb/4/46/Interior_of_Czeczotka_Cocktail_Bar%2C_Krak%C3%B3w%2C_2019.jpg/960px-Interior_of_Czeczotka_Cocktail_Bar%2C_Krak%C3%B3w%2C_2019.jpg", "vibe"]};
+window.__BAKED = {"리움미술관": {"u": ["commons/thumb/c/c4/Leeum%2C_Samsung_Museum_of_Art.jpg/960px-Leeum%2C_Samsung_Museum_of_Art.jpg"], "t": "place"}, "서서울미술관": {"u": ["commons/thumb/6/6d/Seoul_Museum_of_Art_%282014%29.jpg/960px-Seoul_Museum_of_Art_%282014%29.jpg", "commons/thumb/9/99/Seoul_Museum_of_Art_%282013%29.jpg/960px-Seoul_Museum_of_Art_%282013%29.jpg", "commons/thumb/7/7f/Seoul_Museum_of_Art_%28%EC%84%9C%EC%9A%B8%EC%8B%9C%EB%A6%BD%EB%AF%B8%EC%88%A0%EA%B4%80%29.jpg/960px-Seoul_Museum_of_Art_%28%EC%84%9C%EC%9A%B8%EC%8B%9C%EB%A6%BD%EB%AF%B8%EC%88%A0%EA%B4%80%29.jpg"], "t": "place"}, "피크닉": {"u": ["commons/thumb/b/b5/N-Seoul-Tower_and_Namsan_Park_%2826876783888%29.jpg/960px-N-Seoul-Tower_and_Namsan_Park_%2826876783888%29.jpg", "commons/thumb/a/af/Seoul_Myongdong_from_Namsan_Ropeway_-_panoramio.jpg/960px-Seoul_Myongdong_from_Namsan_Ropeway_-_panoramio.jpg"], "t": "place"}, "동대문디자인플라자": {"u": ["commons/thumb/8/8f/Dongdaemun_Design_Plaza_at_night%2C_Seoul%2C_Korea.jpg/960px-Dongdaemun_Design_Plaza_at_night%2C_Seoul%2C_Korea.jpg", "commons/thumb/c/c9/20240601_144028_Dongdaemun_Design_Plaza%2C_Seoul_08.jpg/960px-20240601_144028_Dongdaemun_Design_Plaza%2C_Seoul_08.jpg", "commons/thumb/1/13/Dongdaemun_Design_Plaza_grass.jpg/960px-Dongdaemun_Design_Plaza_grass.jpg"], "t": "place"}, "서울공예박물관": {"u": ["commons/thumb/b/b3/Seoul_Museum_of_Craft_Art.jpg/960px-Seoul_Museum_of_Craft_Art.jpg"], "t": "place"}, "타데우스 로팍": {"u": ["commons/thumb/1/14/Hannam-dong_and_Seoul_Tower_from_across_the_Han.jpg/960px-Hannam-dong_and_Seoul_Tower_from_across_the_Han.jpg", "commons/thumb/1/17/Bogwang-dong%2C_Seoul_from_the_Hannam_Bridge.jpg/960px-Bogwang-dong%2C_Seoul_from_the_Hannam_Bridge.jpg"], "t": "place"}, "국제갤러리": {"u": ["commons/thumb/7/79/Seoul-Samcheong.dong-01.jpg/960px-Seoul-Samcheong.dong-01.jpg", "commons/thumb/6/67/Samcheong_Dong_Seoul_South_Korea_Color_Street_Photography_%28252579073%29.jpeg/960px-Samcheong_Dong_Seoul_South_Korea_Color_Street_Photography_%28252579073%29.jpeg", "commons/thumb/b/b9/Samcheong-dong_-_panoramio.jpg/960px-Samcheong-dong_-_panoramio.jpg"], "t": "place"}, "토탈미술관": {"u": ["commons/thumb/2/29/KOCIS_Korea_Pyeongchang_dong_Snow_01_%2811580332465%29.jpg/960px-KOCIS_Korea_Pyeongchang_dong_Snow_01_%2811580332465%29.jpg"], "t": "place"}, "서울식물원": {"u": ["commons/thumb/2/2c/Seoul_botanic_park_16.jpg/960px-Seoul_botanic_park_16.jpg", "commons/thumb/b/b6/Seoul_botanic_park_05.jpg/960px-Seoul_botanic_park_05.jpg", "commons/thumb/9/99/Seoul_botanic_park_04.jpg/960px-Seoul_botanic_park_04.jpg"], "t": "place"}, "서울시립과학관": {"u": ["commons/thumb/1/1d/Seoul_Science_Center_02.jpg/960px-Seoul_Science_Center_02.jpg", "commons/thumb/a/a6/Seoul_Science_Center_01.jpg/960px-Seoul_Science_Center_01.jpg"], "t": "place"}, "뮤지엄김치간": {"u": ["commons/thumb/5/53/Korea-Seoul-Kimchi_Field_Museum-01.jpg/960px-Korea-Seoul-Kimchi_Field_Museum-01.jpg", "commons/thumb/e/e4/Korea-Kimchi-Museum-02.jpg/960px-Korea-Kimchi-Museum-02.jpg", "commons/thumb/7/7b/Korea-Kimchi-Ancient.form-Museum-01.jpg/960px-Korea-Kimchi-Ancient.form-Museum-01.jpg"], "t": "place"}, "플라이스테이션": {"u": ["commons/thumb/3/36/Vertical_wind_tunnel_simulated_skydiving.jpg/960px-Vertical_wind_tunnel_simulated_skydiving.jpg", "commons/thumb/e/ef/Skydiving_in_Central_London%21%21.jpg/960px-Skydiving_in_Central_London%21%21.jpg"], "t": "vibe"}, "탄산마그네슘": {"u": ["commons/thumb/e/e0/Camera_shop_seongsu_seoul_3.jpg/960px-Camera_shop_seongsu_seoul_3.jpg", "commons/thumb/3/3d/Camera_shop_seongsu_seoul_2.jpg/960px-Camera_shop_seongsu_seoul_2.jpg", "commons/thumb/c/ce/N_Seoul_Tower_seen_from_Seongsu-dong_%2812184283336%29.jpg/960px-N_Seoul_Tower_seen_from_Seongsu-dong_%2812184283336%29.jpg"], "t": "place"}, "서울숲클라이밍": {"u": ["commons/thumb/7/74/Indoor_Climbing_Wall_Bouldering_Mats.jpg/960px-Indoor_Climbing_Wall_Bouldering_Mats.jpg", "commons/thumb/e/e6/Luch_Bouldering_Gym_SpB.jpg/960px-Luch_Bouldering_Gym_SpB.jpg", "commons/thumb/0/02/Severnaya_Stena_Bouldering_Gym_SpB.jpg/960px-Severnaya_Stena_Bouldering_Gym_SpB.jpg"], "t": "vibe"}, "클라이밍파크 성수점": {"u": ["commons/thumb/7/74/Indoor_Climbing_Wall_Bouldering_Mats.jpg/960px-Indoor_Climbing_Wall_Bouldering_Mats.jpg", "commons/thumb/e/e6/Luch_Bouldering_Gym_SpB.jpg/960px-Luch_Bouldering_Gym_SpB.jpg", "commons/thumb/0/02/Severnaya_Stena_Bouldering_Gym_SpB.jpg/960px-Severnaya_Stena_Bouldering_Gym_SpB.jpg"], "t": "vibe"}, "실탄사격장": {"u": ["commons/thumb/9/94/10_metre_indoor_range_by_Gun_For_Glory_Shooting_Academy_Jabalpur.jpg/960px-10_metre_indoor_range_by_Gun_For_Glory_Shooting_Academy_Jabalpur.jpg", "commons/thumb/b/b5/Meari_Shooting_Range_%2813204953155%29.jpg/960px-Meari_Shooting_Range_%2813204953155%29.jpg", "commons/thumb/6/69/Meari_Shooting_Range_%2813205235494%29.jpg/960px-Meari_Shooting_Range_%2813205235494%29.jpg"], "t": "vibe"}, "잠실야구장": {"u": ["commons/thumb/2/2d/Jamsil_Baseball_Stadium_Seoul.jpg/960px-Jamsil_Baseball_Stadium_Seoul.jpg", "commons/thumb/f/fa/Jamsil_Baseball_Stadium_panorama_%28April_28_2017%29.jpg/960px-Jamsil_Baseball_Stadium_panorama_%28April_28_2017%29.jpg", "commons/d/d5/Jamsil_Baseball_Stadium_.jpg"], "t": "place"}, "롤러장": {"u": ["commons/thumb/d/de/Oaks_Park_Roller_Skating_Rink%2C_2018_-_1.jpg/960px-Oaks_Park_Roller_Skating_Rink%2C_2018_-_1.jpg"], "t": "vibe"}, "짱오락실 강남대로점": {"u": ["commons/thumb/e/ed/ArcadeGames.jpg/960px-ArcadeGames.jpg"], "t": "vibe"}, "우리게임장2": {"u": ["commons/thumb/9/9a/MAGFest2025-Arcade-HighAngle.jpg/960px-MAGFest2025-Arcade-HighAngle.jpg"], "t": "vibe"}, "펀시티 건대점": {"u": ["commons/thumb/1/1c/Buildings_near_konkuk_university_01.JPG/960px-Buildings_near_konkuk_university_01.JPG"], "t": "place"}, "스타필드 코엑스몰": {"u": ["commons/thumb/f/fe/Starfield_Library_COEX_20240218.jpg/960px-Starfield_Library_COEX_20240218.jpg", "commons/thumb/c/c9/Library_in_Seoul_%2853608036346%29.jpg/960px-Library_in_Seoul_%2853608036346%29.jpg", "commons/thumb/0/00/Library_in_Seoul_%2853608020746%29.jpg/960px-Library_in_Seoul_%2853608020746%29.jpg"], "t": "place"}, "퍼니앤조이": {"u": ["commons/thumb/a/a9/DFC_0847_A_person_stands_at_a_claw_machine_in_a_dimly_lit_arcade_surrounded_by_colorful_glowing_game_cabinets_and_neon_lights.jpg/960px-DFC_0847_A_person_stands_at_a_claw_machine_in_a_dimly_lit_arcade_surrounded_by_colorful_glowing_game_cabinets_and_neon_lights.jpg", "commons/thumb/8/8d/DFC_0798_Close-up_of_illuminated_arcade_claw_machines_with_glowing_joysticks_and_neon_accents.jpg/960px-DFC_0798_Close-up_of_illuminated_arcade_claw_machines_with_glowing_joysticks_and_neon_accents.jpg"], "t": "vibe"}, "방탈출": {"u": ["commons/thumb/a/a8/Escape_Room_-_%22The_Expedition%22_%28Escape_Quest_Bethesda%29.jpg/960px-Escape_Room_-_%22The_Expedition%22_%28Escape_Quest_Bethesda%29.jpg", "commons/thumb/5/5f/Escape_Quest_-_The_Black_Widow_1.jpg/960px-Escape_Quest_-_The_Black_Widow_1.jpg", "commons/thumb/c/c7/Escaperoom.jpg/960px-Escaperoom.jpg"], "t": "vibe"}, "PC방": {"u": ["commons/thumb/1/10/PC_bang_in_2001.jpg/960px-PC_bang_in_2001.jpg", "commons/thumb/d/da/2020-03-08_10.25.33_PC_bang_in_South_Korea.jpg/960px-2020-03-08_10.25.33_PC_bang_in_South_Korea.jpg"], "t": "vibe"}, "코인노래방": {"u": ["commons/thumb/9/9b/Karaoke_%282986745144%29.jpg/960px-Karaoke_%282986745144%29.jpg"], "t": "vibe"}, "만화카페": {"u": ["commons/6/65/Manga_Cafe_in_Kaminakatown_%E5%B2%A1_Anancuity_Tokushimapref.JPG", "commons/thumb/c/cd/Manga_Kissa_5_%286021168063%29.jpg/960px-Manga_Kissa_5_%286021168063%29.jpg", "commons/thumb/8/80/Kamata_manga_tearoom.JPG/960px-Kamata_manga_tearoom.JPG"], "t": "vibe"}, "코우너스": {"u": ["commons/thumb/8/8e/A_printing_company_in_Euljiro_printing_alley.jpg/960px-A_printing_company_in_Euljiro_printing_alley.jpg", "commons/thumb/3/37/A_Mitsubishi_printing_press_in_a_printing_company_in_Euljiro_printing_alley.jpg/960px-A_Mitsubishi_printing_press_in_a_printing_company_in_Euljiro_printing_alley.jpg", "commons/thumb/2/25/A_printing_company_in_Euljiro_printing_alley%2C_printing_operator_working_on_quality_control.jpg/960px-A_printing_company_in_Euljiro_printing_alley%2C_printing_operator_working_on_quality_control.jpg"], "t": "place"}, "은반지 공방": {"u": ["commons/thumb/1/17/Silver_ring_and_scorzoneras_by_ASQ.jpg/960px-Silver_ring_and_scorzoneras_by_ASQ.jpg", "commons/thumb/4/4f/Silver_ring_with_chalcedony_and_peaches_by_ASQ.jpg/960px-Silver_ring_with_chalcedony_and_peaches_by_ASQ.jpg", "commons/thumb/8/80/Silver_butterfly_ring_and_mushrooms_by_ASQ.jpg/960px-Silver_butterfly_ring_and_mushrooms_by_ASQ.jpg"], "t": "vibe"}, "자개공예": {"u": ["commons/thumb/5/5f/Korean_writing_table%2C_18th_century%2C_lacquer_and_mother_of_pearl%2C_HAA.JPG/960px-Korean_writing_table%2C_18th_century%2C_lacquer_and_mother_of_pearl%2C_HAA.JPG", "commons/thumb/6/6f/Box%2C_Korea%2C_Joseon_dynasty%2C_1700-1800_AD%2C_lacquered_wood_with_mother-of-pearl_inlays_-_Asian_Art_Museum_of_San_Francisco_-_DSC01435.JPG/960px-Box%2C_Korea%2C_Joseon_dynasty%2C_1700-1800_AD%2C_lacquered_wood_with_mother-of-pearl_inlays_-_Asian_Art_Museum_of_San_Francisco_-_DSC01435.JPG", "commons/thumb/b/b2/Box%2C_Korea%2C_Joseon_dynasty%2C_1550-1650_AD%2C_lacquered_wood_with_mother-of-pearl_inlays_-_Asian_Art_Museum_of_San_Francisco_-_DSC01438.JPG/960px-Box%2C_Korea%2C_Joseon_dynasty%2C_1550-1650_AD%2C_lacquered_wood_with_mother-of-pearl_inlays_-_Asian_Art_Museum_of_San_Francisco_-_DSC01438.JPG"], "t": "vibe"}, "신당동": {"u": ["commons/thumb/b/b0/Sindang-dong_Tteokbokki_town_in_2020.jpg/960px-Sindang-dong_Tteokbokki_town_in_2020.jpg"], "t": "place"}, "주신당": {"u": ["commons/thumb/4/46/Interior_of_Czeczotka_Cocktail_Bar%2C_Krak%C3%B3w%2C_2019.jpg/960px-Interior_of_Czeczotka_Cocktail_Bar%2C_Krak%C3%B3w%2C_2019.jpg", "commons/thumb/8/83/Bartender_at_Sylvarum_cocktail_bar%2C_Alicante.jpg/960px-Bartender_at_Sylvarum_cocktail_bar%2C_Alicante.jpg", "commons/thumb/d/dc/Cocktail-Bar_%28Kleines_Phi%29_in_Hamburg.jpg/960px-Cocktail-Bar_%28Kleines_Phi%29_in_Hamburg.jpg"], "t": "vibe"}, "모자이크": {"u": ["commons/thumb/7/72/Vinyl_collection_at_a_record_store_%28Unsplash%29.jpg/960px-Vinyl_collection_at_a_record_store_%28Unsplash%29.jpg", "commons/thumb/0/0a/Vintage_record_store_%28Unsplash%29.jpg/960px-Vintage_record_store_%28Unsplash%29.jpg", "commons/thumb/d/d0/Sonic_Boom_record_store_interior%2C_Toronto_2026.jpg/960px-Sonic_Boom_record_store_interior%2C_Toronto_2026.jpg"], "t": "vibe"}, "힙지로": {"u": ["commons/thumb/c/c9/Night_view_of_Euljiro_1-ga_intersection_and_the_Sogong-dong_Lotte_town.jpg/960px-Night_view_of_Euljiro_1-ga_intersection_and_the_Sogong-dong_Lotte_town.jpg", "commons/thumb/1/19/A_paper_wholesaler_in_Euljiro_printing_alley2.jpg/960px-A_paper_wholesaler_in_Euljiro_printing_alley2.jpg", "commons/thumb/e/ea/A_paper_wholesaler_in_Euljiro_printing_alley.jpg/960px-A_paper_wholesaler_in_Euljiro_printing_alley.jpg"], "t": "place"}, "동묘 벼룩시장": {"u": ["commons/thumb/3/3d/Dongmyo_Flea_Market_Jan_2024_03.jpg/960px-Dongmyo_Flea_Market_Jan_2024_03.jpg", "commons/thumb/0/0a/Dongmyo_Flea_Market_11.jpg/960px-Dongmyo_Flea_Market_11.jpg", "commons/thumb/6/6e/Dongmyo_Flea_Market_Jan_2024_08.jpg/960px-Dongmyo_Flea_Market_Jan_2024_08.jpg"], "t": "place"}, "셀프사진관": {"u": ["commons/thumb/4/47/Photo_booth_in_South_Korea%2C_2001.jpg/960px-Photo_booth_in_South_Korea%2C_2001.jpg"], "t": "vibe"}, "프로필 사진관": {"u": ["commons/thumb/9/93/Dustin_K_Supencheck_portrait_at_WikiPortraits_Studio_at_SXSW_2025_01.jpg/960px-Dustin_K_Supencheck_portrait_at_WikiPortraits_Studio_at_SXSW_2025_01.jpg"], "t": "vibe"}, "러닝크루": {"u": ["commons/thumb/9/97/Running_club_at_night_-_geograph.org.uk_-_7430244.jpg/960px-Running_club_at_night_-_geograph.org.uk_-_7430244.jpg"], "t": "vibe"}, "연희동": {"u": ["commons/thumb/c/ca/The_cloud_in_Yeonhui-dong.jpg/960px-The_cloud_in_Yeonhui-dong.jpg"], "t": "place"}, "팝업스토어": {"u": ["commons/thumb/a/a9/Summit_Ice_pop-up_store_%28interior%29.jpg/960px-Summit_Ice_pop-up_store_%28interior%29.jpg", "commons/thumb/a/a1/Interiors_of_IKEA_Xiamen_Pop-up_Store.jpg/960px-Interiors_of_IKEA_Xiamen_Pop-up_Store.jpg", "commons/thumb/c/cb/UNIQLO_Pop-Up_store_at_Union_Square_station_%2810333672173%29.jpg/960px-UNIQLO_Pop-Up_store_at_Union_Square_station_%2810333672173%29.jpg"], "t": "vibe"}, "남대문 카메라상가": {"u": ["commons/thumb/8/88/Namdaemun_market_in_Seoul_I.jpg/960px-Namdaemun_market_in_Seoul_I.jpg", "commons/thumb/e/e5/Adnan_Kebab._Iraqi_Kebab_Restaurant._Namdaemun_Market_Seoul%2C_South_Korea_01.jpg/960px-Adnan_Kebab._Iraqi_Kebab_Restaurant._Namdaemun_Market_Seoul%2C_South_Korea_01.jpg", "commons/thumb/3/3a/Namdaemun_market_in_Seoul_II.jpg/960px-Namdaemun_market_in_Seoul_II.jpg"], "t": "place"}, "디꾸": {"u": ["commons/thumb/7/76/12_MP_digital_camera_-_red.jpg/960px-12_MP_digital_camera_-_red.jpg", "commons/thumb/8/85/Kyocera_Finecam_SL400R_-_digital_camera.png/960px-Kyocera_Finecam_SL400R_-_digital_camera.png"], "t": "vibe"}, "홍대 빈티지샵": {"u": ["commons/b/b2/Uncle_Sam%27s_Vintage_American_Clothing_shop_in_Oxford_-_geograph.org.uk_-_4085533.jpg", "commons/thumb/2/27/Shop_selling_vintage_clothing_with_a_vintage_ceramic_facade%2C_Salisbury_-_geograph.org.uk_-_7582079.jpg/960px-Shop_selling_vintage_clothing_with_a_vintage_ceramic_facade%2C_Salisbury_-_geograph.org.uk_-_7582079.jpg", "commons/thumb/9/9b/Fabric_patterns_of_vintage_clothing_in_second-hand_shop.jpg/960px-Fabric_patterns_of_vintage_clothing_in_second-hand_shop.jpg"], "t": "vibe"}, "광장시장 구제층": {"u": ["commons/thumb/8/81/Gwangjang_Market%2C_Seoul_02.jpg/960px-Gwangjang_Market%2C_Seoul_02.jpg", "commons/thumb/9/94/Gwangjang_Market%2C_Seoul_01.jpg/960px-Gwangjang_Market%2C_Seoul_01.jpg"], "t": "place"}, "용산전자상가": {"u": ["commons/thumb/c/c4/Yongsan_Electronics_Market.jpg/960px-Yongsan_Electronics_Market.jpg", "commons/thumb/f/ff/Yongsan_Electronics_Market_%283385983467%29.jpg/960px-Yongsan_Electronics_Market_%283385983467%29.jpg", "commons/thumb/1/18/Yongsan_Electronics_Market_%283385983467%29_%28cropped%29.jpg/960px-Yongsan_Electronics_Market_%283385983467%29_%28cropped%29.jpg"], "t": "place"}, "하이커 그라운드": {"u": ["commons/thumb/4/4a/Cheonggyecheon_stream_at_sunrise_with_trees_in_Seoul.jpg/960px-Cheonggyecheon_stream_at_sunrise_with_trees_in_Seoul.jpg", "commons/thumb/9/90/Cheonggyecheon_stream_with_flowers_and_bridge_at_sunrise_near_Cheonggye_Plaza_in_Seoul.jpg/960px-Cheonggyecheon_stream_with_flowers_and_bridge_at_sunrise_near_Cheonggye_Plaza_in_Seoul.jpg", "commons/thumb/6/67/Cheonggyecheon_evening_2.jpg/960px-Cheonggyecheon_evening_2.jpg"], "t": "place"}, "그라운드시소": {"u": ["commons/thumb/e/e4/Amy_Karle_in_%22The_Physical_Mind%22_Immersive_Installation_Art_by_Teun_Vonk_at_FILE_Electronic_Language_International_Festival_2017_S%C3%A3o_Paulo_Brazil.jpg/960px-Amy_Karle_in_%22The_Physical_Mind%22_Immersive_Installation_Art_by_Teun_Vonk_at_FILE_Electronic_Language_International_Festival_2017_S%C3%A3o_Paulo_Brazil.jpg", "commons/thumb/1/17/Captured%2C_immersive_installation_by_Hanna_Haaslahti%2C_2021.jpg/960px-Captured%2C_immersive_installation_by_Hanna_Haaslahti%2C_2021.jpg"], "t": "vibe"}, "한국만화박물관": {"u": ["commons/thumb/0/03/Korea_Manhwa_Museum_20251122_6.jpg/960px-Korea_Manhwa_Museum_20251122_6.jpg", "commons/thumb/5/51/Korea_Manhwa_Museum_20251122_5.jpg/960px-Korea_Manhwa_Museum_20251122_5.jpg", "commons/thumb/3/35/Korea_Manhwa_Museum_20251122_1.jpg/960px-Korea_Manhwa_Museum_20251122_1.jpg"], "t": "place"}, "트릭아이미술관": {"u": ["commons/thumb/c/cf/Trick_Art_Museum_%289407354543%29.jpg/960px-Trick_Art_Museum_%289407354543%29.jpg", "commons/thumb/b/bd/Trick_Art_Museum_%289410118210%29.jpg/960px-Trick_Art_Museum_%289410118210%29.jpg", "commons/thumb/6/69/4D_Trick_Art_Museum.jpg/960px-4D_Trick_Art_Museum.jpg"], "t": "place"}, "서울숲 사슴방사장": {"u": ["commons/thumb/3/3c/View_at_rest_area_in_Lyudao_Sika_Deer_Ecology_Park_2008.jpg/960px-View_at_rest_area_in_Lyudao_Sika_Deer_Ecology_Park_2008.jpg"], "t": "vibe"}, "오리배": {"u": ["commons/thumb/8/87/Swan_and_Duck_Boats%2C_Canoe_Lake_-_53901335143.jpg/960px-Swan_and_Duck_Boats%2C_Canoe_Lake_-_53901335143.jpg", "commons/thumb/a/ac/Swan_boats_on_Coronation_Lake_-_geograph.org.uk_-_7887340.jpg/960px-Swan_boats_on_Coronation_Lake_-_geograph.org.uk_-_7887340.jpg", "commons/4/49/Boating_Lake_for_Swans_-_geograph.org.uk_-_917097.jpg"], "t": "vibe"}, "쌈지길": {"u": ["commons/thumb/d/db/Insa-dong_%28%EC%9D%B8%EC%82%AC%EB%8F%99%29_-_panoramio.jpg/960px-Insa-dong_%28%EC%9D%B8%EC%82%AC%EB%8F%99%29_-_panoramio.jpg"], "t": "place"}, "익선동": {"u": ["commons/thumb/0/0c/Ikseon-dong_%EC%9D%B5%EC%84%A0%EB%8F%99_October_1_2020_3.jpg/960px-Ikseon-dong_%EC%9D%B5%EC%84%A0%EB%8F%99_October_1_2020_3.jpg", "commons/thumb/6/61/Ikseon-dong_%EC%9D%B5%EC%84%A0%EB%8F%99_October_1_2020_2.jpg/960px-Ikseon-dong_%EC%9D%B5%EC%84%A0%EB%8F%99_October_1_2020_2.jpg", "commons/thumb/f/f5/Ikseon-dong_%EC%9D%B5%EC%84%A0%EB%8F%99_October_1_2020_5.jpg/960px-Ikseon-dong_%EC%9D%B5%EC%84%A0%EB%8F%99_October_1_2020_5.jpg"], "t": "place"}, "별마당도서관": {"u": ["commons/thumb/f/fe/Starfield_Library_COEX_20240218.jpg/960px-Starfield_Library_COEX_20240218.jpg", "commons/thumb/c/c9/Library_in_Seoul_%2853608036346%29.jpg/960px-Library_in_Seoul_%2853608036346%29.jpg", "commons/thumb/0/00/Library_in_Seoul_%2853608020746%29.jpg/960px-Library_in_Seoul_%2853608020746%29.jpg"], "t": "place"}, "라인프렌즈 카카오프렌즈": {"u": ["commons/thumb/0/0b/LINE_FRIENDS_FLAGSHIP_STORE_Harajuku_%2852650796010%29.jpg/960px-LINE_FRIENDS_FLAGSHIP_STORE_Harajuku_%2852650796010%29.jpg", "commons/thumb/f/fe/LINE_FRIENDS_FLAGSHIP_STORE_Harajuku_%2852650352921%29.jpg/960px-LINE_FRIENDS_FLAGSHIP_STORE_Harajuku_%2852650352921%29.jpg", "commons/thumb/1/1d/LINE_FRIENDS_FLAGSHIP_STORE_Harajuku_%2852649861567%29.jpg/960px-LINE_FRIENDS_FLAGSHIP_STORE_Harajuku_%2852649861567%29.jpg"], "t": "vibe"}, "하늘공원": {"u": ["commons/thumb/f/f1/Haneul_Park_Seoul_14.jpg/960px-Haneul_Park_Seoul_14.jpg", "commons/thumb/6/66/Haneul_Park_Seoul_07.jpg/960px-Haneul_Park_Seoul_07.jpg", "commons/thumb/8/83/Haneul_Park_Seoul_12.jpg/960px-Haneul_Park_Seoul_12.jpg"], "t": "place"}, "선유도공원": {"u": ["commons/thumb/7/77/Seoul_Seonyudo_Park.jpg/960px-Seoul_Seonyudo_Park.jpg", "commons/thumb/6/68/School_girl_in_Seonyudo_Park%2C_Seoul%2C_Korea.jpg/960px-School_girl_in_Seonyudo_Park%2C_Seoul%2C_Korea.jpg", "commons/thumb/f/fb/Seonyudo_Park_-_historical_-_2005_June_6_various_-_03.jpg/960px-Seonyudo_Park_-_historical_-_2005_June_6_various_-_03.jpg"], "t": "place"}, "노들섬": {"u": ["commons/thumb/1/18/Nodeulseom_%2814005438206%29.jpg/960px-Nodeulseom_%2814005438206%29.jpg"], "t": "place"}, "경의선숲길": {"u": ["commons/thumb/a/a5/Gyeonguiseon_Forest_Trail_Park_and_Ttaeng-ttaeng_Street_in_Seoul_%28near_Hongdae%2C_1%29.jpg/960px-Gyeonguiseon_Forest_Trail_Park_and_Ttaeng-ttaeng_Street_in_Seoul_%28near_Hongdae%2C_1%29.jpg", "commons/thumb/0/06/Gyeonguiseon_Forest_Trail_Park_and_Ttaeng-ttaeng_Street_in_Seoul_%28near_Hongdae%2C_2%29.jpg/960px-Gyeonguiseon_Forest_Trail_Park_and_Ttaeng-ttaeng_Street_in_Seoul_%28near_Hongdae%2C_2%29.jpg", "commons/thumb/9/9b/Gyeonguiseon_Forest_Trail_Park_and_Ttaeng-ttaeng_Street_in_Seoul_%28near_Hongdae%2C_4%29.jpg/960px-Gyeonguiseon_Forest_Trail_Park_and_Ttaeng-ttaeng_Street_in_Seoul_%28near_Hongdae%2C_4%29.jpg"], "t": "place"}, "낙산공원": {"u": ["commons/thumb/8/8a/KOCIS_Korea_Seoul_Fortress_20130924_13_%289910995446%29.jpg/960px-KOCIS_Korea_Seoul_Fortress_20130924_13_%289910995446%29.jpg", "commons/thumb/d/d9/KOCIS_Korea_Seoul_Fortress_20130924_04_%289910962205%29.jpg/960px-KOCIS_Korea_Seoul_Fortress_20130924_04_%289910962205%29.jpg", "commons/thumb/1/16/KOCIS_Korea_Seoul_Fortress_20130924_05_%289911039744%29.jpg/960px-KOCIS_Korea_Seoul_Fortress_20130924_05_%289911039744%29.jpg"], "t": "place"}, "망원시장": {"u": ["commons/thumb/e/e8/Mercado_Mangwon_en_Se%C3%BAl.jpg/960px-Mercado_Mangwon_en_Se%C3%BAl.jpg"], "t": "place"}, "홍제유연": {"u": ["commons/thumb/f/f5/Hongjecheon_Artificial_Waterfall_2023-10-31.jpg/960px-Hongjecheon_Artificial_Waterfall_2023-10-31.jpg"], "t": "place"}, "서울로7017": {"u": ["commons/thumb/a/a4/Seoullo_7017_02.jpg/960px-Seoullo_7017_02.jpg", "commons/thumb/6/6b/Seoullo_7017.jpg/960px-Seoullo_7017.jpg", "commons/thumb/5/50/Seoullo_7017_night_time_city_lights.jpg/960px-Seoullo_7017_night_time_city_lights.jpg"], "t": "place"}, "노량진수산시장": {"u": ["commons/thumb/e/ea/Octopus_as_food_at_Noryangjin_Fisheries_Wholesale_Market_in_Seoul_South_Korea.jpg/960px-Octopus_as_food_at_Noryangjin_Fisheries_Wholesale_Market_in_Seoul_South_Korea.jpg", "commons/thumb/7/7c/Korea-Seoul-Noryangjin_Fish_Market-03.jpg/960px-Korea-Seoul-Noryangjin_Fish_Market-03.jpg", "commons/6/65/Noryangjin_fish_market.JPG"], "t": "place"}, "인왕산": {"u": ["commons/thumb/c/cf/Korea-Seoul-Inwangsan-01.jpg/960px-Korea-Seoul-Inwangsan-01.jpg", "commons/thumb/e/ef/Mount_Inwang.jpg/960px-Mount_Inwang.jpg", "commons/thumb/1/1f/Korea-Seoul-Inwangsan-06.jpg/960px-Korea-Seoul-Inwangsan-06.jpg"], "t": "place"}, "북한산 대남문 코스": {"u": ["commons/thumb/f/fa/Seating_Buddha_Carved_on_the_Rock_in_Gugi-dong%2C_Bukhansan_Mountain%2C_Seoul_04.JPG/960px-Seating_Buddha_Carved_on_the_Rock_in_Gugi-dong%2C_Bukhansan_Mountain%2C_Seoul_04.JPG", "commons/thumb/d/d7/Seating_Buddha_Carved_on_the_Rock_in_Gugi-dong%2C_Bukhansan_Mountain%2C_Seoul_05.JPG/960px-Seating_Buddha_Carved_on_the_Rock_in_Gugi-dong%2C_Bukhansan_Mountain%2C_Seoul_05.JPG", "commons/7/7c/Korea-Bukhansan_shrine-01.jpg"], "t": "place"}, "관악산 과천향교 코스": {"u": ["commons/thumb/8/81/Gwanaksan_Seoul_KR.jpg/960px-Gwanaksan_Seoul_KR.jpg"], "t": "place"}, "오륙도 스카이워크": {"u": ["commons/thumb/5/52/Oryukdo_Skywalk_in_Busan%2C_South_Korea.jpg/960px-Oryukdo_Skywalk_in_Busan%2C_South_Korea.jpg", "commons/thumb/2/2a/Oryukdo%2C_Busan%2C_South_Korea_01.jpg/960px-Oryukdo%2C_Busan%2C_South_Korea_01.jpg", "commons/thumb/1/1e/Oryukdo_Skywalk.jpg/960px-Oryukdo_Skywalk.jpg"], "t": "place"}, "스파랜드 센텀시티": {"u": ["commons/thumb/4/48/Centum_City%2C_Busan%2C_2014-12-28.jpg/960px-Centum_City%2C_Busan%2C_2014-12-28.jpg", "commons/thumb/b/bd/Shinsegye_Dept_store_Centum_city.JPG/960px-Shinsegye_Dept_store_Centum_city.JPG"], "t": "place"}, "감천문화마을": {"u": ["commons/thumb/b/b8/Colorful_houses_in_Gamcheon_Culture_Village_at_sunset_in_Busan_South_Korea.jpg/960px-Colorful_houses_in_Gamcheon_Culture_Village_at_sunset_in_Busan_South_Korea.jpg", "commons/thumb/1/1e/Gamcheon_Culture_Village.jpg/960px-Gamcheon_Culture_Village.jpg", "commons/thumb/c/c8/Gamcheon_Culture_Village_1.jpg/960px-Gamcheon_Culture_Village_1.jpg"], "t": "place"}, "흰여울문화마을": {"u": ["commons/thumb/0/03/Huinnyeoul_culture_village%2C_Busan_on_October_25th%2C_2019.jpg/960px-Huinnyeoul_culture_village%2C_Busan_on_October_25th%2C_2019.jpg"], "t": "place"}, "태종대": {"u": ["commons/thumb/4/47/Korea-Busan-Taejongdae-03.jpg/960px-Korea-Busan-Taejongdae-03.jpg", "commons/thumb/d/d4/Korea-Busan-Taejongdae-10.jpg/960px-Korea-Busan-Taejongdae-10.jpg", "commons/thumb/3/31/Korea-Busan-Taejongdae-01.jpg/960px-Korea-Busan-Taejongdae-01.jpg"], "t": "place"}, "자갈치시장": {"u": ["commons/thumb/0/0e/Jagalchi_Market_01.jpg/960px-Jagalchi_Market_01.jpg", "commons/thumb/1/19/Jagalchi_Market_02.jpg/960px-Jagalchi_Market_02.jpg", "commons/thumb/b/b9/Jagalchi_Market_20200523_018.jpg/960px-Jagalchi_Market_20200523_018.jpg"], "t": "place"}, "해동용궁사": {"u": ["commons/thumb/b/b5/Haedong_Yonggungsa_Temple_near_Busan.jpg/960px-Haedong_Yonggungsa_Temple_near_Busan.jpg", "commons/thumb/d/d4/Haedong_Yonggungsa_Temple_view_on_sea.JPG/960px-Haedong_Yonggungsa_Temple_view_on_sea.JPG", "commons/thumb/2/2a/Haedong_Yonggungsa_Temple%2C_Busan%2C_South_Korea.jpg/960px-Haedong_Yonggungsa_Temple%2C_Busan%2C_South_Korea.jpg"], "t": "place"}, "해운대 블루라인파크": {"u": ["commons/thumb/5/5c/Busan_City_Haeundae_Beach_KOGL_%2801%29.jpg/960px-Busan_City_Haeundae_Beach_KOGL_%2801%29.jpg"], "t": "place"}, "금정산 범어사": {"u": ["commons/thumb/0/0f/Burimun_gate_and_pine_under_blue_sky_at_Beomeosa_temple_in_Busan%2C_South_Korea.jpg/960px-Burimun_gate_and_pine_under_blue_sky_at_Beomeosa_temple_in_Busan%2C_South_Korea.jpg", "commons/thumb/9/9b/Front_exterior_view_of_Beomeosa_temple_with_three_stairs_and_blue_sky_in_Busan_South_Korea.jpg/960px-Front_exterior_view_of_Beomeosa_temple_with_three_stairs_and_blue_sky_in_Busan_South_Korea.jpg", "commons/thumb/4/47/Exterior_view_of_Beomeosa_temple_with_rock_stairs_and_blue_sky_in_Busan_South_Korea.jpg/960px-Exterior_view_of_Beomeosa_temple_with_rock_stairs_and_blue_sky_in_Busan_South_Korea.jpg"], "t": "place"}, "광안리해수욕장": {"u": ["commons/thumb/5/53/Gwangalli_Beach_in_Busan.jpg/960px-Gwangalli_Beach_in_Busan.jpg", "commons/thumb/d/d4/Gwangalli_Beach_and_Gwangan_Bridge_Busan.jpg/960px-Gwangalli_Beach_and_Gwangan_Bridge_Busan.jpg", "commons/thumb/d/da/Busan_Gwangalli_Night.jpg/960px-Busan_Gwangalli_Night.jpg"], "t": "place"}, "송도 케이블카": {"u": ["commons/thumb/3/39/Songdo_Beach_-_panoramio.jpg/960px-Songdo_Beach_-_panoramio.jpg", "commons/thumb/3/3e/Songdo_Waterfall_-_panoramio.jpg/960px-Songdo_Waterfall_-_panoramio.jpg"], "t": "place"}, "متحف قطر الوطني": {"u": ["commons/thumb/5/56/Doha_National_Museum_of_Qatar_Interior_12.jpg/960px-Doha_National_Museum_of_Qatar_Interior_12.jpg", "commons/thumb/0/02/Doha_National_Museum_of_Qatar_Interior_22.jpg/960px-Doha_National_Museum_of_Qatar_Interior_22.jpg", "commons/thumb/9/9a/Doha_National_Museum_of_Qatar_Interior_17.jpg/960px-Doha_National_Museum_of_Qatar_Interior_17.jpg"], "t": "place"}, "متحف الفن الإسلامي": {"u": ["commons/thumb/d/d5/Fisherman_on_the_Doha_Corniche_next_to_the_Islamic_Museum.jpg/960px-Fisherman_on_the_Doha_Corniche_next_to_the_Islamic_Museum.jpg", "commons/thumb/d/d4/View_of_the_Persian_Gulf_and_the_Museum_of_Islamic_Art_in_Qatar_at_dusk.jpg/960px-View_of_the_Persian_Gulf_and_the_Museum_of_Islamic_Art_in_Qatar_at_dusk.jpg", "commons/thumb/4/43/Museum_of_Islamic_Art%2C_Doha_%2842258469495%29.jpg/960px-Museum_of_Islamic_Art%2C_Doha_%2842258469495%29.jpg"], "t": "place"}, "سوق واقف": {"u": ["commons/thumb/f/f4/Souq_Waqif%2C_Doha%2C_Catar%2C_2013-08-05%2C_DD_107.JPG/960px-Souq_Waqif%2C_Doha%2C_Catar%2C_2013-08-05%2C_DD_107.JPG", "commons/thumb/8/88/Souq_Waqif%2C_Doha%2C_Catar%2C_2013-08-05%2C_DD_09.JPG/960px-Souq_Waqif%2C_Doha%2C_Catar%2C_2013-08-05%2C_DD_09.JPG", "commons/thumb/8/8c/Souq_Waqif%2C_Doha%2C_Catar%2C_2013-08-05%2C_DD_75.JPG/960px-Souq_Waqif%2C_Doha%2C_Catar%2C_2013-08-05%2C_DD_75.JPG"], "t": "place"}, "الكورنيش": {"u": ["commons/thumb/2/2c/Traditional_dhows_on_Doha_Corniche_used_for_pearling.jpg/960px-Traditional_dhows_on_Doha_Corniche_used_for_pearling.jpg", "commons/thumb/d/d5/Fisherman_on_the_Doha_Corniche_next_to_the_Islamic_Museum.jpg/960px-Fisherman_on_the_Doha_Corniche_next_to_the_Islamic_Museum.jpg", "commons/thumb/3/30/Stretch_of_promenade_on_Doha_Corniche.jpg/960px-Stretch_of_promenade_on_Doha_Corniche.jpg"], "t": "place"}, "مشيرب": {"u": ["commons/thumb/3/37/Msheireb_Downtown_Doha_tram_at_night.jpg/960px-Msheireb_Downtown_Doha_tram_at_night.jpg", "commons/thumb/e/e7/Art_mural_on_a_wall_in_Msheireb_Downtown_Doha.png/960px-Art_mural_on_a_wall_in_Msheireb_Downtown_Doha.png"], "t": "place"}, "국립항공박물관": {"u": ["commons/thumb/e/e0/%EA%B5%AD%EB%A6%BD%ED%95%AD%EA%B3%B5%EB%B0%95%EB%AC%BC%EA%B4%80.jpg/960px-%EA%B5%AD%EB%A6%BD%ED%95%AD%EA%B3%B5%EB%B0%95%EB%AC%BC%EA%B4%80.jpg"], "t": "place"}, "문화비축기지": {"u": ["commons/thumb/a/a5/Mapo_Park_-_Human_Nature.jpg/960px-Mapo_Park_-_Human_Nature.jpg"], "t": "place"}, "따릉이": {"u": ["commons/thumb/e/e2/Seoul_Bike_Station.jpg/960px-Seoul_Bike_Station.jpg"], "t": "place"}, "세운상가": {"u": ["ko/thumb/f/fa/Seoul-SeUnSanGa_001.jpg/960px-Seoul-SeUnSanGa_001.jpg"], "t": "place"}, "아차산": {"u": ["commons/thumb/8/81/AchasanPost.jpg/960px-AchasanPost.jpg"], "t": "place"}, "부암동": {"u": ["commons/thumb/1/17/Whanki_Museum.jpg/960px-Whanki_Museum.jpg"], "t": "place"}, "보라매안전체험관": {"u": ["commons/thumb/9/96/20140714_%EB%B3%B4%EB%9D%BC%EB%A7%A4%EA%B3%B5%EC%9B%90.jpg/960px-20140714_%EB%B3%B4%EB%9D%BC%EB%A7%A4%EA%B3%B5%EC%9B%90.jpg"], "t": "place"}, "도봉산 망월사 코스": {"u": ["commons/thumb/4/47/Dobongsan_Seoul_South_Korea_Landscape_Photography_%28251858911%29.jpeg/960px-Dobongsan_Seoul_South_Korea_Landscape_Photography_%28251858911%29.jpeg"], "t": "place"}, "부산현대미술관": {"u": ["commons/thumb/2/2b/Museum_of_Contemporary_Art_Busan_at_Busan_Biennale_2018.jpg/960px-Museum_of_Contemporary_Art_Busan_at_Busan_Biennale_2018.jpg"], "t": "place"}};
 const CATS = {
   art:   {label:"Искусство",   color:"var(--jade)"},
   museum:{label:"Опыт и музеи",color:"var(--ginkgo)"},
@@ -585,7 +593,7 @@ const P = [
   {c:"seoul",k:"hike",n:"Намсан, северное кольцо",kr:"남산둘레길 북측순환로",a:"Чун",d:"Полтора километра ровной дороги без ступеней вокруг горы. Клёны здесь держатся дольше всего, пик примерно к 10 ноября.",t:["40 минут","совсем лёгкий","10 ноября"],pr:"бесплатно",lat:37.5520,lng:127.0000},
 
   // ===== BUSAN =====
-  {c:"busan",k:"hike",n:"Прибрежная тропа Игидэ",kr:"이기대 해안산책로",a:"Нам-гу",d:"Четыре и семь десятых километра по деревянным настилам над скалами, с подвесными мостиками и видом на мост Кванан. Заканчивается у Орюкдо. Бесплатно на всём протяжении.",t:["2–3 часа","море","бесплатно"],pr:"бесплатно",lat:37.1270,lng:129.1230},
+  {c:"busan",k:"hike",n:"Прибрежная тропа Игидэ",kr:"이기대 해안산책로",a:"Нам-гу",d:"Четыре и семь десятых километра по деревянным настилам над скалами, с подвесными мостиками и видом на мост Кванан. Заканчивается у Орюкдо. Бесплатно на всём протяжении.",t:["2–3 часа","море","бесплатно"],pr:"бесплатно",lat:35.1270,lng:129.1230},
   {c:"busan",k:"nature",n:"Смотровая Орюкдо",kr:"오륙도 스카이워크",a:"Нам-гу",d:"Стеклянная подкова, вынесенная на пятнадцать метров над морем на высоте тридцати пяти. Под ногами разбиваются волны.",t:["бесплатно","полчаса","море"],pr:"бесплатно",lat:35.0960,lng:129.1240},
   {c:"busan",k:"spa",n:"Spa Land Centum City",kr:"스파랜드 센텀시티",a:"Хэундэ",d:"Лучший чимчильбан страны: двадцать с лишним ванн на настоящей термальной воде, финская сауна, соляные и ледяные комнаты, зона отдыха. Прямо внутри универмага.",t:["4 часа","спа","на дождь"],pr:"от 20 000 ₩",lat:35.1690,lng:129.1290},
   {c:"busan",k:"nature",n:"Камчхон",kr:"감천문화마을",a:"Саха-гу",d:"Пастельные домики лесенкой по склону, переулки с мастерскими и маленькими галереями. Идти утром, пока пусто и свет мягкий.",t:["утром","полдня","для туристов"],pr:"бесплатно",lat:35.0975,lng:129.0105},
@@ -758,22 +766,17 @@ function renderGrid(){
     const gimg  = "https://www.google.com/search?tbm=isch&q=" + term;
     const insta = "https://www.instagram.com/explore/tags/" + encodeURIComponent(p.kr.replace(/[^\p{L}\p{N}]/gu, ""));
     return '<article class="card" id="c' + i + '">' +
-      '<a class="thumb" data-kr="' + esc(p.kr) + '" target="_blank" rel="noopener" href="' + naver + '"' +
-        ' aria-label="Фотографии: ' + esc(p.n) + '"' +
-        ' style="background:linear-gradient(135deg,' + col + ',color-mix(in srgb,' + col + ' 62%,#000))">' +
-        '<img class="shot" alt="" loading="lazy">' +
-        '<svg class="ico" width="22" height="22" viewBox="0 0 24 24" aria-hidden="true" style="color:#fff">' + ICONS[p.k] + '</svg>' +
-        '<span class="photo-cta"><span class="kr">' + esc(p.kr) + '</span><span>фото →</span></span>' +
+      '<div class="thumb" data-kr="' + esc(p.kr) + '" style="background:linear-gradient(135deg,' + col + ',color-mix(in srgb,' + col + ' 62%,#000))">' +
+        '<div class="ph"><svg width="30" height="30" viewBox="0 0 24 24" aria-hidden="true">' + ICONS[p.k] + '</svg></div>' +
         '<span class="droptip">перетащи сюда фото</span>' +
-        '<span class="vibe" title="Похожее место, не само это">вайб</span>' +
-      '</a>' +
+      '</div>' +
       '<div class="card-body">' +
         '<h3>' + esc(p.n) + '</h3>' +
         '<div class="meta"><span class="cat" style="color:' + col + '">' + esc(CATS[p.k].label) + '</span><span>·</span><span>' + esc(p.a) + '</span></div>' +
         '<p class="desc">' + esc(p.d) + '</p>' +
         '<div class="tags">' + p.t.map(t => '<span class="tag">' + esc(t) + '</span>').join("") + '</div>' +
         '<div class="links">' +
-          '<a class="primary" target="_blank" rel="noopener" href="' + naver + '">Фото · Naver</a>' +
+          '<a class="primary" target="_blank" rel="noopener" href="' + naver + '">Ещё фото</a>' +
           '<a target="_blank" rel="noopener" href="' + gimg + '">Google</a>' +
           '<a target="_blank" rel="noopener" href="' + insta + '">Instagram</a>' +
         '</div>' +
@@ -792,32 +795,82 @@ function renderGrid(){
     : "показано " + items.length + " из " + total;
 }
 
-// ---- photos: baked-in URLs (filled only in the downloadable version) + your own dropped images ----
+// ---- photo carousel: baked URLs (live only outside the artifact sandbox) + your own dropped images ----
 const BAKED = window.__BAKED || {};
 const PIC = "kpic:";
+const full = u => /^(https?:|data:)/.test(u) ? u : "https://upload.wikimedia.org/wikipedia/" + u;
 function myPic(kr){ try { return localStorage.getItem(PIC + kr); } catch(e){ return null; } }
 function setPic(kr, v){ try { v ? localStorage.setItem(PIC + kr, v) : localStorage.removeItem(PIC + kr); return true; } catch(e){ return false; } }
 
-function paintThumb(a){
-  const kr = a.dataset.kr, img = a.querySelector("img.shot");
-  if (!img) return;
-  const mine = myPic(kr);
+function shotsFor(kr){
   const rec = BAKED[kr];
-  const baked = rec ? "https://upload.wikimedia.org/wikipedia/" + (Array.isArray(rec) ? rec[0] : rec) : null;
-  const tier = Array.isArray(rec) ? rec[1] : "place";
-  const src = mine || baked;
-  a.classList.toggle("mine", !!mine);
-  a.classList.toggle("isvibe", !mine && !!baked && tier === "vibe");
-  if (!src){ a.classList.remove("has"); img.classList.remove("in"); img.removeAttribute("src"); return; }
-  img.onload = () => { img.classList.add("in"); a.classList.add("has"); };
-  img.onerror = () => { a.classList.remove("has"); img.classList.remove("in"); };
-  img.src = src;
-  if (mine && !a.querySelector(".clearpic")){
-    const b = document.createElement("button");
-    b.type = "button"; b.className = "clearpic"; b.textContent = "убрать фото";
-    b.addEventListener("click", e => { e.preventDefault(); e.stopPropagation(); setPic(kr, null); paintThumb(a); });
-    a.appendChild(b);
+  const list = rec ? (Array.isArray(rec) ? [rec[0]] : rec.u).slice() : [];
+  const mine = myPic(kr);
+  return { urls: mine ? [mine, ...list] : list, tier: rec && !Array.isArray(rec) ? rec.t : "place", mine: !!mine };
+}
+
+function buildThumb(box){
+  const kr = box.dataset.kr;
+  const { urls, tier, mine } = shotsFor(kr);
+  box.querySelectorAll(".slide,.dots,.nav,.vibe,.clearpic").forEach(n => n.remove());
+  box.classList.toggle("mine", mine);
+  if (!urls.length) return;
+
+  urls.forEach((u, i) => {
+    const img = document.createElement("img");
+    img.className = "slide" + (i === 0 ? " on" : "");
+    img.alt = ""; img.loading = i === 0 ? "eager" : "lazy";
+    img.addEventListener("error", () => { img.dataset.dead = "1"; }, {once:true});
+    img.src = full(u);
+    box.appendChild(img);
+  });
+
+  if (!mine && tier === "vibe"){
+    const b = document.createElement("span");
+    b.className = "vibe"; b.textContent = "вайб";
+    b.title = "Похожее место, не именно оно";
+    box.appendChild(b);
   }
+  if (mine){
+    const b = document.createElement("button");
+    b.type = "button"; b.className = "clearpic"; b.textContent = "убрать";
+    b.addEventListener("click", e => { e.preventDefault(); e.stopPropagation(); setPic(kr, null); buildThumb(box); });
+    box.appendChild(b);
+  }
+
+  if (urls.length < 2) return;
+
+  const dots = document.createElement("div");
+  dots.className = "dots";
+  urls.forEach((_, i) => { const d = document.createElement("i"); if (!i) d.className = "on"; dots.appendChild(d); });
+  box.appendChild(dots);
+
+  let at = 0;
+  const go = step => {
+    const slides = [...box.querySelectorAll(".slide")];
+    const marks = [...dots.children];
+    at = (at + step + slides.length) % slides.length;
+    slides.forEach((im, i) => im.classList.toggle("on", i === at));
+    marks.forEach((m, i) => m.classList.toggle("on", i === at));
+    const cur = slides[at];
+    if (cur && !cur.complete) cur.loading = "eager";
+  };
+  [["prev", -1, "‹"], ["next", 1, "›"]].forEach(([cls, step, ch]) => {
+    const btn = document.createElement("button");
+    btn.type = "button"; btn.className = "nav " + cls;
+    btn.setAttribute("aria-label", cls === "prev" ? "Предыдущее фото" : "Следующее фото");
+    btn.innerHTML = "<span>" + ch + "</span>";
+    btn.addEventListener("click", e => { e.preventDefault(); e.stopPropagation(); go(step); });
+    box.appendChild(btn);
+  });
+  let x0 = null;
+  box.addEventListener("touchstart", e => { x0 = e.touches[0].clientX; }, {passive:true});
+  box.addEventListener("touchend", e => {
+    if (x0 === null) return;
+    const dx = e.changedTouches[0].clientX - x0;
+    if (Math.abs(dx) > 35) go(dx < 0 ? 1 : -1);
+    x0 = null;
+  }, {passive:true});
 }
 
 function shrink(file, cb){
@@ -839,24 +892,27 @@ function shrink(file, cb){
 }
 
 function wireThumbs(){
-  document.querySelectorAll(".thumb:not([data-wired])").forEach(a => {
-    a.setAttribute("data-wired", "1");
-    paintThumb(a);
-    a.addEventListener("dragover", e => { e.preventDefault(); a.classList.add("over"); });
-    a.addEventListener("dragleave", () => a.classList.remove("over"));
-    a.addEventListener("drop", e => {
-      e.preventDefault(); a.classList.remove("over");
+  document.querySelectorAll(".thumb:not([data-wired])").forEach(box => {
+    box.setAttribute("data-wired", "1");
+    buildThumb(box);
+    box.addEventListener("dragover", e => { e.preventDefault(); box.classList.add("over"); });
+    box.addEventListener("dragleave", () => box.classList.remove("over"));
+    box.addEventListener("drop", e => {
+      e.preventDefault(); box.classList.remove("over");
       const f = e.dataTransfer && e.dataTransfer.files && e.dataTransfer.files[0];
       if (!f || !/^image\//.test(f.type)) return;
       shrink(f, data => {
         if (!data) return;
-        if (!setPic(a.dataset.kr, data)) alert0("Память браузера переполнена — убери несколько фото.");
-        paintThumb(a);
+        if (!setPic(box.dataset.kr, data)){
+          const c = document.getElementById("count");
+          if (c) c.textContent = "Память браузера переполнена — убери несколько своих фото.";
+          return;
+        }
+        buildThumb(box);
       });
     });
   });
 }
-function alert0(msg){ const c = document.getElementById("count"); if (c) c.textContent = msg; }
 new MutationObserver(wireThumbs).observe(document.getElementById("grid"), {childList:true});
 
 function render(){ renderChips(); renderMap(); renderGrid(); wireThumbs(); }
