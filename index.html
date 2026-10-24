@@ -3,8 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<meta name="theme-color" content="#ECEEE9" media="(prefers-color-scheme: light)">
-<meta name="theme-color" content="#101210" media="(prefers-color-scheme: dark)">
+<meta name="theme-color" content="#ffffff">
 <meta name="referrer" content="no-referrer-when-downgrade">
 <meta name="description" content="Места в Сеуле, Пусане и Дохе на поездку 28 октября — 11 ноября">
 <title>Корея, 28.10 — 11.11</title>
@@ -16,312 +15,237 @@ img{max-width:100%}
 </style>
 </head>
 <body>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Unbounded:wght@400;600;800&family=Golos+Text:wght@400;500;600;700&family=Noto+Sans+KR:wght@400;500;700&display=swap">
 <style>
-/* Layout: sticky filter rail over a projected city map, then a dense card grid */
 :root{
-  --bg:#ECEEE9;
-  --surface:#F7F8F5;
-  --surface-2:#E2E5DE;
-  --fg:#171A17;
-  --fg-dim:#5B625B;
-  --line:#CDD2CA;
-  --persimmon:#C44A23;
-  --jade:#2E6B5E;
-  --ginkgo:#9A7B12;
-  --indigo:#5A41BC;
-  --leaf:#4A7345;
-  --plum:#9E2F62;
-  --earth:#7C4F23;
-  --water:#1F5D7D;
-  --neon:#C2185B;
-  --map-land:#E4E7E0;
-  --map-water:#CBD9DE;
-  --map-ridge:#D3D8CE;
-  --shadow:0 1px 2px rgba(23,26,23,.06),0 8px 24px -12px rgba(23,26,23,.22);
-  --font-display:"Unbounded","Golos Text",system-ui,sans-serif;
-  --font-body:"Golos Text",system-ui,-apple-system,sans-serif;
-  --font-kr:"Noto Sans KR","Golos Text",system-ui,sans-serif;
-}
-@media (prefers-color-scheme:dark){
-  :root:not([data-theme="light"]){
-    --bg:#101210;
-    --surface:#191C18;
-    --surface-2:#22261F;
-    --fg:#E9EBE4;
-    --fg-dim:#9BA498;
-    --line:#2E332C;
-    --persimmon:#F2825A;
-    --jade:#6ABBA6;
-    --ginkgo:#D9B646;
-    --indigo:#9C88F5;
-    --leaf:#89BE7F;
-    --plum:#E87BA9;
-    --earth:#C79260;
-    --water:#6CB2D6;
-    --neon:#FF7FB0;
-    --map-land:#1E221C;
-    --map-water:#1A2A31;
-    --map-ridge:#272C24;
-    --shadow:0 1px 2px rgba(0,0,0,.5),0 8px 24px -12px rgba(0,0,0,.8);
-    color-scheme:dark;
-  }
-}
-:root[data-theme="dark"]{
-  --bg:#101210;
-  --surface:#191C18;
-  --surface-2:#22261F;
-  --fg:#E9EBE4;
-  --fg-dim:#9BA498;
-  --line:#2E332C;
-  --persimmon:#F2825A;
-  --jade:#6ABBA6;
-  --ginkgo:#D9B646;
-  --indigo:#9C88F5;
-  --leaf:#89BE7F;
-  --plum:#E87BA9;
-  --earth:#C79260;
-  --water:#6CB2D6;
-  --neon:#FF7FB0;
-  --map-land:#1E221C;
-  --map-water:#1A2A31;
-  --map-ridge:#272C24;
-  --shadow:0 1px 2px rgba(0,0,0,.5),0 8px 24px -12px rgba(0,0,0,.8);
-  color-scheme:dark;
+  color-scheme:light;
+  --bg:#fff;--surface:#fff;--surface-2:#f5f5f5;
+  --fg:#191919;--fg-dim:#737373;--line:#e7e7e7;
+  --persimmon:#191919;--jade:#595959;--ginkgo:#595959;
+  --indigo:#595959;--leaf:#595959;--plum:#595959;
+  --earth:#595959;--water:#595959;--neon:#595959;
+  --map-land:#fafafa;--map-water:#e9e9e9;--map-ridge:#f0f0f0;
+  --font-body:"Helvetica Neue",Helvetica,Arial,sans-serif;
+  --font-display:var(--font-body);--font-kr:var(--font-body);
 }
 *{box-sizing:border-box}
-body{
-  background:var(--bg);
-  color:var(--fg);
-  font-family:var(--font-body);
-  font-size:15px;
-  line-height:1.5;
-  -webkit-font-smoothing:antialiased;
-}
-.wrap{max-width:1180px;margin:0 auto;padding-inline:18px;padding-block:0}
-h1,h2,h3{text-wrap:balance;margin:0}
-a{color:inherit}
-
-/* ---------- masthead ---------- */
-.mast{padding-block:40px 24px;border-bottom:1px solid var(--line)}
-.kicker{
-  font-family:var(--font-body);font-size:11px;font-weight:600;
-  letter-spacing:.16em;text-transform:uppercase;color:var(--persimmon);
-}
-.mast h1{
-  font-family:var(--font-display);font-weight:800;
-  font-size:clamp(30px,7vw,58px);line-height:.98;letter-spacing:-.02em;
-  margin-top:10px;
-}
-.mast h1 em{font-style:normal;color:var(--persimmon)}
-.lede{margin-top:16px;max-width:60ch;color:var(--fg-dim);font-size:16px}
-.facts{
-  display:flex;flex-wrap:wrap;gap:8px 10px;margin-top:20px;
-}
-.fact{
-  display:flex;flex-direction:column;gap:2px;
-  background:var(--surface);border:1px solid var(--line);border-radius:3px;
-  padding:9px 13px;min-width:0;
-}
-.fact b{font-family:var(--font-display);font-weight:600;font-size:14px;font-variant-numeric:tabular-nums}
-.fact span{font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--fg-dim)}
-
-/* ---------- timeline strip ---------- */
-.rail{margin-top:26px;overflow-x:auto;padding-bottom:6px}
-.rail-inner{display:flex;gap:0;min-width:640px;border:1px solid var(--line);border-radius:3px;overflow:hidden}
-.leg{flex:1;padding:12px 14px;background:var(--surface);border-right:1px solid var(--line);min-width:0}
-.leg:last-child{border-right:0}
-.leg b{display:block;font-family:var(--font-display);font-size:13px;font-weight:600}
-.leg span{display:block;font-size:12px;color:var(--fg-dim);margin-top:3px}
-.leg.accent{background:color-mix(in srgb,var(--persimmon) 10%,var(--surface))}
-
-/* ---------- controls ---------- */
-.controls{
-  position:sticky;top:env(safe-area-inset-top,0px);z-index:30;
-  background:color-mix(in srgb,var(--bg) 92%,transparent);
-  backdrop-filter:blur(10px);
-  border-bottom:1px solid var(--line);
-  padding-block:12px;margin-top:28px;
-}
-.ctl-row{display:flex;gap:10px;align-items:center;flex-wrap:wrap}
-.cities{display:flex;gap:0;border:1px solid var(--line);border-radius:3px;overflow:hidden;background:var(--surface)}
-.cities button{
-  font:inherit;font-weight:600;font-size:13px;border:0;background:transparent;color:var(--fg-dim);
-  padding:8px 14px;cursor:pointer;border-right:1px solid var(--line);
-}
-.cities button:last-child{border-right:0}
-.cities button[aria-pressed="true"]{background:var(--fg);color:var(--bg)}
-.search{
-  flex:1;min-width:150px;font:inherit;padding:8px 12px;border-radius:3px;
-  border:1px solid var(--line);background:var(--surface);color:var(--fg);
-}
-.search::placeholder{color:var(--fg-dim)}
-.chips{display:flex;flex-wrap:wrap;gap:6px;margin-top:10px}
-.chip{
-  font:inherit;font-size:12px;font-weight:500;cursor:pointer;
-  border:1px solid var(--line);background:var(--surface);color:var(--fg-dim);
-  padding:5px 11px;border-radius:999px;display:inline-flex;align-items:center;gap:6px;
-}
-.chip .dot{width:7px;height:7px;border-radius:50%;background:currentColor;opacity:.9}
-.chip[aria-pressed="true"]{color:var(--surface);border-color:transparent}
-.chip.reset{color:var(--fg-dim);text-decoration:underline;border-color:transparent;background:transparent}
-.count{font-size:12px;color:var(--fg-dim);margin-top:10px;font-variant-numeric:tabular-nums}
-
-/* ---------- map ---------- */
-.mapwrap{margin-top:22px;border:1px solid var(--line);border-radius:4px;overflow:hidden;background:var(--map-land)}
-.maphead{display:flex;justify-content:space-between;align-items:baseline;gap:10px;padding:10px 14px;border-bottom:1px solid var(--line);background:var(--surface);flex-wrap:wrap}
-.maphead h2{font-family:var(--font-display);font-size:13px;font-weight:600;letter-spacing:.02em}
-.maphead span{font-size:11px;color:var(--fg-dim)}
-svg.map{display:block;width:100%;height:auto}
+html{scroll-behavior:smooth;scroll-padding-top:160px}
+body{margin:0;background:var(--bg);color:var(--fg);font:15px/1.55 var(--font-body);-webkit-font-smoothing:antialiased}
+button,input{font:inherit}
+button,a,input,summary{-webkit-tap-highlight-color:transparent}
+button,summary{cursor:pointer}
+a{color:inherit;text-underline-offset:4px}
+img{max-width:100%}
+[hidden]{display:none!important}
+h1,h2,h3,p{margin:0}
+h1,h2,h3{font-weight:500}
+.wrap{max-width:1320px;margin:0 auto;padding:0 48px}
+.mast{padding:30px 0 0}
+.mast-top{display:flex;justify-content:space-between;align-items:center;gap:24px;padding-bottom:24px;border-bottom:1px solid var(--line)}
+.wordmark{text-decoration:none;font-size:17px;font-weight:500;letter-spacing:-.04em}
+.wordmark span{color:var(--fg-dim);font-weight:400}
+.mast-nav{display:flex;gap:28px;font-size:13px;color:var(--fg-dim)}
+.mast-nav a{text-decoration:none}
+.mast-nav a:hover{color:var(--fg)}
+.intro{padding:64px 0 42px}
+.kicker{font-size:12px;color:var(--fg-dim);letter-spacing:.01em;margin-bottom:20px}
+.mast h1{font-size:clamp(42px,6.4vw,84px);line-height:1.04;letter-spacing:-.065em;font-weight:500;max-width:850px}
+.mast h1 em{font-style:normal}
+.lede{margin-top:24px;max-width:550px;font-size:16px;line-height:1.65;color:var(--fg-dim)}
+.intro-meta{display:flex;flex-wrap:wrap;gap:8px 24px;margin-top:28px;font-size:12px;color:var(--fg-dim)}
+.intro-meta b{font-weight:400;color:var(--fg)}
+.trip-details{border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.trip-details > summary{list-style:none;display:flex;justify-content:space-between;align-items:center;padding:17px 0;font-size:13px}
+summary::-webkit-details-marker{display:none}
+.trip-details > summary::after,.maphead::after{content:"+";font-size:20px;font-weight:300;line-height:1}
+.trip-details[open] > summary::after,.mapwrap[open] > summary::after{content:"−"}
+.trip-content{padding-bottom:24px}
+.facts{display:grid;grid-template-columns:repeat(4,1fr);gap:24px;padding:10px 0 20px}
+.fact{display:flex;flex-direction:column;gap:4px}
+.fact b{font-weight:500;font-size:15px;font-variant-numeric:tabular-nums}
+.fact span{font-size:12px;color:var(--fg-dim)}
+.localbar{font-size:12px;line-height:1.7;color:var(--fg-dim);max-width:740px;padding-top:16px}
+.localbar b{font-weight:400;color:var(--fg)}
+.rail{overflow-x:auto;margin-top:8px}
+.rail-inner{display:grid;grid-template-columns:repeat(6,1fr);min-width:900px;border-top:1px solid var(--line);padding-top:20px;gap:22px}
+.leg b{font-size:13px;font-weight:500}
+.leg span{display:block;font-size:12px;color:var(--fg-dim);margin-top:8px}
+.section-title{display:flex;align-items:baseline;justify-content:space-between;gap:20px;padding-top:42px;margin-bottom:22px}
+.section-title h2{font-size:24px;letter-spacing:-.04em}
+.section-title p{font-size:12px;color:var(--fg-dim)}
+.controls{position:sticky;top:env(safe-area-inset-top,0px);z-index:30;background:#fff;border-bottom:1px solid var(--line);padding:12px 0}
+.ctl-row{display:flex;gap:28px;align-items:center;justify-content:space-between}
+.cities{display:flex;gap:26px;flex-shrink:0}
+.cities button{font-size:15px;color:var(--fg-dim);padding:9px 0;border:0;border-bottom:1px solid transparent;background:none;min-height:40px}
+.cities button[aria-pressed="true"]{color:var(--fg);border-bottom-color:var(--fg)}
+.search{width:280px;max-width:48%;min-width:0;padding:10px 0 10px 24px;border:0;border-bottom:1px solid var(--line);border-radius:0;background:transparent;color:var(--fg);font-size:13px;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='none' stroke='%23808080' stroke-width='1.2'%3E%3Ccircle cx='6.5' cy='6.5' r='4.5'/%3E%3Cpath d='m10 10 4 4'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:left center}
+.search::placeholder{color:#808080;opacity:1}
+.chips{display:flex;gap:5px 18px;align-items:center;flex-wrap:wrap;margin-top:14px}
+.chip{flex-shrink:0;display:inline-flex;align-items:center;gap:5px;font-size:12px;padding:6px 0;border:0;border-bottom:1px solid transparent;background:transparent;color:var(--fg-dim);border-radius:0;min-height:32px}
+.chip[aria-pressed="true"]{color:var(--fg);border-bottom-color:var(--fg)}
+.chip .dot{display:none}
+.chip.reset{color:var(--fg-dim);text-decoration:underline}
+.count{font-size:11px;color:var(--fg-dim);margin-top:10px;font-variant-numeric:tabular-nums}
+.busan-guide{margin-top:28px;scroll-margin-top:180px}
+.busan-guide h2{font-size:24px;letter-spacing:-.04em;margin-bottom:12px}
+.busan-guide .busan-intro{font-size:14px;line-height:1.7;color:var(--fg-dim);max-width:760px;margin-bottom:20px}
+.busan-guide a{color:inherit;text-underline-offset:3px}
+.busan-guide .trip-details + .trip-details{border-top:0}
+.mapwrap{margin-top:20px;border-bottom:1px solid var(--line)}
+.maphead{list-style:none;display:flex;align-items:center;gap:20px;padding:14px 0;color:var(--fg-dim);font-size:12px}
+.maphead h2{font-size:13px;font-weight:400;color:var(--fg)}
+.maphead::after{margin-left:auto;color:var(--fg)}
+.maphead span{font-size:11px}
+svg.map{display:block;width:100%;height:auto;max-height:400px;background:var(--map-land)}
 .mk{cursor:pointer}
 .mk circle.hit{fill:transparent}
-.mk circle.pin{stroke:var(--surface);stroke-width:1.6}
-.mk text{font-family:var(--font-body);font-size:7.2px;font-weight:600;fill:var(--fg);paint-order:stroke;stroke:var(--map-land);stroke-width:2.6px;stroke-linejoin:round}
-.mk.off{opacity:.13;pointer-events:none}
-.mk.on circle.pin{stroke:var(--fg);stroke-width:2.2}
-.maplabel{font-family:var(--font-body);font-size:8px;font-weight:600;letter-spacing:.1em;fill:var(--fg-dim);text-transform:uppercase}
-.riverlabel{font-family:var(--font-body);font-size:7px;font-style:italic;fill:var(--water);opacity:.75}
-
-/* ---------- cards ---------- */
-.grid{
-  display:grid;gap:14px;margin-top:22px;
-  grid-template-columns:repeat(auto-fill,minmax(272px,1fr));
-}
-.card{
-  background:var(--surface);border:1px solid var(--line);border-radius:4px;
-  overflow:hidden;display:flex;flex-direction:column;min-width:0;
-  scroll-margin-top:140px;
-}
-.card.flash{box-shadow:0 0 0 2px var(--persimmon)}
-.thumb{
-  position:relative;aspect-ratio:4/3;max-width:100%;overflow:hidden;
-  background:var(--surface-2);user-select:none;touch-action:pan-y;
-}
-.slide{
-  position:absolute;inset:0;width:100%;height:100%;object-fit:cover;
-  opacity:0;transition:opacity .28s ease;
-}
+.mk circle.pin{stroke:#fff;stroke-width:1.6}
+.mk text{font-family:var(--font-body);font-size:7.2px;font-weight:500;fill:var(--fg);paint-order:stroke;stroke:var(--map-land);stroke-width:2.6px;stroke-linejoin:round}
+.mk.off{opacity:.08;pointer-events:none}
+.mk.on circle.pin{stroke:var(--fg);stroke-width:1.2}
+.maplabel{font-family:var(--font-body);font-size:8px;fill:var(--fg-dim)}
+.riverlabel{font-family:var(--font-body);font-size:7px;fill:var(--fg-dim)}
+.grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:46px 28px;margin-top:28px}
+.card{min-width:0;display:flex;flex-direction:column;background:#fff;scroll-margin-top:180px}
+.card.flash{outline:1px solid var(--fg);outline-offset:8px}
+.thumb{position:relative;aspect-ratio:4/3;max-width:100%;overflow:hidden;background:var(--surface-2);user-select:none;touch-action:pan-y;border-radius:2px}
+.slide{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;transition:opacity .2s ease}
 .slide.on{opacity:1}
-.ph{
-  position:absolute;inset:0;display:flex;align-items:center;justify-content:center;
-}
-.ph svg{opacity:.5;color:#fff}
-.nav{
-  position:absolute;top:0;bottom:0;width:38%;z-index:3;border:0;background:transparent;
-  cursor:pointer;opacity:0;transition:opacity .2s ease;
-  display:flex;align-items:center;padding:0 8px;
-}
+.ph{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;color:#aaa}
+.ph svg{width:24px;height:24px;opacity:.6}
+.nav{position:absolute;top:0;bottom:0;width:30%;z-index:3;border:0;background:transparent;cursor:pointer;opacity:0;transition:opacity .2s;display:flex;align-items:center;padding:0 12px}
 .nav.prev{left:0;justify-content:flex-start}
 .nav.next{right:0;justify-content:flex-end}
-.nav span{
-  display:grid;place-items:center;width:26px;height:26px;border-radius:50%;
-  background:rgba(0,0,0,.45);color:#fff;font-size:13px;line-height:1;
-}
-.thumb:hover .nav{opacity:1}
-.dots{
-  position:absolute;left:0;right:0;bottom:7px;z-index:4;
-  display:flex;gap:4px;justify-content:center;pointer-events:none;
-}
-.dots i{
-  width:5px;height:5px;border-radius:50%;background:rgba(255,255,255,.45);
-  box-shadow:0 0 2px rgba(0,0,0,.5);transition:background .2s ease;
-}
+.nav span{display:grid;place-items:center;width:28px;height:28px;border-radius:50%;background:rgba(255,255,255,.9);color:#191919;font-size:13px}
+.thumb:hover .nav,.nav:focus-visible{opacity:1}
+.dots{position:absolute;left:0;right:0;bottom:12px;z-index:4;display:flex;gap:5px;justify-content:center;pointer-events:none}
+.dots i{width:4px;height:4px;border-radius:50%;background:rgba(255,255,255,.45);box-shadow:0 0 1px #777}
 .dots i.on{background:#fff}
-.vibe{
-  position:absolute;top:8px;left:9px;z-index:4;
-  font-size:9.5px;font-weight:700;letter-spacing:.07em;text-transform:uppercase;
-  color:#fff;background:rgba(0,0,0,.52);border-radius:999px;padding:3px 8px;
-}
-.droptip{
-  position:absolute;inset:0;z-index:5;display:none;align-items:center;justify-content:center;
-  background:rgba(0,0,0,.55);color:#fff;font-size:12px;font-weight:600;
-  border:2px dashed rgba(255,255,255,.8);
-}
-.thumb.over .droptip{display:flex}
-.clearpic{
-  position:absolute;top:7px;right:8px;z-index:6;display:none;
-  font:inherit;font-size:10px;font-weight:600;cursor:pointer;color:#fff;
-  background:rgba(0,0,0,.5);border:0;border-radius:999px;padding:3px 8px;
-}
-.thumb.mine:hover .clearpic{display:block}
-.localbar{margin-top:14px;padding:11px 14px;border-radius:4px;background:var(--surface);border:1px solid var(--line);border-left:3px solid var(--jade);font-size:13px;color:var(--fg-dim)}
-.card-body{padding:13px 14px 15px;display:flex;flex-direction:column;gap:9px;flex:1;min-width:0}
-.card h3{font-family:var(--font-display);font-size:15px;font-weight:600;line-height:1.22;letter-spacing:-.01em}
-.meta{display:flex;flex-wrap:wrap;gap:4px 8px;font-size:11.5px;color:var(--fg-dim);align-items:center}
-.meta .cat{font-weight:600;letter-spacing:.04em;text-transform:uppercase;font-size:10.5px}
-.desc{font-size:13.5px;color:var(--fg);opacity:.86;min-width:0}
-.tags{display:flex;flex-wrap:wrap;gap:4px;margin-top:auto;padding-top:4px}
-.tag{
-  font-size:10.5px;font-weight:500;padding:3px 7px;border-radius:999px;
-  background:var(--surface-2);color:var(--fg-dim);white-space:nowrap;
-}
-.card-foot{display:flex;justify-content:space-between;align-items:center;gap:8px;padding-top:4px;flex-wrap:wrap}
-.price{font-family:var(--font-display);font-size:12px;font-weight:600;font-variant-numeric:tabular-nums}
-.gmap{font-size:11.5px;font-weight:600;color:var(--fg-dim);text-decoration:none;border-bottom:1px solid var(--line)}
-.gmap:hover{color:var(--persimmon)}
-.links{display:flex;flex-wrap:wrap;gap:4px;padding-top:2px}
-.links a{
-  font-size:10.5px;font-weight:600;text-decoration:none;white-space:nowrap;
-  padding:4px 9px;border-radius:999px;border:1px solid var(--line);
-  background:var(--surface-2);color:var(--fg-dim);
-}
-.links a:hover{color:var(--persimmon);border-color:var(--persimmon)}
-.links a.primary{background:var(--fg);color:var(--bg);border-color:var(--fg)}
-.links a.primary:hover{background:var(--persimmon);border-color:var(--persimmon);color:#fff}
+.vibe{position:absolute;top:12px;left:12px;z-index:4;font-size:10px;color:#fff;background:rgba(0,0,0,.45);padding:3px 7px;border-radius:2px}
 
-/* ---------- section blocks ---------- */
-.block{margin-top:44px}
-.block > h2{
-  font-family:var(--font-display);font-weight:600;font-size:19px;letter-spacing:-.01em;
-  padding-bottom:9px;border-bottom:2px solid var(--fg);display:inline-block;
+.photo-source{position:absolute;right:10px;bottom:10px;z-index:5;background:rgba(255,255,255,.94);color:#333;padding:5px 8px;font-size:10px;line-height:1.3;text-decoration:none;border-radius:2px}
+.photo-source:hover{text-decoration:underline}
+.photo-label{position:absolute;top:10px;left:10px;z-index:4;background:rgba(255,255,255,.94);color:#333;padding:4px 7px;font-size:10px;line-height:1.3;border-radius:2px}
+.slide.poster{object-fit:contain;background:#15151d}
+.droptip{position:absolute;inset:0;z-index:5;display:none;align-items:center;justify-content:center;background:rgba(0,0,0,.55);color:#fff;font-size:12px;border:1px dashed #fff}
+.thumb.over .droptip{display:flex}
+.clearpic{position:absolute;top:12px;right:12px;z-index:6;display:none;font-size:11px;color:#fff;background:rgba(0,0,0,.5);border:0;border-radius:2px;padding:4px 8px;cursor:pointer}
+.thumb.mine:hover .clearpic{display:block}
+.card-body{padding-top:18px;display:flex;flex-direction:column;gap:12px;flex:1;min-width:0}
+.card h3{font-size:21px;line-height:1.2;letter-spacing:-.035em;font-weight:500;overflow-wrap:anywhere}
+.meta{display:flex;flex-wrap:wrap;gap:4px 7px;align-items:center;font-size:11px;color:var(--fg-dim)}
+.meta .cat{font-weight:400}
+.desc{font-size:13px;line-height:1.7;color:#606060}
+.tags{display:flex;flex-wrap:wrap;gap:4px 8px;padding-top:4px;margin-top:auto}
+.tag{font-size:10px;color:var(--fg-dim);white-space:normal}
+.tag + .tag::before{content:"·";margin-right:8px;color:#b0b0b0}
+.links{display:flex;flex-wrap:wrap;gap:6px 14px;padding-top:3px}
+.links a{font-size:11px;text-decoration:none;color:var(--fg-dim)}
+.links a:hover,.gmap:hover{text-decoration:underline;color:var(--fg)}
+.links a.primary{color:var(--fg)}
+.card-foot{display:flex;align-items:baseline;justify-content:space-between;gap:10px;flex-wrap:wrap;border-top:1px solid var(--line);margin-top:3px;padding-top:14px}
+.price{font-size:12px;font-weight:500;font-variant-numeric:tabular-nums}
+.gmap{font-size:11px;color:var(--fg-dim);text-decoration:none}
+.block{margin-top:80px;scroll-margin-top:170px}
+.block > h2{font-size:28px;line-height:1.2;letter-spacing:-.04em;margin-bottom:28px}
+.notes{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:30px}
+.note{border-top:1px solid var(--line);padding-top:18px;min-width:0}
+.note b,.opt b{display:block;font-size:14px;font-weight:500;margin-bottom:10px}
+.note p,.opt p{font-size:13px;color:var(--fg-dim);line-height:1.7}
+.day{margin-top:26px;border-top:1px solid var(--line)}
+.day-head{display:flex;align-items:baseline;gap:24px;padding:24px 0}
+.daynum{font-size:30px;letter-spacing:-.05em;font-variant-numeric:tabular-nums}
+.day-head b{display:block;font-size:16px;font-weight:500}
+.day-head span:not(.daynum){display:block;font-size:12px;color:var(--fg-dim);margin-top:4px}
+.day-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:28px}
+.opt{min-width:0}
+.apps{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:0 40px}
+.app{display:flex;flex-direction:column;gap:8px;padding:20px 0;border-top:1px solid var(--line);min-width:0}
+.app b{font-size:14px;font-weight:500}
+.app span{font-size:13px;color:var(--fg-dim);line-height:1.7}
+footer{margin-top:80px;border-top:1px solid var(--line);padding:24px 0 36px;max-width:820px;font-size:11px;line-height:1.7;color:var(--fg-dim)}
+.empty{padding:60px 0;text-align:center;color:var(--fg-dim);font-size:14px}
+:focus-visible{outline:2px solid #191919;outline-offset:4px}
+@media(min-width:1400px){.intro{padding-top:80px}}
+@media(max-width:1000px){
+  .wrap{padding-inline:32px}
+  .grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:40px 24px}
+  .notes,.day-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .chips{flex-wrap:nowrap;overflow-x:auto;scrollbar-width:none;padding-bottom:2px}
+  .chips::-webkit-scrollbar{display:none}
 }
-.notes{display:grid;gap:12px;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));margin-top:18px}
-.note{background:var(--surface);border:1px solid var(--line);border-left:3px solid var(--persimmon);border-radius:0 4px 4px 0;padding:13px 15px;min-width:0}
-.note b{display:block;font-family:var(--font-display);font-size:13px;font-weight:600;margin-bottom:5px}
-.note p{margin:0;font-size:13.5px;color:var(--fg-dim)}
-.note.j{border-left-color:var(--jade)}
-.note.g{border-left-color:var(--ginkgo)}
-.note.w{border-left-color:var(--water)}
-/* ---------- dates ---------- */
-.day{margin-top:18px;border:1px solid var(--line);border-radius:4px;background:var(--surface);overflow:hidden}
-.day-head{display:flex;gap:14px;align-items:center;padding:14px 16px;border-bottom:1px solid var(--line);background:var(--surface-2);flex-wrap:wrap}
-.daynum{font-family:var(--font-display);font-weight:800;font-size:22px;color:var(--persimmon);font-variant-numeric:tabular-nums;letter-spacing:-.02em}
-.day-head b{display:block;font-family:var(--font-display);font-size:15px;font-weight:600}
-.day-head span{font-size:13px;color:var(--fg-dim)}
-.day-grid{display:grid;gap:1px;background:var(--line);grid-template-columns:repeat(auto-fit,minmax(230px,1fr))}
-.opt{background:var(--surface);padding:14px 16px;min-width:0}
-.opt b{display:block;font-family:var(--font-display);font-size:13px;font-weight:600;margin-bottom:6px}
-.opt p{margin:0;font-size:13.5px;color:var(--fg-dim)}
-.opt.warn b{color:var(--persimmon)}
-.apps{margin-top:18px;display:grid;gap:10px}
-.app{display:flex;gap:12px;align-items:baseline;padding:11px 14px;background:var(--surface);border:1px solid var(--line);border-radius:4px;flex-wrap:wrap}
-.app b{font-family:var(--font-display);font-size:13.5px;font-weight:600;white-space:nowrap}
-.app span{font-size:13px;color:var(--fg-dim);flex:1;min-width:0}
-footer{margin-top:52px;padding-block:22px 40px;border-top:1px solid var(--line);font-size:12px;color:var(--fg-dim)}
-.empty{padding:40px 0;text-align:center;color:var(--fg-dim);font-size:14px}
-@media (prefers-reduced-motion:no-preference){
-  .card{transition:box-shadow .25s ease}
-  .mk{transition:opacity .2s ease}
+@media(max-width:600px){
+  html{scroll-padding-top:150px}
+  .wrap{padding-inline:22px}
+  .mast{padding-top:22px}
+  .mast-top{padding-bottom:18px}
+  .wordmark{font-size:16px}
+  .mast-nav{gap:17px;font-size:11px}
+  .intro{padding:44px 0 30px}
+  .kicker{font-size:11px;margin-bottom:18px}
+  .mast h1{font-size:clamp(40px,11vw,64px);line-height:1.07;letter-spacing:-.06em}
+  .lede{font-size:14px;line-height:1.65;margin-top:20px}
+  .intro-meta{margin-top:22px;gap:8px 15px;font-size:11px}
+  .facts{grid-template-columns:repeat(2,minmax(0,1fr));gap:20px}
+  .section-title{padding-top:32px;margin-bottom:12px}
+  .section-title h2{font-size:22px}
+  .section-title p{font-size:11px}
+  .ctl-row{gap:16px}
+  .cities{gap:18px}
+  .cities button{font-size:13px}
+  .search{font-size:12px;max-width:45%;padding-left:22px}
+  .chips{gap:18px;margin-top:10px;margin-right:-22px;padding-right:22px}
+  .chip{font-size:11px}
+  .count{margin-top:7px;font-size:10px}
+  .mapwrap{margin-top:10px}
+  .maphead{gap:8px}
+  .maphead span{display:none}
+  .grid{grid-template-columns:minmax(0,1fr);gap:36px;margin-top:22px}
+  .card-body{padding-top:16px;gap:11px}
+  .card h3{font-size:22px}
+  .desc{font-size:14px}
+  .meta,.links a,.gmap{font-size:12px}
+  .tag{font-size:11px}
+  .card-foot{padding-top:12px}
+  .price{font-size:13px}
+  .nav{opacity:1}
+  .block{margin-top:56px}
+  .block > h2{font-size:25px;margin-bottom:22px}
+  .notes,.day-grid,.apps{grid-template-columns:minmax(0,1fr);gap:22px}
+  .day-head{gap:20px;align-items:flex-start}
+  .daynum{font-size:28px}
+  .day-head b{font-size:15px}
+  .apps{gap:0}
+  .thumb.mine .clearpic{display:block}
+  footer{margin-top:56px}
 }
-:focus-visible{outline:2px solid var(--persimmon);outline-offset:2px}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.slide,.nav{transition:none}}
 </style>
 
 <div class="wrap">
   <header class="mast">
+    <div class="mast-top">
+      <a class="wordmark" href="#">Korea<span> / 2026</span></a>
+      <nav class="mast-nav" aria-label="Разделы">
+        <a href="#places">Места</a><a href="#dates">Планы</a><a href="#notes">Заметки</a>
+      </nav>
+    </div>
+    <div class="intro">
     <div class="kicker">28 октября — 11 ноября 2026</div>
-    <h1>Корея<br><em>во второй раз</em></h1>
-    <p class="lede">Не шопинг, а город: музеи, странные аттракционы, автоматы, хайкинг и клёны на пике. Плюс сутки в Дохе по дороге туда и Пусан в середине. Фильтры сверху, карта ниже, карточки кликаются с карты. Где фотографий несколько, они листаются стрелками или свайпом.</p>
+    <h1>Корея<br>во второй раз.</h1>
+    <p class="lede">Музеи, маленькие галереи, игры и долгие прогулки. Сеул и Пусан в осенней листве — и один день в Дохе по дороге.</p>
+    <div class="intro-meta"><span>Сеул · Пусан · Доха</span><span>14 дней</span><span id="totalFact"><b>—</b> мест и маршрутов</span></div>
+    </div>
+    <details class="trip-details">
+      <summary>Детали поездки</summary>
+      <div class="trip-content">
     <div class="facts">
       <div class="fact"><b>14 дней</b><span>всего</span></div>
       <div class="fact"><b>QR286 → QR858</b><span>Ереван · Доха · Инчхон</span></div>
       <div class="fact"><b>21 ч 40 мин</b><span>пересадка в Дохе</span></div>
       <div class="fact"><b>кон. окт — нач. ноя</b><span>пик листвы в Сеуле</span></div>
-      <div class="fact" id="totalFact"><b>—</b><span>мест в списке</span></div>
     </div>
 
-    <div class="localbar"><b>382 фотографий на 108 карточках.</b> Листай стрелками или свайпом. Метка «вайб» значит, что это похожее место, а не именно оно. Можно перетащить на карточку свою картинку мышкой — она встанет первой и сохранится.</div>
+
 
     <div class="rail">
       <div class="rail-inner">
@@ -333,8 +257,12 @@ footer{margin-top:52px;padding-block:22px 40px;border-top:1px solid var(--line);
         <div class="leg"><b>~5–10.11</b><span>Клёны в самом Сеуле на пике: Пукаксан, Наксан, Пуам-дон</span></div>
       </div>
     </div>
+    <div class="localbar"><b>153 изображения для 135 из 215 карточек.</b> Листай стрелками или свайпом. Для новых мест фотографии пока не добавлены. В подборке отмечены архивные снимки, примеры форматов и афиша. Источник каждого изображения — по ссылке на фото. Обновлено 24 октября 2026. Можно перетащить на карточку свою картинку мышкой — она встанет первой и сохранится.</div>
+      </div>
+    </details>
   </header>
 
+  <div class="section-title" id="places"><h2>Места</h2><p>Выбирай по настроению.</p></div>
   <div class="controls">
     <div class="ctl-row">
       <div class="cities" role="group" aria-label="Город">
@@ -342,19 +270,55 @@ footer{margin-top:52px;padding-block:22px 40px;border-top:1px solid var(--line);
         <button type="button" data-city="busan" aria-pressed="false">Пусан</button>
         <button type="button" data-city="doha" aria-pressed="false">Доха</button>
       </div>
-      <input class="search" id="q" type="search" placeholder="Найти место, район или слово" aria-label="Поиск по местам">
+      <input class="search" id="q" type="search" placeholder="Найти место" aria-label="Поиск по местам">
     </div>
     <div class="chips" id="chips"></div>
     <div class="count" id="count"></div>
   </div>
 
-  <div class="mapwrap">
-    <div class="maphead">
-      <h2 id="mapTitle">Сеул</h2>
+  <section id="busan-guide" class="busan-guide" hidden aria-labelledby="busan-heading">
+    <h2 id="busan-heading">Пусан на 48 часов</h2>
+    <p class="busan-intro">Примерить город для жизни: море после работы, жилые улицы, молодые районы и промышленная архитектура. Вариант — <b>4–5 ноября, лучше с двумя ночёвками</b>; база — Кванналли / Намчхон. Это предложение для маршрута, даты ещё можно менять.</p>
+
+    <details class="trip-details" id="busan-route">
+      <summary>Два дня · маршрут по районам</summary>
+      <div class="trip-content day-grid">
+        <div class="opt"><b>День 1 · утро</b><p>KTX до Пусана, оставить вещи у Кванналли / Намчхона. Пройти жилые улицы, посмотреть магазины, метро, дома и путь к морю.</p></div>
+        <div class="opt"><b>День 1 · день</b><p>Суён / Мангми → F1963. Выставка Отониэля, промышленная архитектура, книжный и двор. После — прогулка по самому району.</p></div>
+        <div class="opt"><b>День 1 · вечер</b><p>Кванналли → Миллак: прогулка у воды, мост Кванан и ужин. Рыбный рынок — по желанию; Millac The Market — тёплая остановка по дороге.</p></div>
+        <div class="opt"><b>День 2 · утро</b><p>Портовый Пусан: посмотреть корабли, склады и перепады высот с общедоступных улиц и набережных. Конкретный утренний отрезок по портовым кварталам выбрать перед выездом.</p></div>
+        <div class="opt"><b>День 2 · день</b><p>Чонпхо → Сомён: небольшие магазины, переулки, кофе и бары. Оставить время заходить в заинтересовавшие места без обязательного списка кофеен.</p></div>
+        <div class="opt"><b>День 2 · вечер</b><p>Centum / Marine City → снова Кванналли. Сравнить современный город у воды со старыми портовыми районами и вернуться в свою базу.</p></div>
+      </div>
+    </details>
+
+    <details class="trip-details">
+      <summary>Выставки и события · ноябрь 2026</summary>
+      <div class="trip-content day-grid">
+        <div class="opt"><b>Отониэль · F1963</b><p>In the Labyrinth of Love — до 31 декабря. Уже включено в карточку F1963: территория бесплатная, выставка для взрослых — 10 000 ₩. <a href="https://www.busan.go.kr/news/totalnews01/view?dataNo=73374&amp;gugun=Next" target="_blank" rel="noopener">Афиша города ↗</a></p></div>
+        <div class="opt"><b>7 ноября · фейерверки</b><p>Busan Fireworks Festival у Кванналли: основное шоу 19:00–20:00. Это отдельный вариант поездки с большим потоком зрителей и изменениями движения. <a href="https://www.busan.go.kr/eng/bsevents/1752782" target="_blank" rel="noopener">Программа ↗</a></p></div>
+        <div class="opt"><b>Дрон-шоу · проверить дату</b><p>Общего правила «каждую субботу» недостаточно: ноябрьская афиша M Drone Light Show начинается с 14 ноября, после вашей поездки. На 7 ноября регулярное шоу в ней не указано. <a href="https://www.gwangallimdrone.co.kr/notice-en/gwangalli-m-drone-light-show-november-performance-program-announcement-2" target="_blank" rel="noopener">Актуальная афиша ↗</a></p></div>
+        <div class="opt"><b>Запасные варианты</b><p>Busan Museum of Art и отдельный Space Lee Ufan — в районе Centum. Busan MoCA на Ыльсукдо — далеко от основного маршрута. Heritage Art Fair — до 8 ноября; Illustration Fair — 6–8 ноября в BEXCO, при других датах поездки.</p></div>
+      </div>
+    </details>
+
+    <details class="trip-details">
+      <summary>Что оставить за рамками двух дней</summary>
+      <div class="trip-content day-grid">
+        <div class="opt"><b>Туристические деревни</b><p>Камчхон и Хинёуль не включены в этот маршрут. Для знакомства с городом приоритет у жилых и портовых кварталов.</p></div>
+        <div class="opt"><b>Sky Capsule</b><p>Оставить для другой поездки: в этом варианте время отдано прогулкам и районам. Прежняя карточка Blue Line Park сохранена.</p></div>
+        <div class="opt"><b>Без гонки по точкам</b><p>Не собирать за день храм, рынок и башню. Лучше два часа провести в одном районе и понять, нравится ли его обычный ритм.</p></div>
+      </div>
+    </details>
+  </section>
+
+  <details class="mapwrap">
+    <summary class="maphead">
+      <h2>Карта · <b id="mapTitle">Сеул</b></h2>
       <span id="mapHint">Координаты настоящие, география схематичная. Нажми на точку — откроется карточка.</span>
-    </div>
+    </summary>
     <svg class="map" id="map" viewBox="0 0 400 300" role="img" aria-label="Схематичная карта с метками мест"></svg>
-  </div>
+  </details>
 
   <div class="grid" id="grid"></div>
   <div class="empty" id="empty" hidden>Под эти фильтры ничего не попало. Сбрось пару тегов.</div>
@@ -444,8 +408,8 @@ footer{margin-top:52px;padding-block:22px 40px;border-top:1px solid var(--line);
   </footer>
 </div>
 
+<script src="assets/photos.js"></script>
 <script>
-window.__BAKED = {"스포츠몬스터": {"u": ["https://live.staticflickr.com/419/32103140565_13db2d497f_b.jpg"], "t": "place"}, "도끼던지기": {"u": ["https://live.staticflickr.com/65535/52128348398_1bc920403e_b.jpg"], "t": "place"}, "트릭아이미술관": {"u": ["https://live.staticflickr.com/8048/8378406382_f6a7f9a1c4_b.jpg", "https://upload.wikimedia.org/wikipedia/commons/thumb/c/cf/Trick_Art_Museum_%289407354543%29.jpg/960px-Trick_Art_Museum_%289407354543%29.jpg", "https://upload.wikimedia.org/wikipedia/commons/thumb/b/bd/Trick_Art_Museum_%289410118210%29.jpg/960px-Trick_Art_Museum_%289410118210%29.jpg", "https://upload.wikimedia.org/wikipedia/commons/thumb/6/69/4D_Trick_Art_Museum.jpg/960px-4D_Trick_Art_Museum.jpg"], "t": "place"}, "라인프렌즈 카카오프렌즈": {"u": ["https://live.staticflickr.com/1843/29784589087_c936751052_b.jpg", "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0b/LINE_FRIENDS_FLAGSHIP_STORE_Harajuku_%2852650796010%29.jpg/960px-LINE_FRIENDS_FLAGSHIP_STORE_Harajuku_%2852650796010%29.jpg", "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fe/LINE_FRIENDS_FLAGSHIP_STORE_Harajuku_%2852650352921%29.jpg/960px-LINE_FRIENDS_FLAGSHIP_STORE_Harajuku_%2852650352921%29.jpg", "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1d/LINE_FRIENDS_FLAGSHIP_STORE_Harajuku_%2852649861567%29.jpg/960px-LINE_FRIENDS_FLAGSHIP_STORE_Harajuku_%2852649861567%29.jpg"], "t": "vibe"}, "익선동": {"u": ["https://upload.wikimedia.org/wikipedia/commons/thumb/0/0c/Ikseon-dong_%EC%9D%B5%EC%84%A0%EB%8F%99_October_1_2020_3.jpg/960px-Ikseon-dong_%EC%9D%B5%EC%84%A0%EB%8F%99_October_1_2020_3.jpg", "https://upload.wikimedia.org/wikipedia/commons/thumb/6/61/Ikseon-dong_%EC%9D%B5%EC%84%A0%EB%8F%99_October_1_2020_2.jpg/960px-Ikseon-dong_%EC%9D%B5%EC%84%A0%EB%8F%99_October_1_2020_2.jpg", "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f5/Ikseon-dong_%EC%9D%B5%EC%84%A0%EB%8F%99_October_1_2020_5.jpg/960px-Ikseon-dong_%EC%9D%B5%EC%84%A0%EB%8F%99_October_1_2020_5.jpg"], "t": "place"}, "펀시티 건대점": {"u": ["https://live.staticflickr.com/4033/4526096706_f75ac4853e_b.jpg", "https://live.staticflickr.com/32/39439409_75513a95ac_b.jpg", "https://live.staticflickr.com/6069/6088572326_e8cacd6848_b.jpg", "https://live.staticflickr.com/65535/53416317573_32736ff592_b.jpg", "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1c/Buildings_near_konkuk_university_01.JPG/960px-Buildings_near_konkuk_university_01.JPG"], "t": "place"}, "보라매안전체험관": {"u": ["https://live.staticflickr.com/2083/5783799438_39c1713c6d_b.jpg", "https://live.staticflickr.com/6227/6346765186_e56754e250_b.jpg", "https://live.staticflickr.com/1540/24837851510_99ebe535ca_b.jpg", "https://live.staticflickr.com/7563/29648872340_846ae161de_b.jpg", "https://upload.wikimedia.org/wikipedia/commons/thumb/9/96/20140714_%EB%B3%B4%EB%9D%BC%EB%A7%A4%EA%B3%B5%EC%9B%90.jpg/960px-20140714_%EB%B3%B4%EB%9D%BC%EB%A7%A4%EA%B3%B5%EC%9B%90.jpg"], "t": "place"}, "남산둘레길 북측순환로": {"u": ["https://live.staticflickr.com/7533/15109987454_7b4841e759_b.jpg", "https://live.staticflickr.com/8215/8299051168_5a986781b4_b.jpg", "https://live.staticflickr.com/4676/25904362318_4f9afc9020_b.jpg", "https://live.staticflickr.com/8345/29234425235_78d9a797b0_b.jpg"], "t": "place"}, "도자기 원데이클래스": {"u": ["https://live.staticflickr.com/5515/9881154446_7ae1156482_b.jpg", "https://live.staticflickr.com/75/157341807_4a6b4e5c9a_b.jpg", "https://live.staticflickr.com/4145/4956111637_ed73856687_b.jpg", "https://live.staticflickr.com/5493/12552191745_f9102c92f1_b.jpg"], "t": "place"}, "مشيرب": {"u": ["https://live.staticflickr.com/3724/10123879184_669e427ae7_b.jpg", "https://upload.wikimedia.org/wikipedia/commons/thumb/3/37/Msheireb_Downtown_Doha_tram_at_night.jpg/960px-Msheireb_Downtown_Doha_tram_at_night.jpg", "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e7/Art_mural_on_a_wall_in_Msheireb_Downtown_Doha.png/960px-Art_mural_on_a_wall_in_Msheireb_Downtown_Doha.png"], "t": "place"}, "은반지 공방": {"u": ["https://live.staticflickr.com/6215/6322904261_9a1e3fc25b_b.jpg", "https://upload.wikimedia.org/wikipedia/commons/b/b3/Making_a_silver_chain%2C_18_%2825%29.jpg", "https://upload.wikimedia.org/wikipedia/commons/thumb/1/17/Silver_ring_and_scorzoneras_by_ASQ.jpg/960px-Silver_ring_and_scorzoneras_by_ASQ.jpg", "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4f/Silver_ring_with_chalcedony_and_peaches_by_ASQ.jpg/960px-Silver_ring_with_chalcedony_and_peaches_by_ASQ.jpg", "https://upload.wikimedia.org/wikipedia/commons/thumb/8/80/Silver_butterfly_ring_and_mushrooms_by_ASQ.jpg/960px-Silver_butterfly_ring_and_mushrooms_by_ASQ.jpg"], "t": "vibe"}, "해동용궁사": {"u": ["https://upload.wikimedia.org/wikipedia/commons/2/2a/Haedong_Yonggungsa_Temple%2C_Busan%2C_South_Korea.jpg", "https://live.staticflickr.com/4093/4936104833_df3a11e8fc_b.jpg", "https://live.staticflickr.com/2806/13212604863_20cb25e3bd_b.jpg", "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b5/Haedong_Yonggungsa_Temple_near_Busan.jpg/960px-Haedong_Yonggungsa_Temple_near_Busan.jpg", "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d4/Haedong_Yonggungsa_Temple_view_on_sea.JPG/960px-Haedong_Yonggungsa_Temple_view_on_sea.JPG"], "t": "place"}, "부암동": {"u": ["https://live.staticflickr.com/2788/4151582119_1368b16d19_b.jpg", "https://upload.wikimedia.org/wikipedia/commons/thumb/1/17/Whanki_Museum.jpg/960px-Whanki_Museum.jpg"], "t": "place"}, "인왕산": {"u": ["https://live.staticflickr.com/3206/2991919907_11951bab4c_b.jpg", "https://live.staticflickr.com/2773/4156878424_383c56bcfd_b.jpg", "https://upload.wikimedia.org/wikipedia/commons/thumb/c/cf/Korea-Seoul-Inwangsan-01.jpg/960px-Korea-Seoul-Inwangsan-01.jpg", "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ef/Mount_Inwang.jpg/960px-Mount_Inwang.jpg", "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1f/Korea-Seoul-Inwangsan-06.jpg/960px-Korea-Seoul-Inwangsan-06.jpg"], "t": "place"}, "광안리해수욕장": {"u": ["https://live.staticflickr.com/2893/12604635625_692676e9cf_b.jpg", "https://live.staticflickr.com/2744/4123573739_4a222ba61c_b.jpg", "https://live.staticflickr.com/253/444794341_1b98d7d27b_b.jpg", "https://upload.wikimedia.org/wikipedia/commons/e/ec/The_Busan_International_Fireworks_Festival.jpg", "https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Gwangalli_Beach_in_Busan.jpg/960px-Gwangalli_Beach_in_Busan.jpg"], "t": "place"}, "따릉이": {"u": ["https://live.staticflickr.com/8001/7582383158_a1b87d17cb_b.jpg", "https://live.staticflickr.com/5754/29765410043_ed3a22106a_b.jpg", "https://live.staticflickr.com/7770/17264621963_0c172089cb_b.jpg", "https://live.staticflickr.com/5817/31470343385_80bc5be7a1_b.jpg", "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e2/Seoul_Bike_Station.jpg/960px-Seoul_Bike_Station.jpg"], "t": "place"}, "국제갤러리": {"u": ["https://live.staticflickr.com/1506/23882069734_ef2d6dd8cb_b.jpg", "https://live.staticflickr.com/7160/6514193779_4c6117de41_b.jpg", "https://live.staticflickr.com/3880/14911558245_827f29bb0d_b.jpg", "https://live.staticflickr.com/3308/3559101351_94ea494863_b.jpg", "https://upload.wikimedia.org/wikipedia/commons/thumb/7/79/Seoul-Samcheong.dong-01.jpg/960px-Seoul-Samcheong.dong-01.jpg"], "t": "place"}, "오륙도 스카이워크": {"u": ["https://live.staticflickr.com/7297/27517862933_eb731caed2_b.jpg", "https://upload.wikimedia.org/wikipedia/commons/5/52/Oryukdo_Skywalk_in_Busan%2C_South_Korea.jpg", "https://upload.wikimedia.org/wikipedia/commons/thumb/5/52/Oryukdo_Skywalk_in_Busan%2C_South_Korea.jpg/960px-Oryukdo_Skywalk_in_Busan%2C_South_Korea.jpg", "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2a/Oryukdo%2C_Busan%2C_South_Korea_01.jpg/960px-Oryukdo%2C_Busan%2C_South_Korea_01.jpg", "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1e/Oryukdo_Skywalk.jpg/960px-Oryukdo_Skywalk.jpg"], "t": "place"}, "송도 케이블카": {"u": ["https://live.staticflickr.com/65535/52557755970_2bcda710df_b.jpg", "https://live.staticflickr.com/65535/54241139917_9943a78658_b.jpg", "https://upload.wikimedia.org/wikipedia/commons/thumb/3/39/Songdo_Beach_-_panoramio.jpg/960px-Songdo_Beach_-_panoramio.jpg", "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3e/Songdo_Waterfall_-_panoramio.jpg/960px-Songdo_Waterfall_-_panoramio.jpg"], "t": "place"}, "아차산": {"u": ["https://live.staticflickr.com/65535/48451214407_62bcd4c985_b.jpg", "https://upload.wikimedia.org/wikipedia/commons/thumb/8/81/AchasanPost.jpg/960px-AchasanPost.jpg"], "t": "place"}, "토탈미술관": {"u": ["https://live.staticflickr.com/7426/16199698487_cc77a69b41_b.jpg", "https://live.staticflickr.com/2788/4151582119_1368b16d19_b.jpg", "https://upload.wikimedia.org/wikipedia/commons/thumb/2/29/KOCIS_Korea_Pyeongchang_dong_Snow_01_%2811580332465%29.jpg/960px-KOCIS_Korea_Pyeongchang_dong_Snow_01_%2811580332465%29.jpg"], "t": "place"}, "الكورنيش": {"u": ["https://upload.wikimedia.org/wikipedia/commons/1/15/Doha_Corniche_Skyline_View_2.jpg", "https://live.staticflickr.com/3277/4602684986_a000206b9b_b.jpg", "https://live.staticflickr.com/7290/8742857592_a30067557e_b.jpg", "https://live.staticflickr.com/65535/51615266845_4334668325_b.jpg", "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2c/Traditional_dhows_on_Doha_Corniche_used_for_pearling.jpg/960px-Traditional_dhows_on_Doha_Corniche_used_for_pearling.jpg"], "t": "place"}, "해운대 블루라인파크": {"u": ["https://upload.wikimedia.org/wikipedia/commons/8/8e/Sky_Capsule_train_at_Haeundae_Blueline_Park%2C_Busan.jpg", "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5c/Busan_City_Haeundae_Beach_KOGL_%2801%29.jpg/960px-Busan_City_Haeundae_Beach_KOGL_%2801%29.jpg"], "t": "place"}, "짱오락실 강남대로점": {"u": ["https://upload.wikimedia.org/wikipedia/commons/thumb/e/ed/ArcadeGames.jpg/960px-ArcadeGames.jpg"], "t": "vibe"}, "감천문화마을": {"u": ["https://live.staticflickr.com/1948/31877407908_05a753be00_b.jpg", "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b8/Colorful_houses_in_Gamcheon_Culture_Village_at_sunset_in_Busan_South_Korea.jpg/960px-Colorful_houses_in_Gamcheon_Culture_Village_at_sunset_in_Busan_South_Korea.jpg", "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1e/Gamcheon_Culture_Village.jpg/960px-Gamcheon_Culture_Village.jpg", "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c8/Gamcheon_Culture_Village_1.jpg/960px-Gamcheon_Culture_Village_1.jpg"], "t": "place"}, "신당동": {"u": ["https://live.staticflickr.com/2509/4127576030_c9053db4cd_b.jpg", "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b0/Sindang-dong_Tteokbokki_town_in_2020.jpg/960px-Sindang-dong_Tteokbokki_town_in_2020.jpg"], "t": "place"}, "수성동계곡": {"u": ["https://live.staticflickr.com/7417/14125271723_af6dc7345c_b.jpg"], "t": "place"}, "광장시장 구제층": {"u": ["https://live.staticflickr.com/8241/8612135951_7b4d17bcea_b.jpg", "https://live.staticflickr.com/1657/25557785442_c32ea3883d_b.jpg", "https://live.staticflickr.com/3128/5729447864_f252c19b79_b.jpg", "https://live.staticflickr.com/6232/6319273831_4027ed2598_b.jpg", "https://upload.wikimedia.org/wikipedia/commons/thumb/8/81/Gwangjang_Market%2C_Seoul_02.jpg/960px-Gwangjang_Market%2C_Seoul_02.jpg"], "t": "place"}, "주신당": {"u": ["https://upload.wikimedia.org/wikipedia/commons/thumb/4/46/Interior_of_Czeczotka_Cocktail_Bar%2C_Krak%C3%B3w%2C_2019.jpg/960px-Interior_of_Czeczotka_Cocktail_Bar%2C_Krak%C3%B3w%2C_2019.jpg", "https://upload.wikimedia.org/wikipedia/commons/thumb/8/83/Bartender_at_Sylvarum_cocktail_bar%2C_Alicante.jpg/960px-Bartender_at_Sylvarum_cocktail_bar%2C_Alicante.jpg", "https://upload.wikimedia.org/wikipedia/commons/thumb/d/dc/Cocktail-Bar_%28Kleines_Phi%29_in_Hamburg.jpg/960px-Cocktail-Bar_%28Kleines_Phi%29_in_Hamburg.jpg"], "t": "vibe"}, "스카이라인 루지": {"u": ["https://live.staticflickr.com/2819/10527315425_e22e0e3446_b.jpg", "https://live.staticflickr.com/1591/23386609764_b0f984bfa8_b.jpg", "https://live.staticflickr.com/4030/4321136779_37da8fc004_b.jpg"], "t": "place"}, "모자이크": {"u": ["https://live.staticflickr.com/7385/8730849732_1052e66da7_b.jpg", "https://upload.wikimedia.org/wikipedia/commons/thumb/7/72/Vinyl_collection_at_a_record_store_%28Unsplash%29.jpg/960px-Vinyl_collection_at_a_record_store_%28Unsplash%29.jpg", "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0a/Vintage_record_store_%28Unsplash%29.jpg/960px-Vintage_record_store_%28Unsplash%29.jpg", "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d0/Sonic_Boom_record_store_interior%2C_Toronto_2026.jpg/960px-Sonic_Boom_record_store_interior%2C_Toronto_2026.jpg"], "t": "vibe"}, "자갈치시장": {"u": ["https://live.staticflickr.com/5100/5452260063_14fdafa62f_b.jpg", "https://upload.wikimedia.org/wikipedia/commons/2/2a/Jagalchi_Market_Busan_Cooperative_Fish_Market%2C_2019.jpg", "https://live.staticflickr.com/4883/44835449435_b23ebf69d6_b.jpg", "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0e/Jagalchi_Market_01.jpg/960px-Jagalchi_Market_01.jpg", "https://upload.wikimedia.org/wikipedia/commons/thumb/1/19/Jagalchi_Market_02.jpg/960px-Jagalchi_Market_02.jpg"], "t": "place"}, "도봉산 망월사 코스": {"u": ["https://live.staticflickr.com/3934/15036433674_3a3dba73f8_b.jpg", "https://upload.wikimedia.org/wikipedia/commons/thumb/4/47/Dobongsan_Seoul_South_Korea_Landscape_Photography_%28251858911%29.jpeg/960px-Dobongsan_Seoul_South_Korea_Landscape_Photography_%28251858911%29.jpeg"], "t": "place"}, "팝업스토어": {"u": ["https://upload.wikimedia.org/wikipedia/commons/thumb/a/a9/Summit_Ice_pop-up_store_%28interior%29.jpg/960px-Summit_Ice_pop-up_store_%28interior%29.jpg", "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a1/Interiors_of_IKEA_Xiamen_Pop-up_Store.jpg/960px-Interiors_of_IKEA_Xiamen_Pop-up_Store.jpg", "https://upload.wikimedia.org/wikipedia/commons/thumb/c/cb/UNIQLO_Pop-Up_store_at_Union_Square_station_%2810333672173%29.jpg/960px-UNIQLO_Pop-Up_store_at_Union_Square_station_%2810333672173%29.jpg"], "t": "vibe"}, "서울시립과학관": {"u": ["https://live.staticflickr.com/7140/6971295030_8f8a440020_b.jpg", "https://live.staticflickr.com/7562/15871157895_115ae8fe32_b.jpg", "https://live.staticflickr.com/2099/2066371508_67a6a5ba61_b.jpg", "https://live.staticflickr.com/2549/3817107286_3fbaaa0a25_b.jpg", "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1d/Seoul_Science_Center_02.jpg/960px-Seoul_Science_Center_02.jpg"], "t": "place"}, "드래곤힐스파": {"u": ["https://live.staticflickr.com/4087/5088061659_a77340c296_b.jpg"], "t": "place"}, "피크닉": {"u": ["https://live.staticflickr.com/5214/5464351080_f701992af3_b.jpg", "https://live.staticflickr.com/3724/10171339525_e5d02faec1_b.jpg", "https://live.staticflickr.com/7681/16652884083_6b0596626b_b.jpg", "https://live.staticflickr.com/3774/13238966904_e1a8c40121_b.jpg", "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b5/N-Seoul-Tower_and_Namsan_Park_%2826876783888%29.jpg/960px-N-Seoul-Tower_and_Namsan_Park_%2826876783888%29.jpg"], "t": "place"}, "클라이밍파크 성수점": {"u": ["https://live.staticflickr.com/3233/2965884855_2546dbf930_b.jpg", "https://live.staticflickr.com/625/33308695341_0436032e21_b.jpg", "https://live.staticflickr.com/3688/10423953674_2cb501040d_b.jpg", "https://live.staticflickr.com/4013/4614933784_a16c77413d_b.jpg", "https://upload.wikimedia.org/wikipedia/commons/thumb/7/74/Indoor_Climbing_Wall_Bouldering_Mats.jpg/960px-Indoor_Climbing_Wall_Bouldering_Mats.jpg"], "t": "vibe"}, "서울로7017": {"u": ["https://live.staticflickr.com/4818/45749340251_efb21064fd_b.jpg", "https://live.staticflickr.com/4489/38051798682_ef4a2a217a_b.jpg", "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a4/Seoullo_7017_02.jpg/960px-Seoullo_7017_02.jpg", "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6b/Seoullo_7017.jpg/960px-Seoullo_7017.jpg", "https://upload.wikimedia.org/wikipedia/commons/thumb/5/50/Seoullo_7017_night_time_city_lights.jpg/960px-Seoullo_7017_night_time_city_lights.jpg"], "t": "place"}, "서울공예박물관": {"u": ["https://live.staticflickr.com/8148/7605689940_d037f5a57c_b.jpg", "https://upload.wikimedia.org/wikipedia/commons/b/b3/Seoul_Museum_of_Craft_Art.jpg", "https://live.staticflickr.com/2579/4119448239_648f345cfd_b.jpg", "https://upload.wikimedia.org/wikipedia/commons/5/52/Hanbok_Culture_Week_2023_%2820231020%2C_Jongno-gu%2C_Seoul%29_01.jpg", "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b3/Seoul_Museum_of_Craft_Art.jpg/960px-Seoul_Museum_of_Craft_Art.jpg"], "t": "place"}, "세운상가": {"u": ["https://upload.wikimedia.org/wikipedia/ko/thumb/f/fa/Seoul-SeUnSanGa_001.jpg/960px-Seoul-SeUnSanGa_001.jpg"], "t": "place"}, "낙산공원": {"u": ["https://upload.wikimedia.org/wikipedia/commons/thumb/8/8a/KOCIS_Korea_Seoul_Fortress_20130924_13_%289910995446%29.jpg/960px-KOCIS_Korea_Seoul_Fortress_20130924_13_%289910995446%29.jpg", "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d9/KOCIS_Korea_Seoul_Fortress_20130924_04_%289910962205%29.jpg/960px-KOCIS_Korea_Seoul_Fortress_20130924_04_%289910962205%29.jpg", "https://upload.wikimedia.org/wikipedia/commons/thumb/1/16/KOCIS_Korea_Seoul_Fortress_20130924_05_%289911039744%29.jpg/960px-KOCIS_Korea_Seoul_Fortress_20130924_05_%289911039744%29.jpg"], "t": "place"}, "타데우스 로팍": {"u": ["https://live.staticflickr.com/2146/5738839435_8132eb10a9_b.jpg", "https://upload.wikimedia.org/wikipedia/commons/thumb/1/14/Hannam-dong_and_Seoul_Tower_from_across_the_Han.jpg/960px-Hannam-dong_and_Seoul_Tower_from_across_the_Han.jpg", "https://upload.wikimedia.org/wikipedia/commons/thumb/1/17/Bogwang-dong%2C_Seoul_from_the_Hannam_Bridge.jpg/960px-Bogwang-dong%2C_Seoul_from_the_Hannam_Bridge.jpg"], "t": "place"}, "홍제유연": {"u": ["https://upload.wikimedia.org/wikipedia/commons/thumb/f/f5/Hongjecheon_Artificial_Waterfall_2023-10-31.jpg/960px-Hongjecheon_Artificial_Waterfall_2023-10-31.jpg"], "t": "place"}, "롤러장": {"u": ["https://live.staticflickr.com/65535/52220888749_b0381975df_b.jpg", "https://live.staticflickr.com/207/524480157_727b7a4ff3_b.jpg", "https://live.staticflickr.com/5337/9891860174_555134eae6_b.jpg", "https://live.staticflickr.com/4150/5001885457_913ce4b310_b.jpg", "https://upload.wikimedia.org/wikipedia/commons/thumb/d/de/Oaks_Park_Roller_Skating_Rink%2C_2018_-_1.jpg/960px-Oaks_Park_Roller_Skating_Rink%2C_2018_-_1.jpg"], "t": "vibe"}, "متحف قطر الوطني": {"u": ["https://live.staticflickr.com/65535/53553326984_64851cac33_b.jpg", "https://live.staticflickr.com/5501/11277835196_4d6f09b600_b.jpg", "https://live.staticflickr.com/4878/46646735472_90169579c3_b.jpg", "https://live.staticflickr.com/65535/49077509568_cd7461f640_b.jpg", "https://upload.wikimedia.org/wikipedia/commons/thumb/5/56/Doha_National_Museum_of_Qatar_Interior_12.jpg/960px-Doha_National_Museum_of_Qatar_Interior_12.jpg"], "t": "place"}, "금정산 범어사": {"u": ["https://live.staticflickr.com/5322/10173842483_69852d7be4_b.jpg", "https://live.staticflickr.com/6107/6239594446_3c38c61fa6_b.jpg", "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0f/Burimun_gate_and_pine_under_blue_sky_at_Beomeosa_temple_in_Busan%2C_South_Korea.jpg/960px-Burimun_gate_and_pine_under_blue_sky_at_Beomeosa_temple_in_Busan%2C_South_Korea.jpg", "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9b/Front_exterior_view_of_Beomeosa_temple_with_three_stairs_and_blue_sky_in_Busan_South_Korea.jpg/960px-Front_exterior_view_of_Beomeosa_temple_with_three_stairs_and_blue_sky_in_Busan_South_Korea.jpg", "https://upload.wikimedia.org/wikipedia/commons/thumb/4/47/Exterior_view_of_Beomeosa_temple_with_rock_stairs_and_blue_sky_in_Busan_South_Korea.jpg/960px-Exterior_view_of_Beomeosa_temple_with_rock_stairs_and_blue_sky_in_Busan_South_Korea.jpg"], "t": "place"}, "탄산마그네슘": {"u": ["https://upload.wikimedia.org/wikipedia/commons/thumb/e/e0/Camera_shop_seongsu_seoul_3.jpg/960px-Camera_shop_seongsu_seoul_3.jpg", "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3d/Camera_shop_seongsu_seoul_2.jpg/960px-Camera_shop_seongsu_seoul_2.jpg", "https://upload.wikimedia.org/wikipedia/commons/thumb/c/ce/N_Seoul_Tower_seen_from_Seongsu-dong_%2812184283336%29.jpg/960px-N_Seoul_Tower_seen_from_Seongsu-dong_%2812184283336%29.jpg"], "t": "place"}, "동대문디자인플라자": {"u": ["https://live.staticflickr.com/7454/15862964673_f4bc6d6e48_b.jpg", "https://live.staticflickr.com/7146/13462190584_74c39d0849_b.jpg", "https://live.staticflickr.com/8374/8405189774_a1eed27b35_b.jpg", "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8f/Dongdaemun_Design_Plaza_at_night%2C_Seoul%2C_Korea.jpg/960px-Dongdaemun_Design_Plaza_at_night%2C_Seoul%2C_Korea.jpg", "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c9/20240601_144028_Dongdaemun_Design_Plaza%2C_Seoul_08.jpg/960px-20240601_144028_Dongdaemun_Design_Plaza%2C_Seoul_08.jpg"], "t": "place"}, "남대문 카메라상가": {"u": ["https://live.staticflickr.com/3862/15007174897_2503a4e872_b.jpg", "https://live.staticflickr.com/3134/3135499062_c3454e3715_b.jpg", "https://live.staticflickr.com/2004/5747740005_a114d8be95_b.jpg", "https://live.staticflickr.com/3481/3281330927_69a6127889_b.jpg", "https://upload.wikimedia.org/wikipedia/commons/thumb/8/88/Namdaemun_market_in_Seoul_I.jpg/960px-Namdaemun_market_in_Seoul_I.jpg"], "t": "place"}, "홍대 빈티지샵": {"u": ["https://upload.wikimedia.org/wikipedia/commons/b/b2/Uncle_Sam%27s_Vintage_American_Clothing_shop_in_Oxford_-_geograph.org.uk_-_4085533.jpg", "https://upload.wikimedia.org/wikipedia/commons/thumb/2/27/Shop_selling_vintage_clothing_with_a_vintage_ceramic_facade%2C_Salisbury_-_geograph.org.uk_-_7582079.jpg/960px-Shop_selling_vintage_clothing_with_a_vintage_ceramic_facade%2C_Salisbury_-_geograph.org.uk_-_7582079.jpg", "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9b/Fabric_patterns_of_vintage_clothing_in_second-hand_shop.jpg/960px-Fabric_patterns_of_vintage_clothing_in_second-hand_shop.jpg"], "t": "vibe"}, "망원시장": {"u": ["https://live.staticflickr.com/575/21647464116_39e298af73_b.jpg", "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e8/Mercado_Mangwon_en_Se%C3%BAl.jpg/960px-Mercado_Mangwon_en_Se%C3%BAl.jpg"], "t": "place"}, "동묘 벼룩시장": {"u": ["https://live.staticflickr.com/8269/8706794272_9a9d9911a0_b.jpg", "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3d/Dongmyo_Flea_Market_Jan_2024_03.jpg/960px-Dongmyo_Flea_Market_Jan_2024_03.jpg", "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0a/Dongmyo_Flea_Market_11.jpg/960px-Dongmyo_Flea_Market_11.jpg", "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6e/Dongmyo_Flea_Market_Jan_2024_08.jpg/960px-Dongmyo_Flea_Market_Jan_2024_08.jpg"], "t": "place"}, "하이커 그라운드": {"u": ["https://upload.wikimedia.org/wikipedia/commons/thumb/4/4a/Cheonggyecheon_stream_at_sunrise_with_trees_in_Seoul.jpg/960px-Cheonggyecheon_stream_at_sunrise_with_trees_in_Seoul.jpg", "https://upload.wikimedia.org/wikipedia/commons/thumb/9/90/Cheonggyecheon_stream_with_flowers_and_bridge_at_sunrise_near_Cheonggye_Plaza_in_Seoul.jpg/960px-Cheonggyecheon_stream_with_flowers_and_bridge_at_sunrise_near_Cheonggye_Plaza_in_Seoul.jpg", "https://upload.wikimedia.org/wikipedia/commons/thumb/6/67/Cheonggyecheon_evening_2.jpg/960px-Cheonggyecheon_evening_2.jpg"], "t": "place"}, "만화카페": {"u": ["https://live.staticflickr.com/1152/854691400_27811d7777_b.jpg", "https://live.staticflickr.com/2080/2391984571_0aa0b22d1a_b.jpg", "https://live.staticflickr.com/2727/4390309112_b08714777a_b.jpg", "https://live.staticflickr.com/2713/4221981175_4f3190423e_b.jpg", "https://upload.wikimedia.org/wikipedia/commons/6/65/Manga_Cafe_in_Kaminakatown_%E5%B2%A1_Anancuity_Tokushimapref.JPG"], "t": "vibe"}, "스타필드 코엑스몰": {"u": ["https://live.staticflickr.com/65535/48450732097_3f4e96044d_b.jpg", "https://live.staticflickr.com/65535/49418985551_5dfe3dd178_b.jpg", "https://live.staticflickr.com/65535/48448069282_82f77d900e_b.jpg", "https://live.staticflickr.com/4278/35325419226_01915a01a4_b.jpg", "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fe/Starfield_Library_COEX_20240218.jpg/960px-Starfield_Library_COEX_20240218.jpg"], "t": "place"}, "북한산 대남문 코스": {"u": ["https://live.staticflickr.com/4759/39776510071_8a8292ec0d_b.jpg", "https://live.staticflickr.com/8334/8108384074_a436bb2f37_b.jpg", "https://live.staticflickr.com/3174/2937247220_3f2e7002d1_b.jpg", "https://live.staticflickr.com/65535/51717978497_95fea253b3_b.jpg", "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fa/Seating_Buddha_Carved_on_the_Rock_in_Gugi-dong%2C_Bukhansan_Mountain%2C_Seoul_04.JPG/960px-Seating_Buddha_Carved_on_the_Rock_in_Gugi-dong%2C_Bukhansan_Mountain%2C_Seoul_04.JPG"], "t": "place"}, "마곡안전체험관": {"u": ["https://live.staticflickr.com/2452/4038813035_814181599f_b.jpg", "https://live.staticflickr.com/5726/20685013084_8691f57e23_b.jpg", "https://live.staticflickr.com/4371/35943102984_4963af3631_b.jpg", "https://live.staticflickr.com/65535/51564596556_80b7811735_b.jpg"], "t": "place"}, "흰여울문화마을": {"u": ["https://upload.wikimedia.org/wikipedia/commons/0/03/Huinnyeoul_culture_village%2C_Busan_on_October_25th%2C_2019.jpg", "https://live.staticflickr.com/65535/50681735707_61bd51d8d1_b.jpg", "https://upload.wikimedia.org/wikipedia/commons/thumb/0/03/Huinnyeoul_culture_village%2C_Busan_on_October_25th%2C_2019.jpg/960px-Huinnyeoul_culture_village%2C_Busan_on_October_25th%2C_2019.jpg"], "t": "place"}, "국립현대미술관": {"u": ["https://live.staticflickr.com/3726/10862922525_af9c8b50dd_b.jpg", "https://upload.wikimedia.org/wikipedia/commons/a/a9/MMCA_Seoul.jpg", "https://live.staticflickr.com/65535/48182604172_3df106734c_b.jpg", "https://live.staticflickr.com/2920/14454720209_10ff424222_b.jpg"], "t": "place"}, "관악산 과천향교 코스": {"u": ["https://upload.wikimedia.org/wikipedia/commons/a/a7/Yeonjuam_hermitage.jpg", "https://upload.wikimedia.org/wikipedia/commons/thumb/8/81/Gwanaksan_Seoul_KR.jpg/960px-Gwanaksan_Seoul_KR.jpg"], "t": "place"}, "코인노래방": {"u": ["https://upload.wikimedia.org/wikipedia/commons/thumb/9/9b/Karaoke_%282986745144%29.jpg/960px-Karaoke_%282986745144%29.jpg"], "t": "vibe"}, "서서울미술관": {"u": ["https://upload.wikimedia.org/wikipedia/commons/a/a1/Seoul_Museum_of_Art_%28SeMA%29.jpg", "https://live.staticflickr.com/8374/8398625568_167fb7a22b_b.jpg", "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6d/Seoul_Museum_of_Art_%282014%29.jpg/960px-Seoul_Museum_of_Art_%282014%29.jpg", "https://upload.wikimedia.org/wikipedia/commons/thumb/9/99/Seoul_Museum_of_Art_%282013%29.jpg/960px-Seoul_Museum_of_Art_%282013%29.jpg", "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7f/Seoul_Museum_of_Art_%28%EC%84%9C%EC%9A%B8%EC%8B%9C%EB%A6%BD%EB%AF%B8%EC%88%A0%EA%B4%80%29.jpg/960px-Seoul_Museum_of_Art_%28%EC%84%9C%EC%9A%B8%EC%8B%9C%EB%A6%BD%EB%AF%B8%EC%88%A0%EA%B4%80%29.jpg"], "t": "place"}, "자개공예": {"u": ["https://upload.wikimedia.org/wikipedia/commons/thumb/5/5f/Korean_writing_table%2C_18th_century%2C_lacquer_and_mother_of_pearl%2C_HAA.JPG/960px-Korean_writing_table%2C_18th_century%2C_lacquer_and_mother_of_pearl%2C_HAA.JPG", "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6f/Box%2C_Korea%2C_Joseon_dynasty%2C_1700-1800_AD%2C_lacquered_wood_with_mother-of-pearl_inlays_-_Asian_Art_Museum_of_San_Francisco_-_DSC01435.JPG/960px-Box%2C_Korea%2C_Joseon_dynasty%2C_1700-1800_AD%2C_lacquered_wood_with_mother-of-pearl_inlays_-_Asian_Art_Museum_of_San_Francisco_-_DSC01435.JPG", "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b2/Box%2C_Korea%2C_Joseon_dynasty%2C_1550-1650_AD%2C_lacquered_wood_with_mother-of-pearl_inlays_-_Asian_Art_Museum_of_San_Francisco_-_DSC01438.JPG/960px-Box%2C_Korea%2C_Joseon_dynasty%2C_1550-1650_AD%2C_lacquered_wood_with_mother-of-pearl_inlays_-_Asian_Art_Museum_of_San_Francisco_-_DSC01438.JPG"], "t": "vibe"}, "뮤지엄김치간": {"u": ["https://live.staticflickr.com/3534/3187506856_7fdbba50dc_b.jpg", "https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Korea-Seoul-Kimchi_Field_Museum-01.jpg/960px-Korea-Seoul-Kimchi_Field_Museum-01.jpg", "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e4/Korea-Kimchi-Museum-02.jpg/960px-Korea-Kimchi-Museum-02.jpg", "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7b/Korea-Kimchi-Ancient.form-Museum-01.jpg/960px-Korea-Kimchi-Ancient.form-Museum-01.jpg"], "t": "place"}, "프로필 사진관": {"u": ["https://live.staticflickr.com/5105/5623834662_7e5a1dee6c_b.jpg", "https://live.staticflickr.com/2284/2153409092_fd34405455_b.jpg", "https://live.staticflickr.com/7083/7216838772_500c5770c2_b.jpg", "https://live.staticflickr.com/4023/5103208971_90d122515b_b.jpg", "https://upload.wikimedia.org/wikipedia/commons/thumb/9/93/Dustin_K_Supencheck_portrait_at_WikiPortraits_Studio_at_SXSW_2025_01.jpg/960px-Dustin_K_Supencheck_portrait_at_WikiPortraits_Studio_at_SXSW_2025_01.jpg"], "t": "vibe"}, "연희동": {"u": ["https://upload.wikimedia.org/wikipedia/commons/thumb/c/ca/The_cloud_in_Yeonhui-dong.jpg/960px-The_cloud_in_Yeonhui-dong.jpg"], "t": "place"}, "에프1963": {"u": ["https://live.staticflickr.com/4602/38985403314_affe9ce620_b.jpg"], "t": "place"}, "잠실야구장": {"u": ["https://live.staticflickr.com/2627/5852758647_bb178bc045_b.jpg", "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2d/Jamsil_Baseball_Stadium_Seoul.jpg/960px-Jamsil_Baseball_Stadium_Seoul.jpg", "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fa/Jamsil_Baseball_Stadium_panorama_%28April_28_2017%29.jpg/960px-Jamsil_Baseball_Stadium_panorama_%28April_28_2017%29.jpg", "https://upload.wikimedia.org/wikipedia/commons/d/d5/Jamsil_Baseball_Stadium_.jpg"], "t": "place"}, "코우너스": {"u": ["https://upload.wikimedia.org/wikipedia/commons/thumb/8/8e/A_printing_company_in_Euljiro_printing_alley.jpg/960px-A_printing_company_in_Euljiro_printing_alley.jpg", "https://upload.wikimedia.org/wikipedia/commons/thumb/3/37/A_Mitsubishi_printing_press_in_a_printing_company_in_Euljiro_printing_alley.jpg/960px-A_Mitsubishi_printing_press_in_a_printing_company_in_Euljiro_printing_alley.jpg", "https://upload.wikimedia.org/wikipedia/commons/thumb/2/25/A_printing_company_in_Euljiro_printing_alley%2C_printing_operator_working_on_quality_control.jpg/960px-A_printing_company_in_Euljiro_printing_alley%2C_printing_operator_working_on_quality_control.jpg"], "t": "place"}, "سوق واقف": {"u": ["https://live.staticflickr.com/8208/8194989837_dd926d124c_b.jpg", "https://live.staticflickr.com/8202/8172029003_a7bd7793db_b.jpg", "https://live.staticflickr.com/1756/42653859572_16252b3c3f_b.jpg", "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f4/Souq_Waqif%2C_Doha%2C_Catar%2C_2013-08-05%2C_DD_107.JPG/960px-Souq_Waqif%2C_Doha%2C_Catar%2C_2013-08-05%2C_DD_107.JPG", "https://upload.wikimedia.org/wikipedia/commons/thumb/8/88/Souq_Waqif%2C_Doha%2C_Catar%2C_2013-08-05%2C_DD_09.JPG/960px-Souq_Waqif%2C_Doha%2C_Catar%2C_2013-08-05%2C_DD_09.JPG"], "t": "place"}, "돈의문박물관마을": {"u": ["https://live.staticflickr.com/65535/49092223552_6e694283ba_b.jpg"], "t": "place"}, "하늘공원": {"u": ["https://live.staticflickr.com/5776/21644644329_d94e68c574_b.jpg", "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f1/Haneul_Park_Seoul_14.jpg/960px-Haneul_Park_Seoul_14.jpg", "https://upload.wikimedia.org/wikipedia/commons/thumb/6/66/Haneul_Park_Seoul_07.jpg/960px-Haneul_Park_Seoul_07.jpg", "https://upload.wikimedia.org/wikipedia/commons/thumb/8/83/Haneul_Park_Seoul_12.jpg/960px-Haneul_Park_Seoul_12.jpg"], "t": "place"}, "스파랜드 센텀시티": {"u": ["https://upload.wikimedia.org/wikipedia/commons/thumb/4/48/Centum_City%2C_Busan%2C_2014-12-28.jpg/960px-Centum_City%2C_Busan%2C_2014-12-28.jpg", "https://upload.wikimedia.org/wikipedia/commons/thumb/b/bd/Shinsegye_Dept_store_Centum_city.JPG/960px-Shinsegye_Dept_store_Centum_city.JPG"], "t": "place"}, "우리게임장2": {"u": ["https://live.staticflickr.com/3462/3884418810_3983557017_b.jpg", "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9a/MAGFest2025-Arcade-HighAngle.jpg/960px-MAGFest2025-Arcade-HighAngle.jpg"], "t": "vibe"}, "별마당도서관": {"u": ["https://live.staticflickr.com/65535/49418985551_5dfe3dd178_b.jpg", "https://live.staticflickr.com/65535/48448069282_82f77d900e_b.jpg", "https://live.staticflickr.com/65535/49305486432_0f4270b1c4_b.jpg", "https://live.staticflickr.com/4278/35325419226_01915a01a4_b.jpg", "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fe/Starfield_Library_COEX_20240218.jpg/960px-Starfield_Library_COEX_20240218.jpg"], "t": "place"}, "선유도공원": {"u": ["https://live.staticflickr.com/4087/4959435714_a9bfdd4775_b.jpg", "https://live.staticflickr.com/3856/14975538329_667168f59f_b.jpg", "https://live.staticflickr.com/4057/5143605889_2991cdb6f0_b.jpg", "https://upload.wikimedia.org/wikipedia/commons/thumb/7/77/Seoul_Seonyudo_Park.jpg/960px-Seoul_Seonyudo_Park.jpg", "https://upload.wikimedia.org/wikipedia/commons/thumb/6/68/School_girl_in_Seonyudo_Park%2C_Seoul%2C_Korea.jpg/960px-School_girl_in_Seonyudo_Park%2C_Seoul%2C_Korea.jpg"], "t": "place"}, "부산현대미술관": {"u": ["https://upload.wikimedia.org/wikipedia/commons/2/2b/Museum_of_Contemporary_Art_Busan_at_Busan_Biennale_2018.jpg", "https://upload.wikimedia.org/wikipedia/commons/a/a5/The_Busan_Biennale.jpg", "https://live.staticflickr.com/65535/54434736002_ed73420da9_b.jpg", "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2b/Museum_of_Contemporary_Art_Busan_at_Busan_Biennale_2018.jpg/960px-Museum_of_Contemporary_Art_Busan_at_Busan_Biennale_2018.jpg"], "t": "place"}, "그라운드시소": {"u": ["https://live.staticflickr.com/65535/35543119640_5aa56e693a_b.jpg", "https://live.staticflickr.com/546/19317555513_11e0b405a9_b.jpg", "https://live.staticflickr.com/8332/8367059742_a29727d480_b.jpg", "https://live.staticflickr.com/4913/45065599515_30047796b4_b.jpg", "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e4/Amy_Karle_in_%22The_Physical_Mind%22_Immersive_Installation_Art_by_Teun_Vonk_at_FILE_Electronic_Language_International_Festival_2017_S%C3%A3o_Paulo_Brazil.jpg/960px-Amy_Karle_in_%22The_Physical_Mind%22_Immersive_Installation_Art_by_Teun_Vonk_at_FILE_Electronic_Language_International_Festival_2017_S%C3%A3o_Paulo_Brazil.jpg"], "t": "vibe"}, "국립항공박물관": {"u": ["https://live.staticflickr.com/3715/9072857654_fe124a5f73_b.jpg", "https://live.staticflickr.com/3108/2803400128_0f0e6ac9da_b.jpg", "https://live.staticflickr.com/3297/5778595034_76156d161e_b.jpg", "https://live.staticflickr.com/5496/11374509893_6216119f9f_b.jpg", "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e0/%EA%B5%AD%EB%A6%BD%ED%95%AD%EA%B3%B5%EB%B0%95%EB%AC%BC%EA%B4%80.jpg/960px-%EA%B5%AD%EB%A6%BD%ED%95%AD%EA%B3%B5%EB%B0%95%EB%AC%BC%EA%B4%80.jpg"], "t": "place"}, "어린이대공원": {"u": ["https://upload.wikimedia.org/wikipedia/commons/b/b3/Seoul_Childrens_Grand_Park_Main_Gate.jpg", "https://upload.wikimedia.org/wikipedia/commons/9/9c/Korea-Seoul-Childrens_Grand_Park-01.jpg", "https://live.staticflickr.com/8671/16480120359_5f09696058_b.jpg"], "t": "place"}, "용산전자상가": {"u": ["https://live.staticflickr.com/3035/3385975561_27d15a0a3c_b.jpg", "https://live.staticflickr.com/5299/5457451757_a6a83779d5_b.jpg", "https://live.staticflickr.com/3200/2759011123_b380044e74_b.jpg", "https://live.staticflickr.com/8532/8602509375_4551a33af0_b.jpg", "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c4/Yongsan_Electronics_Market.jpg/960px-Yongsan_Electronics_Market.jpg"], "t": "place"}, "서울식물원": {"u": ["https://live.staticflickr.com/65535/50093945411_e5473956da_b.jpg", "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2c/Seoul_botanic_park_16.jpg/960px-Seoul_botanic_park_16.jpg", "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b6/Seoul_botanic_park_05.jpg/960px-Seoul_botanic_park_05.jpg", "https://upload.wikimedia.org/wikipedia/commons/thumb/9/99/Seoul_botanic_park_04.jpg/960px-Seoul_botanic_park_04.jpg"], "t": "place"}, "셀프사진관": {"u": ["https://upload.wikimedia.org/wikipedia/commons/thumb/4/47/Photo_booth_in_South_Korea%2C_2001.jpg/960px-Photo_booth_in_South_Korea%2C_2001.jpg"], "t": "vibe"}, "문화비축기지": {"u": ["https://upload.wikimedia.org/wikipedia/commons/thumb/a/a5/Mapo_Park_-_Human_Nature.jpg/960px-Mapo_Park_-_Human_Nature.jpg"], "t": "place"}, "홍대 라이브클럽": {"u": ["https://live.staticflickr.com/2016/2307775836_d4350620ef_b.jpg"], "t": "place"}, "한국만화박물관": {"u": ["https://live.staticflickr.com/5538/9461455995_73792a44a6_b.jpg", "https://upload.wikimedia.org/wikipedia/commons/3/30/Korea_Manhwa_Museum.JPG", "https://upload.wikimedia.org/wikipedia/commons/5/51/Korea_Manhwa_Museum_20251122_5.jpg", "https://upload.wikimedia.org/wikipedia/commons/thumb/0/03/Korea_Manhwa_Museum_20251122_6.jpg/960px-Korea_Manhwa_Museum_20251122_6.jpg", "https://upload.wikimedia.org/wikipedia/commons/thumb/5/51/Korea_Manhwa_Museum_20251122_5.jpg/960px-Korea_Manhwa_Museum_20251122_5.jpg"], "t": "place"}, "노량진수산시장": {"u": ["https://live.staticflickr.com/8329/8394881126_7589cc1503_b.jpg", "https://live.staticflickr.com/1355/3163391123_89ff7d88cc_b.jpg", "https://live.staticflickr.com/8387/8679950387_3402dcd8d5_b.jpg", "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ea/Octopus_as_food_at_Noryangjin_Fisheries_Wholesale_Market_in_Seoul_South_Korea.jpg/960px-Octopus_as_food_at_Noryangjin_Fisheries_Wholesale_Market_in_Seoul_South_Korea.jpg", "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7c/Korea-Seoul-Noryangjin_Fish_Market-03.jpg/960px-Korea-Seoul-Noryangjin_Fish_Market-03.jpg"], "t": "place"}, "스크린야구": {"u": ["https://live.staticflickr.com/3365/3341711614_9de9594b5b_b.jpg"], "t": "place"}, "متحف الفن الإسلامي": {"u": ["https://live.staticflickr.com/4115/4754905352_162c10fe31_b.jpg", "https://live.staticflickr.com/8070/8171890818_36e7540b7a_b.jpg", "https://live.staticflickr.com/6167/6194495929_8cc2591471_b.jpg", "https://live.staticflickr.com/4150/4843230344_e34fcef144_b.jpg", "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d5/Fisherman_on_the_Doha_Corniche_next_to_the_Islamic_Museum.jpg/960px-Fisherman_on_the_Doha_Corniche_next_to_the_Islamic_Museum.jpg"], "t": "place"}, "실탄사격장": {"u": ["https://live.staticflickr.com/5264/5636531029_da8bf60cdf_b.jpg", "https://live.staticflickr.com/5281/5283233420_b86d6d3532_b.jpg", "https://live.staticflickr.com/4299/36210238626_0d8a6d68db_b.jpg", "https://upload.wikimedia.org/wikipedia/commons/thumb/9/94/10_metre_indoor_range_by_Gun_For_Glory_Shooting_Academy_Jabalpur.jpg/960px-10_metre_indoor_range_by_Gun_For_Glory_Shooting_Academy_Jabalpur.jpg", "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b5/Meari_Shooting_Range_%2813204953155%29.jpg/960px-Meari_Shooting_Range_%2813204953155%29.jpg"], "t": "vibe"}, "디꾸": {"u": ["https://upload.wikimedia.org/wikipedia/commons/thumb/7/76/12_MP_digital_camera_-_red.jpg/960px-12_MP_digital_camera_-_red.jpg", "https://upload.wikimedia.org/wikipedia/commons/thumb/8/85/Kyocera_Finecam_SL400R_-_digital_camera.png/960px-Kyocera_Finecam_SL400R_-_digital_camera.png"], "t": "vibe"}, "태종대": {"u": ["https://live.staticflickr.com/7193/13941294072_c248720c01_b.jpg", "https://live.staticflickr.com/5173/5452502079_b280d88f81_b.jpg", "https://upload.wikimedia.org/wikipedia/commons/c/c0/Korea-Busan-Taejongdae-14.jpg", "https://live.staticflickr.com/144/325872766_dddfa1c48a_b.jpg", "https://upload.wikimedia.org/wikipedia/commons/thumb/4/47/Korea-Busan-Taejongdae-03.jpg/960px-Korea-Busan-Taejongdae-03.jpg"], "t": "place"}, "오리배": {"u": ["https://upload.wikimedia.org/wikipedia/commons/thumb/8/87/Swan_and_Duck_Boats%2C_Canoe_Lake_-_53901335143.jpg/960px-Swan_and_Duck_Boats%2C_Canoe_Lake_-_53901335143.jpg", "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/Swan_boats_on_Coronation_Lake_-_geograph.org.uk_-_7887340.jpg/960px-Swan_boats_on_Coronation_Lake_-_geograph.org.uk_-_7887340.jpg", "https://upload.wikimedia.org/wikipedia/commons/4/49/Boating_Lake_for_Swans_-_geograph.org.uk_-_917097.jpg"], "t": "vibe"}, "퍼니앤조이": {"u": ["https://live.staticflickr.com/7060/7020023275_a73037941f_b.jpg", "https://live.staticflickr.com/7359/9124806306_2bcdd6caf3_b.jpg", "https://live.staticflickr.com/6015/6000082242_9b02c432c3_b.jpg", "https://live.staticflickr.com/7413/12054543166_0687152a52_b.jpg", "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a9/DFC_0847_A_person_stands_at_a_claw_machine_in_a_dimly_lit_arcade_surrounded_by_colorful_glowing_game_cabinets_and_neon_lights.jpg/960px-DFC_0847_A_person_stands_at_a_claw_machine_in_a_dimly_lit_arcade_surrounded_by_colorful_glowing_game_cabinets_and_neon_lights.jpg"], "t": "vibe"}, "서울숲 사슴방사장": {"u": ["https://live.staticflickr.com/7419/9926764206_ce90c0e156_b.jpg", "https://live.staticflickr.com/7154/6786183777_7d68833258_b.jpg", "https://upload.wikimedia.org/wikipedia/commons/9/91/Sika_Deer_-_Seoul_Forest_%281%29.jpg", "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3c/View_at_rest_area_in_Lyudao_Sika_Deer_Ecology_Park_2008.jpg/960px-View_at_rest_area_in_Lyudao_Sika_Deer_Ecology_Park_2008.jpg"], "t": "vibe"}, "서울숲클라이밍": {"u": ["https://upload.wikimedia.org/wikipedia/commons/thumb/7/74/Indoor_Climbing_Wall_Bouldering_Mats.jpg/960px-Indoor_Climbing_Wall_Bouldering_Mats.jpg", "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e6/Luch_Bouldering_Gym_SpB.jpg/960px-Luch_Bouldering_Gym_SpB.jpg", "https://upload.wikimedia.org/wikipedia/commons/thumb/0/02/Severnaya_Stena_Bouldering_Gym_SpB.jpg/960px-Severnaya_Stena_Bouldering_Gym_SpB.jpg"], "t": "vibe"}, "힙지로": {"u": ["https://upload.wikimedia.org/wikipedia/commons/thumb/c/c9/Night_view_of_Euljiro_1-ga_intersection_and_the_Sogong-dong_Lotte_town.jpg/960px-Night_view_of_Euljiro_1-ga_intersection_and_the_Sogong-dong_Lotte_town.jpg", "https://upload.wikimedia.org/wikipedia/commons/thumb/1/19/A_paper_wholesaler_in_Euljiro_printing_alley2.jpg/960px-A_paper_wholesaler_in_Euljiro_printing_alley2.jpg", "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ea/A_paper_wholesaler_in_Euljiro_printing_alley.jpg/960px-A_paper_wholesaler_in_Euljiro_printing_alley.jpg"], "t": "place"}, "향수 공방": {"u": ["https://live.staticflickr.com/1917/44905105531_a745344d10_b.jpg"], "t": "place"}, "이기대 해안산책로": {"u": ["https://live.staticflickr.com/3904/14672783485_68e0898a01_b.jpg"], "t": "place"}, "플라이스테이션": {"u": ["https://live.staticflickr.com/3063/2622160557_0159741d25_b.jpg", "https://live.staticflickr.com/3341/3212212394_f0d0a68519_b.jpg", "https://live.staticflickr.com/7329/13897011300_92d200316c_b.jpg", "https://live.staticflickr.com/7047/6950682941_311412505f_b.jpg", "https://upload.wikimedia.org/wikipedia/commons/thumb/3/36/Vertical_wind_tunnel_simulated_skydiving.jpg/960px-Vertical_wind_tunnel_simulated_skydiving.jpg"], "t": "vibe"}, "방탈출": {"u": ["https://live.staticflickr.com/791/40774379542_b1bee019bf_b.jpg", "https://live.staticflickr.com/65535/52241110426_a7f0737fdb_b.jpg", "https://live.staticflickr.com/5681/22775370146_7b83810070_b.jpg", "https://upload.wikimedia.org/wikipedia/commons/3/39/Conundrum_Escape_Room.jpg", "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a8/Escape_Room_-_%22The_Expedition%22_%28Escape_Quest_Bethesda%29.jpg/960px-Escape_Room_-_%22The_Expedition%22_%28Escape_Quest_Bethesda%29.jpg"], "t": "vibe"}, "노들섬": {"u": ["https://upload.wikimedia.org/wikipedia/commons/thumb/1/18/Nodeulseom_%2814005438206%29.jpg/960px-Nodeulseom_%2814005438206%29.jpg"], "t": "place"}, "경의선숲길": {"u": ["https://live.staticflickr.com/5459/29598777583_32314352fc_b.jpg", "https://live.staticflickr.com/65535/54243576923_c3ec606cc8_b.jpg", "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a5/Gyeonguiseon_Forest_Trail_Park_and_Ttaeng-ttaeng_Street_in_Seoul_%28near_Hongdae%2C_1%29.jpg/960px-Gyeonguiseon_Forest_Trail_Park_and_Ttaeng-ttaeng_Street_in_Seoul_%28near_Hongdae%2C_1%29.jpg", "https://upload.wikimedia.org/wikipedia/commons/thumb/0/06/Gyeonguiseon_Forest_Trail_Park_and_Ttaeng-ttaeng_Street_in_Seoul_%28near_Hongdae%2C_2%29.jpg/960px-Gyeonguiseon_Forest_Trail_Park_and_Ttaeng-ttaeng_Street_in_Seoul_%28near_Hongdae%2C_2%29.jpg", "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9b/Gyeonguiseon_Forest_Trail_Park_and_Ttaeng-ttaeng_Street_in_Seoul_%28near_Hongdae%2C_4%29.jpg/960px-Gyeonguiseon_Forest_Trail_Park_and_Ttaeng-ttaeng_Street_in_Seoul_%28near_Hongdae%2C_4%29.jpg"], "t": "place"}, "PC방": {"u": ["https://upload.wikimedia.org/wikipedia/commons/7/70/Korean.culture-PC.bang-01.jpg", "https://live.staticflickr.com/3642/3559346863_34a569933b_b.jpg", "https://upload.wikimedia.org/wikipedia/commons/1/13/T1_Base_Camp_PC_bang_interior_-_2023-07-21.jpg", "https://upload.wikimedia.org/wikipedia/commons/thumb/1/10/PC_bang_in_2001.jpg/960px-PC_bang_in_2001.jpg", "https://upload.wikimedia.org/wikipedia/commons/thumb/d/da/2020-03-08_10.25.33_PC_bang_in_South_Korea.jpg/960px-2020-03-08_10.25.33_PC_bang_in_South_Korea.jpg"], "t": "vibe"}, "쌈지길": {"u": ["https://live.staticflickr.com/5540/11150639153_e715a993f4_b.jpg", "https://live.staticflickr.com/8124/8692930898_fbf3332682_b.jpg", "https://live.staticflickr.com/89/235014164_8c9d4d5664_b.jpg", "https://live.staticflickr.com/8601/15742582499_b8ea04c190_b.jpg", "https://upload.wikimedia.org/wikipedia/commons/thumb/d/db/Insa-dong_%28%EC%9D%B8%EC%82%AC%EB%8F%99%29_-_panoramio.jpg/960px-Insa-dong_%28%EC%9D%B8%EC%82%AC%EB%8F%99%29_-_panoramio.jpg"], "t": "place"}, "러닝크루": {"u": ["https://upload.wikimedia.org/wikipedia/commons/thumb/9/97/Running_club_at_night_-_geograph.org.uk_-_7430244.jpg/960px-Running_club_at_night_-_geograph.org.uk_-_7430244.jpg"], "t": "vibe"}, "리움미술관": {"u": ["https://live.staticflickr.com/7015/6539780101_9a1d77e339_b.jpg", "https://live.staticflickr.com/5175/5439087136_cee5eaa933_b.jpg", "https://live.staticflickr.com/128/317661531_5f27825419_b.jpg", "https://live.staticflickr.com/65535/51719372341_db9e3bb5bb_b.jpg", "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c4/Leeum%2C_Samsung_Museum_of_Art.jpg/960px-Leeum%2C_Samsung_Museum_of_Art.jpg"], "t": "place"}};
 const CATS = {
   art:   {label:"Искусство",   color:"var(--jade)"},
   museum:{label:"Опыт и музеи",color:"var(--ginkgo)"},
@@ -472,13 +436,13 @@ const ICONS = {
   local:'<path d="M12 2.5 13.9 8l5.6 1.9-5.6 1.9L12 17.5 10.1 11.8 4.5 9.9 10.1 8Z" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/><path d="M18 16.5l.8 2.2 2.2.8-2.2.8-.8 2.2-.8-2.2-2.2-.8 2.2-.8Z" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linejoin="round"/>'
 };
 
-// city, category, name, korean, area, description, tags, price, lat, lng
+// city, category, name, korean, area, description, tags, price, lat, lng; optional url and map query q
 const P = [
   // ===== SEOUL · ART =====
   {c:"seoul",k:"art",n:"Leeum",kr:"리움미술관",a:"Ханнам",d:"Три здания от Botta, Nouvel и Кулхаса. До 29 ноября — средовые инсталляции женщин-художниц 1956–76, внутрь которых буквально заходишь. Параллельно Ку Джон А до 27 декабря.",t:["до 29 ноября","пн выходной","полдня"],pr:"от 18 000 ₩",lat:37.5384,lng:126.9990},
   {c:"seoul",k:"art",n:"Amorepacific Museum of Art",kr:"아모레퍼시픽미술관",a:"Ёнсан",d:"Штаб-квартира Чипперфильда с огромным внутренним двором. Большая монография Сола Левитта идёт до февраля.",t:["до февраля","архитектура"],pr:"от 10 000 ₩",lat:37.5272,lng:126.9728},
   {c:"seoul",k:"art",n:"MMCA Seoul",kr:"국립현대미술관",a:"Самчхон",d:"Главный музей современного искусства страны, низкие корпуса во дворах рядом с дворцом. Расписание выставок меняется каждые пару месяцев.",t:["пн выходной","рядом с дворцами"],pr:"2 000 ₩",lat:37.5786,lng:126.9800},
-  {c:"seoul",k:"art",n:"Сеульский музей фотографии",kr:"서서울미술관",a:"Кымчхон",d:"Новый филиал городского музея с уклоном в медиа и фотографию. Персональная выставка Ким Хичхона до 8 ноября.",t:["бесплатно","до 8 ноября","далеко"],pr:"бесплатно",lat:37.4660,lng:126.8960},
+  {c:"seoul",k:"art",n:"Seo-Seoul Museum of Art",kr:"서서울미술관",a:"Кымчхон",d:"Городской музей нового медиаискусства, открывшийся в марте 2026 года в парке Кымнарэ. Серебристый фасад отражает деревья и небо, а стеклянные проходы соединяют музей с парком.",t:["бесплатно","медиаискусство","архитектура"],pr:"бесплатно",lat:37.4660,lng:126.8960,q:"서서울미술관 서울 금천구"},
   {c:"seoul",k:"art",n:"SongEun",kr:"송은",a:"Чхондам",d:"Здание Herzog & de Meuron: бетонный клин, сужающийся кверху. Показывают молодых корейских художников, вход свободный.",t:["бесплатно","архитектура","час"],pr:"бесплатно",lat:37.5230,lng:127.0470},
   {c:"seoul",k:"art",n:"Piknic",kr:"피크닉",a:"Хвехён",d:"Старое офисное здание под Намсаном, переделанное под кураторские выставки. Сад на крыше с видом на центр, внизу кафе и магазин.",t:["крыша","вечер","час-два"],pr:"от 15 000 ₩",lat:37.5570,lng:126.9781},
   {c:"seoul",k:"art",n:"DDP",kr:"동대문디자인플라자",a:"Тондэмун",d:"Заха Хадид. Дизайн-выставки внутри, а снаружи вечером — подсветка и поток людей. Рядом ночные рынки тканей.",t:["вечер","дизайн","бесплатно снаружи"],pr:"выставки от 8 000 ₩",lat:37.5665,lng:127.0092},
@@ -509,9 +473,14 @@ const P = [
   {c:"seoul",k:"active",n:"Dragon Hill Spa",kr:"드래곤힐스파",a:"Ёнсан",d:"Семиэтажный чимчильбан: бассейны, соляные комнаты, зал для сна, уличная зона. Отдельно берётся сесин — когда тебя полчаса трёт мочалкой профессиональная аджумма.",t:["круглосуточно","спа","на дождь"],pr:"от 15 000 ₩",lat:37.5290,lng:126.9640},
   {c:"seoul",k:"active",n:"Бейсбол на Чамсиле",kr:"잠실야구장",a:"Чамсиль",d:"Финал корейской лиги играют как раз в конце октября и начале ноября. Барабаны, песни на каждого игрока, еда с собой разрешена. Проверить расписание ближе к датам.",t:["вечер","по расписанию","спорт"],pr:"от 12 000 ₩",lat:37.5120,lng:127.0720},
   {c:"seoul",k:"active",n:"Велосипеды вдоль Ханган",kr:"따릉이",a:"Ханган",d:"Городской прокат: тысяча вон за час, станции через каждые пару сотен метров. Вечером вдоль реки включается подсветка мостов.",t:["дёшево","вечер","своим темпом"],pr:"1 000 ₩/час",lat:37.5100,lng:126.9950},
-  {c:"seoul",k:"active",n:"Скрин-бейсбол",kr:"스크린야구",a:"Хондэ",d:"Комната с проекцией, настоящей битой и подающей машиной. Почасово, пиво приносят внутрь. Корейцы ходят туда компаниями вместо бара.",t:["вечер","в помещении","компанией"],pr:"от 25 000 ₩/час",lat:37.5540,lng:126.9230},
+  {c:"seoul",k:"active",n:"Скрин-бейсбол · Strikezon",kr:"스크린야구",a:"Хондэ / Чамсиль / филиалы",d:"Комната с проекцией, настоящей битой и подающей машиной. Можно соревноваться вдвоём даже без опыта. Один из вариантов — сеть Strikezon; конкретный филиал, тариф и часы проверить перед визитом.",t:["вечер","в помещении","вдвоём","Strikezon"],pr:"от 25 000 ₩/час",lat:37.554,lng:126.923,url:"https://www.strikezon.com/new/kr/strikezon/product.php",q:"스트라이크존 서울"},
   {c:"seoul",k:"active",n:"Роллердром",kr:"롤러장",a:"Хондэ / Ённам",d:"Ретро-катки с диско-шаром и музыкой восьмидесятых, сейчас на пике моды у молодых корейцев. Коньки выдают на месте.",t:["вечер","ретро","в помещении"],pr:"от 15 000 ₩",lat:37.5620,lng:126.9260},
   {c:"seoul",k:"active",n:"Метание топоров",kr:"도끼던지기",a:"Хондэ",d:"Несколько залов по городу, снаряжение и инструктаж на месте. Час уходит быстро.",t:["необычное","час"],pr:"от 20 000 ₩",lat:37.5555,lng:126.9245},
+  {c:"seoul",k:"active",n:"Healswing / K-Swing",kr:"힐스윙",a:"Вансипни",d:"Очень странная сеульская штука: экстремальные качели, которые делают полный оборот на 360°. Сезонность и часы работы обязательно проверить перед поездкой.",t:["360°","странное","адреналин","проверить расписание"],pr:"проверить перед визитом",lat:37.5615,lng:127.0375,url:"https://english.visitseoul.net/entertainment/2024-Healswing/ENPl4rnb2",q:"힐스윙 왕십리"},
+  {c:"seoul",k:"active",n:"Ttukseom X-Game Zone",kr:"뚝섬 한강공원 X게임장",a:"Ттуксом",d:"Скейт/BMX-парк прямо у Хангана с рампами и рейлами. Можно встроить в велодень Seoul Forest → Ttukseom → река, даже если просто посмотреть на катающихся.",t:["бесплатно","скейт","BMX","велодень"],pr:"бесплатно",lat:37.5294,lng:127.0697,url:"https://english.visitseoul.net/entertainment/X-GAME/ENP6zvjr6",q:"뚝섬한강공원 X게임장 서울 광진구 자양동 427-27"},
+  {c:"seoul",k:"active",n:"Веломаршрут · Seoul Forest → Ttukseom → Banpo → Nodeul",kr:"서울숲 → 뚝섬 → 반포 → 노들섬",a:"Ханган",d:"Главный велодень: старт у Seoul Forest, дальше отдельные дорожки вдоль Хангана через Ttukseom и Banpo к Nodeul Island. Примерно 15–20 км в расслабленном темпе с остановками.",t:["веломаршрут","15–20 км","плоско","4–5 часов"],pr:"прокат отдельно",lat:37.5444,lng:127.0374},
+  {c:"seoul",k:"active",n:"Веломаршрут · Nodeul → Yeouido → Seonyudo → Mangwon",kr:"노들섬 → 여의도 → 선유도 → 망원",a:"Ханган запад",d:"Маршрут через острова и парки: Nodeul, Yeouido, экологический Saetgang, Yanghwa, Seonyudo и финиш у Mangwon. Хороший вариант, если хочется больше парков и меньше мегаполиса.",t:["веломаршрут","15–20 км","парки","полдня"],pr:"прокат отдельно",lat:37.517,lng:126.958},
+  {c:"seoul",k:"active",n:"Веломаршрут · Olympic Park → Seongnaecheon → Jamsil",kr:"올림픽공원 → 성내천 → 잠실",a:"Чамсиль",d:"Короткий и простой маршрут примерно на 4 км: парк, ручей и Ханган. Можно использовать как кусок дня Olympic Park → велики → Seokchon Lake → Jamsil вечером.",t:["веломаршрут","~4 км","легко","Чамсиль"],pr:"прокат отдельно",lat:37.5207,lng:127.1215},
 
   // ===== SEOUL · GAME =====
   {c:"seoul",k:"game",n:"짱오락실 Каннам",kr:"짱오락실 강남대로점",a:"Каннам",d:"Самый большой аркадный зал страны: около тысячи квадратов, открылся в 2024. Современные автоматы, краны, гоночные кабины, ритм-игры.",t:["до ночи","большой","автоматы"],pr:"от 500 ₩ за игру",lat:37.5020,lng:127.0255},
@@ -523,6 +492,14 @@ const P = [
   {c:"seoul",k:"game",n:"PC방",kr:"PC방",a:"везде",d:"Два часа за пару тысяч вон, кресло, еда прямо за компьютером. Отдельный культурный опыт, даже если не играешь.",t:["дёшево","ночь"],pr:"~2 000 ₩/час",lat:37.5570,lng:126.9250},
   {c:"seoul",k:"game",n:"Коин-норэбан",kr:"코인노래방",a:"везде",d:"Будка-караоке, где платишь по песне. Пятьсот вон за трек, никакой компании не требуется.",t:["дёшево","ночь","вдвоём"],pr:"500 ₩/песня",lat:37.5590,lng:126.9240},
   {c:"seoul",k:"game",n:"Манхва-кафе",kr:"만화카페",a:"Хондэ",d:"Лежишь в нише с подушками среди тысяч томов комиксов, тебе приносят рамён. Пара часов стоит копейки.",t:["дёшево","тихо","на дождь"],pr:"от 5 000 ₩",lat:37.5550,lng:126.9240},
+  {c:"seoul",k:"game",n:"ActiveMode Hongdae",kr:"액티브모드 홍대",a:"Хондэ",d:"Физическая аркада, где вы сами персонажи: LED-полы, реакция, скорость, координация и короткие челленджи. Хороший вариант вдвоём на час-полтора вечером.",t:["вдвоём","физические игры","вечер","Хондэ"],pr:"проверить перед визитом",lat:37.5563,lng:126.9236,url:"https://pf.kakao.com/_DkxoZn/",q:"액티브모드 홍대 서울 마포구 잔다리로2길 19"},
+  {c:"seoul",k:"game",n:"Running Man Experience",kr:"런닝맨 체험관",a:"Инсадон",d:"Большой indoor challenge park примерно на полтора часа: миссии на реакцию, ловкость, скорость и командную работу. Знать телешоу не обязательно.",t:["интерактив","вдвоём","90 минут","английский"],pr:"проверить перед визитом",lat:37.5719,lng:126.987,url:"https://english.visitseoul.net/entertainment/RunningManExperienceCenter/ENPf78gji",q:"런닝맨 체험관 인사동 서울 종로구 인사동길 12"},
+  {c:"seoul",k:"game",n:"Kom Kom Arcade",kr:"콤콤오락실",a:"Итхэвон",d:"Маленькая ретро-аркада со старыми автоматами: Tekken, Street Fighter, Bubble Bobble и другие. Хорошая короткая остановка по дороге через Итхэвон и Ханнам.",t:["ретро","автоматы","30–60 минут","вечер"],pr:"от ~1 000 ₩",lat:37.5347,lng:126.9947,url:"https://english.visitseoul.net/area/Kom-Kom-Arcade/ENP034489",q:"콤콤오락실 서울 용산구 회나무로 3"},
+  {c:"seoul",k:"game",n:"Claw-machine rooms",kr:"인형뽑기방",a:"Хондэ / студенческие районы",d:"Не один автомат в ТЦ, а целые помещения с десятками кранов: плюшевые игрушки, фигурки и брелоки. Не планировать отдельно — просто заходить, когда встретите по дороге.",t:["кавай","автоматы","спонтанно","вечер"],pr:"от ~1 000 ₩/игра",lat:37.5568,lng:126.9238},
+  {c:"seoul",k:"game",n:"Showroom404 Escape Room",kr:"쇼룸404",a:"Хондэ",d:"Иммерсивный корейский escape room с упором на декорации, сюжет и эффекты, а не только на замки и коды. Проверить конкретную тему и поддержку английского при бронировании.",t:["эскейп","иммерсив","по записи","проверить английский"],pr:"проверить перед визитом",lat:37.5558,lng:126.925,url:"https://showroom404.com/",q:"쇼룸404 서울 마포구 잔다리로 5-1"},
+  {c:"seoul",k:"game",n:"DeepThinker Escape Room",kr:"딥띵커",a:"Хондэ",d:"Ещё один вариант сюжетного escape room в Хондэ с сильными декорациями. Выбирать конкретный сценарий по сложности и количеству текста на корейском.",t:["эскейп","сюжет","по записи","Хондэ"],pr:"проверить перед визитом",lat:37.5561,lng:126.9243,url:"https://deepthinker.co.kr/en/",q:"딥띵커 서울 마포구 잔다리로 23"},
+  {c:"seoul",k:"game",n:"Board Game Café Red Button · Синчхон",kr:"레드버튼",a:"Синчхон",d:"Корейский формат настольного кафе: огромная библиотека игр, отдельные столы, еда и напитки. Отличный запасной вечер на дождь или когда ноги уже умерли.",t:["настолки","вдвоём","на дождь","вечер"],pr:"почасовая оплата",lat:37.5566,lng:126.9369,url:"https://redbutton.co.kr/store/매장찾기/",q:"레드버튼 신촌 서울 서대문구 연세로 8"},
+  {c:"seoul",k:"game",n:"Elves & Espresso",kr:"엘브즈앤에스프레소",a:"Итхэвон",d:"Фэнтези-таверна и настольные игры в одном месте — более атмосферный вариант обычного board-game café. Хорошо стыкуется с Ханнамом и Итхэвоном.",t:["настолки","фэнтези","вечер","Итхэвон"],pr:"проверить перед визитом",lat:37.5345,lng:126.994,url:"https://elvesandespresso.com/blogs/information/frequently-asked-questions",q:"Elves & Espresso 서울 용산구 녹사평대로46길 5"},
 
   // ===== SEOUL · CRAFT =====
   {c:"seoul",k:"craft",n:"Corners",kr:"코우너스",a:"Ыльчжиро",d:"Самая известная ризографическая студия Сеула: печатают, издают книги и периодически проводят воркшопы. Смотреть анонсы в инстаграме ближе к датам.",t:["ризограф","инстаграм","по анонсу"],pr:"по-разному",lat:37.5660,lng:126.9910},
@@ -542,10 +519,10 @@ const P = [
   {c:"seoul",k:"local",n:"Профильная фотосессия",kr:"프로필 사진관",a:"Хондэ / Каннам",d:"Студии, где за час делают стилизованный портрет со светом и макияжем. У корейцев это норма — обновлять аватарку раз в год, и под это выросла целая индустрия.",t:["по записи","час","увезти с собой"],pr:"от 60 000 ₩",lat:37.5545,lng:126.9255},
   {c:"seoul",k:"local",n:"Биртдей-кафе",kr:"생일카페",a:"Хондэ / Каннам",d:"Фанаты снимают кафе на день рождения своего айдола, увешивают постерами и раздают держатели для стаканов. Проходят постоянно, зайти может кто угодно. Искать за несколько дней по тегу 생일카페 плюс имя в инстаграме или X.",t:["айдолы","по анонсу","цена напитка"],pr:"цена напитка",lat:37.5560,lng:126.9230},
   {c:"seoul",k:"local",n:"Беговые крю",kr:"러닝크루",a:"Ханган / Намсан",d:"Самое массовое увлечение корейских двадцатилетних прямо сейчас. Крю собираются вечером вдоль реки и вокруг Намсана, к большинству можно присоединиться разово через инстаграм или Frip. Ноябрь — идеальная погода.",t:["вечер","бесплатно","знакомства"],pr:"бесплатно",lat:37.5250,lng:126.9960},
-  {c:"seoul",k:"local",n:"Инди-клубы Хондэ",kr:"홍대 라이브클럽",a:"Хондэ",d:"Rolling Hall, Velo:Rouge, Club FF, Sangsangmadang — живые концерты почти каждый вечер, билеты через Interpark или Melon Ticket. Это то, чем Хондэ был до того, как стал туристическим.",t:["вечер","музыка","билеты заранее"],pr:"от 20 000 ₩",lat:37.5525,lng:126.9225},
+  {c:"seoul",k:"local",n:"Инди-клубы Хондэ · gig roulette",kr:"홍대 라이브클럽",a:"Хондэ / Сангсу",d:"Не выбирать 'известную корейскую группу', а вечером открыть сегодняшнюю афишу и пойти на маленький концерт по самому странному названию/постеру. На ваши даты почти каждый день есть несколько шоу за 10–40k ₩: punk, emo, noise, indie rock, experimental.",t:["инди","панк","вечером","спонтанно"],pr:"обычно ~10–40 000 ₩",lat:37.5525,lng:126.9225},
   {c:"seoul",k:"local",n:"Ённи-дон",kr:"연희동",a:"Содэмун",d:"Ещё один из девяти районов, которые Z-поколение называет своими. Тихие улицы, пекарни, независимые книжные, маленькие винные бары. Противоположность Сонсу: туда идут не фотографироваться, а сидеть.",t:["тихо","вино","рядом с Хондэ"],pr:"бесплатно",lat:37.5695,lng:126.9290},
   {c:"seoul",k:"local",n:"Самгакчи",kr:"삼각지",a:"Ёнсан",d:"Недавно попал в тот же список. Маленькие бары и галереи в старых домах у рынка, рядом Ханнам и музеи Ёнсана. Пока почти никем не занято.",t:["вечер","новое","без туристов"],pr:"бесплатно",lat:37.5345,lng:126.9735},
-  {c:"seoul",k:"local",n:"Поп-апы",kr:"팝업스토어",a:"Сонсу / Ханнам",d:"Главный жанр корейского потребления: бренд строит временное пространство на две недели, и половина из них не магазин, а инсталляция с медиа-артом и записью по слотам. Афиша живёт в инстаграме и на popply.co.kr.",t:["по анонсу","бесплатно","очередь"],pr:"обычно бесплатно",lat:37.5445,lng:127.0555},
+  {c:"seoul",k:"local",n:"Поп-апы Сонсу · Seongsu popup crawl",kr:"팝업스토어",a:"Сонсу",d:"Очень сеульский формат 2026: не ехать в один магазин, а открыть карту сегодняшних pop-up'ов и пройти 3–5 подряд. На ваши даты в Сонсу одновременно идут fashion, character, beauty и experience-попапы; состав меняется буквально каждую неделю.",t:["попапы","MZ","спонтанно","проверить в день"],pr:"многие бесплатно",lat:37.5445,lng:127.0555},
 
   // ===== SEOUL · Y2K =====
   {c:"seoul",k:"local",n:"Камерный рынок Намдэмун",kr:"남대문 카메라상가",a:"Намдэмун",d:"Главное место, где покупают те самые цифровые мыльницы нулевых. У корейцев это сейчас полноценная культура: по данным платформы Ably, продажи дикамер за девять месяцев 2026-го выросли на 74%, и 63% покупателей — люди до двадцати. Ценят именно зернистость и странные цвета, которых нет у телефона.",t:["Y2K","дикамера","торг"],pr:"мыльница от 80 000 ₩",lat:37.5595,lng:126.9770},
@@ -561,6 +538,8 @@ const P = [
   {c:"seoul",k:"museum",n:"Ground Seesaw",kr:"그라운드시소",a:"Сочхон",d:"Залы под иммерсивные выставки: заходишь внутрь проекций, трогаешь, ходишь по свету. Программа меняется, но формат всегда про «побыть внутри картинки», а не смотреть на неё.",t:["весело","интерактив","час-два"],pr:"от 15 000 ₩",lat:37.5790,lng:126.9700},
   {c:"seoul",k:"museum",n:"Музей манхвы",kr:"한국만화박물관",a:"Пучхон",d:"Целый музей корейских комиксов с огромным читальным залом, где можно просто сесть и листать часами. Светло, мягко, тихо и ни капли серьёзности.",t:["весело","тихо","на дождь","за городом"],pr:"5 000 ₩",lat:37.5050,lng:126.7700},
   {c:"seoul",k:"museum",n:"Музей оптических иллюзий",kr:"트릭아이미술관",a:"Хондэ",d:"Полная ерунда и именно поэтому хорошо: залы, где надо вставать в дурацкие позы, чтобы фото сработало. Час беспричинного хохота.",t:["весело","фотки","час"],pr:"от 15 000 ₩",lat:37.5555,lng:126.9215},
+  {c:"seoul",k:"museum",n:"Тюрьма Содэмун",kr:"서대문형무소역사관",a:"Содэмун",d:"Бывшая японская тюрьма, оставленная почти как есть: камеры, карцеры, подвалы. Тяжёлое место, но одно из самых сильных в городе.",t:["тяжёлое","пн выходной","полтора часа"],pr:"3 000 ₩",lat:37.5744,lng:126.956,url:"https://sphh.sscmc.or.kr/",q:"서대문형무소역사관 서울 서대문구 통일로 251"},
+  {c:"seoul",k:"museum",n:"Военный мемориал",kr:"전쟁기념관",a:"Ёнсан",d:"Огромный комплекс с AR-зонами внутри и техникой во дворе — по самолётам и танкам можно лазить. Вход свободный.",t:["бесплатно","двор","полдня"],pr:"бесплатно",lat:37.537,lng:126.977,url:"https://www.warmemo.or.kr/",q:"전쟁기념관 서울 용산구 이태원로 29"},
   {c:"seoul",k:"nature",n:"Олени в Соульском лесу",kr:"서울숲 사슴방사장",a:"Сонсу",d:"Прямо в парке живёт стадо пятнистых оленей, к ним можно подойти вплотную. Бесплатно, десять минут и настроение другое.",t:["бесплатно","весело","полчаса"],pr:"бесплатно",lat:37.5440,lng:127.0400},
   {c:"seoul",k:"nature",n:"Детский большой парк",kr:"어린이대공원",a:"Кванджин",d:"Вопреки названию ходят туда все. Бесплатный зоопарк, оранжерея, старые карусели, огромная зелёная территория. Самое доброе место в городе.",t:["бесплатно","весело","полдня"],pr:"бесплатно",lat:37.5490,lng:127.0810},
   {c:"seoul",k:"nature",n:"Лодки-утки на Ханган",kr:"오리배",a:"Ттуксом / Панпхо",d:"Педальные катамараны в виде уток, светятся в темноте. Абсолютно нелепо и очень весело, особенно вечером.",t:["весело","вечер","полчаса"],pr:"~32 000 ₩ за 30 мин",lat:37.5300,lng:127.0690},
@@ -594,29 +573,113 @@ const P = [
   {c:"seoul",k:"hike",n:"Намсан, северное кольцо",kr:"남산둘레길 북측순환로",a:"Чун",d:"Полтора километра ровной дороги без ступеней вокруг горы. Клёны здесь держатся дольше всего, пик примерно к 10 ноября.",t:["40 минут","совсем лёгкий","10 ноября"],pr:"бесплатно",lat:37.5520,lng:127.0000},
 
   // ===== BUSAN =====
-  {c:"busan",k:"hike",n:"Прибрежная тропа Игидэ",kr:"이기대 해안산책로",a:"Нам-гу",d:"Четыре и семь десятых километра по деревянным настилам над скалами, с подвесными мостиками и видом на мост Кванан. Заканчивается у Орюкдо. Бесплатно на всём протяжении.",t:["2–3 часа","море","бесплатно"],pr:"бесплатно",lat:37.1270,lng:129.1230},
+  {c:"busan",k:"hike",n:"Прибрежная тропа Игидэ",kr:"이기대 해안산책로",a:"Нам-гу",d:"Четыре и семь десятых километра по деревянным настилам над скалами, с подвесными мостиками и видом на мост Кванан. Заканчивается у Орюкдо. Бесплатно на всём протяжении.",t:["2–3 часа","море","бесплатно"],pr:"бесплатно",lat:null,lng:null,q:"이기대 해안산책로 동생말전망대 부산",url:"https://www.busan.go.kr/geopark_en/igidae"},
   {c:"busan",k:"nature",n:"Смотровая Орюкдо",kr:"오륙도 스카이워크",a:"Нам-гу",d:"Стеклянная подкова, вынесенная на пятнадцать метров над морем на высоте тридцати пяти. Под ногами разбиваются волны.",t:["бесплатно","полчаса","море"],pr:"бесплатно",lat:35.0960,lng:129.1240},
   {c:"busan",k:"spa",n:"Spa Land Centum City",kr:"스파랜드 센텀시티",a:"Хэундэ",d:"Лучший чимчильбан страны: двадцать с лишним ванн на настоящей термальной воде, финская сауна, соляные и ледяные комнаты, зона отдыха. Прямо внутри универмага.",t:["4 часа","спа","на дождь"],pr:"от 20 000 ₩",lat:35.1690,lng:129.1290},
-  {c:"busan",k:"nature",n:"Камчхон",kr:"감천문화마을",a:"Саха-гу",d:"Пастельные домики лесенкой по склону, переулки с мастерскими и маленькими галереями. Идти утром, пока пусто и свет мягкий.",t:["утром","полдня","для туристов"],pr:"бесплатно",lat:35.0975,lng:129.0105},
-  {c:"busan",k:"nature",n:"Хинёуль и тропа Чорён",kr:"흰여울문화마을",a:"Йондо",d:"Деревня на обрыве над морем и прибрежная тропа на один–три часа под ней. Сверху кафе с окнами в воду, снизу — вода и камни.",t:["2 часа","море","кафе"],pr:"бесплатно",lat:35.0790,lng:129.0430},
+  {c:"busan",k:"nature",n:"Камчхон",kr:"감천문화마을",a:"Саха-гу",d:"Пастельные домики лесенкой по склону, переулки с мастерскими и маленькими галереями. Идти утром, пока пусто и свет мягкий.",t:["вне маршрута 48 часов","утром","туристическая деревня"],pr:"бесплатно",lat:35.0975,lng:129.0105},
+  {c:"busan",k:"nature",n:"Хинёуль и тропа Чорён",kr:"흰여울문화마을",a:"Йондо",d:"Деревня на обрыве над морем и прибрежная тропа на один–три часа под ней. Сверху кафе с окнами в воду, снизу — вода и камни.",t:["вне маршрута 48 часов","море","кафе"],pr:"бесплатно",lat:35.079,lng:129.043},
   {c:"busan",k:"nature",n:"Тэджондэ",kr:"태종대",a:"Йондо",d:"Лесопарк на скалах южной оконечности острова: маяк, обрывы, по кругу ходит паровозик, если не хочется идти пешком.",t:["полдня","море","парк"],pr:"бесплатно",lat:35.0530,lng:129.0870},
-  {c:"busan",k:"art",n:"F1963",kr:"에프1963",a:"Суён",d:"Бывший завод стальной проволоки, переделанный в культурный комплекс: выставочные залы, книжный Teracotta, кофейня, бамбуковый двор. Ровно тот тип места, который вам нужен.",t:["бесплатно","индустриальное","полдня"],pr:"бесплатно",lat:35.1600,lng:129.1090},
-  {c:"busan",k:"art",n:"Музей современного искусства",kr:"부산현대미술관",a:"Ыльсукдо",d:"Большое здание на острове в устье реки, стены заросли зеленью. Крупные международные проекты, вход часто свободный.",t:["пн выходной","далеко"],pr:"от бесплатно",lat:35.1070,lng:128.9440},
+  {c:"busan",k:"art",n:"F1963",kr:"에프1963",a:"Суён",d:"Бывшая фабрика стального троса Kiswire, превращённая в культурный комплекс с выставочными пространствами, книжным и двором. До 31 декабря 2026 в Seokcheon Hall и Moonlight Garden идёт Jean-Michel Othoniel · In the Labyrinth of Love: стеклянные скульптуры и инсталляции. После выставки пройти обычные улицы Суён / Мангми.",t:["ядро 48 часов","архитектура","Отониэль до 31.12"],pr:"территория бесплатно · выставка 10 000 ₩",lat:35.16,lng:129.109,url:"https://www.busan.go.kr/news/totalnews01/view?dataNo=73374&gugun=Next",q:"F1963 부산 수영구 구락로123번길 20"},
+  {c:"busan",k:"art",n:"Busan MoCA · Ыльсукдо",kr:"부산현대미술관",a:"Ыльсукдо",d:"Музей современного и медиаискусства на острове Ыльсукдо в дельте Нактонгана, с озеленённым фасадом. Это отдельный музей, не Busan Museum of Art в районе Centum. Далеко от основного двухдневного маршрута: оставлять как запасной вариант, только если нужна конкретная выставка.",t:["запасной вариант","пн выходной","далеко"],pr:"от бесплатно",lat:35.107,lng:128.944},
   {c:"busan",k:"food",n:"Рынок Чагальчхи",kr:"자갈치시장",a:"Чун-гу",d:"Главный рыбный рынок страны. Тот же принцип: выбираешь внизу, готовят наверху. Вокруг старый центр и рынок Кукче.",t:["еда","день","торг"],pr:"от 30 000 ₩ на двоих",lat:35.0965,lng:129.0305},
   {c:"busan",k:"nature",n:"Хэдон Ёнгунса",kr:"해동용궁사",a:"Кичжан",d:"Храм прямо на скалах у воды — редкость для Кореи, где храмы обычно в горах. Ехать рано утром, иначе не протолкнуться.",t:["утром","море","для туристов"],pr:"бесплатно",lat:35.1880,lng:129.2230},
-  {c:"busan",k:"active",n:"Blue Line Park",kr:"해운대 블루라인파크",a:"Хэундэ",d:"Бывшая железная дорога вдоль моря: сверху едут капсулы на двоих, внизу идёт пешеходная тропа от Михо до Чхонсапхо. Можно ехать, можно идти.",t:["2 часа","море","для туристов"],pr:"от 8 000 ₩",lat:35.1580,lng:129.1710},
+  {c:"busan",k:"active",n:"Blue Line Park",kr:"해운대 블루라인파크",a:"Хэундэ",d:"Бывшая железная дорога вдоль моря: сверху едут капсулы на двоих, внизу идёт пешеходная тропа от Михо до Чхонсапхо. Можно ехать, можно идти.",t:["вне маршрута 48 часов","Sky Capsule","море"],pr:"от 8 000 ₩",lat:35.158,lng:129.171},
   {c:"busan",k:"hike",n:"Кымджонсан и Помоса",kr:"금정산 범어사",a:"Кымджон",d:"Древний храм у подножия и крепостная стена по гребню горы. Можно взять только храм на час, можно уйти на весь день по стене.",t:["от часа","храм","гора"],pr:"бесплатно",lat:35.2820,lng:129.0690},
   {c:"busan",k:"active",n:"Skyline Luge",kr:"스카이라인 루지",a:"Кичжан",d:"Спуск на картах-люджах по трассе в горе над морем. Наверх поднимает подъёмник, вниз — своим ходом и с любой скоростью.",t:["2 часа","адреналин","за городом"],pr:"от 25 000 ₩",lat:35.2010,lng:129.2160},
-  {c:"busan",k:"nature",n:"Кванналли",kr:"광안리해수욕장",a:"Суён",d:"Пляж, который вечером смотрит на подсвеченный мост. Вдоль берега бары и кофейни, по выходным бывают дрон-шоу.",t:["вечер","море","бесплатно"],pr:"бесплатно",lat:35.1530,lng:129.1180},
+  {c:"busan",k:"nature",n:"Кванналли",kr:"광안리해수욕장",a:"Суён",d:"Район для повседневной жизни у моря: вечерние прогулки, пробежки, встречи и вид на мост Кванан. Вернуться сюда оба вечера, пройти к Намчхону и Миллаку. 7 ноября 2026 — большой Busan Fireworks Festival, основное шоу 19:00–20:00: район будет жить в фестивальном ритме. Регулярное M Drone Light Show сверять отдельно: в опубликованной ноябрьской программе первая дата — 14 ноября, уже после поездки.",t:["ядро 48 часов","вечер","море","фейерверки 07.11"],pr:"бесплатно",lat:35.153,lng:129.118,url:"https://www.busanfireworks.com/en/"},
   {c:"busan",k:"active",n:"Канатка Сондо",kr:"송도 케이블카",a:"Со-гу",d:"Полтора километра над открытым морем, есть кабины со стеклянным полом. Соединяет пляж Сондо с парком Амнам.",t:["час","море","для туристов"],pr:"от 15 000 ₩",lat:35.0760,lng:129.0180},
-  {c:"busan",k:"local",n:"Чонпхо, кафейная улица",kr:"전포카페거리",a:"Чонпхо",d:"Бывшая улица инструментальных лавок, где между мастерскими открылись кофейни, бары и мелкие магазины. Туда ходят местные двадцатилетние, а не приезжие.",t:["вечер","кофе","без туристов"],pr:"бесплатно",lat:35.1570,lng:129.0620},
+  {c:"busan",k:"local",n:"Чонпхо, кафейная улица",kr:"전포카페거리",a:"Чонпхо",d:"Плотные переулки Чонпхо рядом с Сомёном: независимые кафе между бывшими инструментальными мастерскими, небольшие магазины и бары. Для второго дня — исследовать район без списка обязательных кофеен, смотреть обычную молодую городскую жизнь и переход к более плотному центру Сомёна.",t:["ядро 48 часов","молодой район","магазины","вечер"],pr:"бесплатно",lat:35.157,lng:129.062},
 
   // ===== DOHA =====
   {c:"doha",k:"museum",n:"Национальный музей Катара",kr:"متحف قطر الوطني",a:"Доха",d:"Жан Нувель, здание в виде сросшейся пустынной розы. В среду работает — в отличие от Музея исламского искусства.",t:["28 октября","работает в ср"],pr:"50 QAR",lat:25.2870,lng:51.5510},
   {c:"doha",k:"art",n:"Музей исламского искусства",kr:"متحف الفن الإسلامي",a:"Доха",d:"Бэй Юймин, на насыпном острове. По средам закрыт — то есть ровно в ваш день. Оставляю на случай, если планы сдвинутся.",t:["ср закрыт","осторожно"],pr:"25 QAR",lat:25.2954,lng:51.5394},
   {c:"doha",k:"food",n:"Сук-Вакиф",kr:"سوق واقف",a:"Доха",d:"Старый рынок: специи, соколиный ряд, кальянные и рестораны в переулках. Оживает после четырёх дня — под ваш график идеально.",t:["после 16:00","еда","вечер"],pr:"ужин 40–60 QAR",lat:25.2880,lng:51.5329},
   {c:"doha",k:"nature",n:"Набережная Корниш",kr:"الكورنيش",a:"Доха",d:"Семь километров вдоль залива с видом на небоскрёбы Вест-Бэя. От отеля можно дойти пешком до Музея исламского искусства.",t:["бесплатно","вечер","пешком"],pr:"бесплатно",lat:25.2950,lng:51.5280},
-  {c:"doha",k:"nature",n:"Мшейреб",kr:"مشيرب",a:"Доха",d:"Новый центр, построенный целиком заново в современно-традиционном ключе. Тут же конечная станция метро из аэропорта.",t:["метро","архитектура"],pr:"бесплатно",lat:25.2870,lng:51.5250}
+  {c:"doha",k:"nature",n:"Мшейреб",kr:"مشيرب",a:"Доха",d:"Новый центр, построенный целиком заново в современно-традиционном ключе. Тут же конечная станция метро из аэропорта.",t:["метро","архитектура"],pr:"бесплатно",lat:25.2870,lng:51.5250},
+
+  // ===== SEOUL · NEW ACTIVITIES, SUBCULTURE AND UE18 =====
+  {c:"seoul",k:"game",n:"Robinhood Archery Cafe",kr:"양궁카페 로빈훗 신촌점",a:"Синчхон",d:"Маленький лучный тир-кафе: инструктор ставит технику, потом вы стреляете сериями и соревнуетесь по электронному счёту. Хороший формат на час — больше игра, чем серьёзная тренировка.",t:["вдвоём","соревнование","вечер","инструктор"],pr:"ориентир 25 000 ₩ / 36 стрел",lat:37.5586,lng:126.937,q:"양궁카페 로빈훗 신촌점 서울"},
+  {c:"seoul",k:"game",n:"KKUN Fishing Cafe",kr:"꾼 낚시카페",a:"Синчхон",d:"Абсурдно-корейский формат: настоящий бассейн с рыбой прямо в помещении. Ловите рыбу, улов взвешивают, начисляют очки и можно получать призы. Персонал помогает новичкам; по отзывам, справляются и с английским.",t:["очень странно","вдвоём","до 02:00","на дождь"],pr:"от ~13 200 ₩ / час",lat:37.5598,lng:126.938,q:"꾼 낚시카페 서울"},
+  {c:"seoul",k:"game",n:"Chakan Bungeo Fishing Cafe",kr:"착한붕어 낚시카페",a:"Хехва / Тэханно",d:"Ещё один indoor fishing cafe, но уже в театральном районе Тэханно. Большой общий бассейн, снасти дают на месте; отличный случайный вечерний стоп после прогулки по Хехва.",t:["странное","до 02:00","вечер","на дождь"],pr:"уточнить на месте",lat:37.5824,lng:127.0035,q:"착한붕어 낚시카페 서울"},
+  {c:"seoul",k:"game",n:"G-Plex",kr:"지플렉스",a:"Синчхон",d:"Многоэтажный аркадный зал: снизу краны с призами, выше ритм-игры и обычные кабинеты. Хорош не как отдельная поездка, а как внезапные 30–60 минут по дороге через Синчхон.",t:["автоматы","ритм-игры","спонтанно","до 23:00"],pr:"обычно от ~1 000 ₩ / игра",lat:37.5565,lng:126.936,q:"지플렉스 서울"},
+  {c:"seoul",k:"game",n:"Noryangjin Amuse Town",kr:"노량진 어뮤즈타운",a:"Норянджин",d:"Не туристическая аркада, а почти спортивный хаб для ритм-игр: несколько этажей музыкальных автоматов и люди, которые играют пугающе хорошо. Весело даже просто смотреть.",t:["ритм-игры","локальное","ночь","наблюдать"],pr:"по автоматам",lat:37.5132,lng:126.942,q:"노량진 어뮤즈타운 서울"},
+  {c:"seoul",k:"game",n:"Zzang Games Hongdae",kr:"짱오락실 홍대점",a:"Хондэ",d:"Большая шумная аркада прямо в Хондэ: краны, ритм-игры, гонки, дартс и куча кабинетов. Идеальный вариант не планировать — просто зайти ночью, когда проходите мимо.",t:["до 02–03","автоматы","спонтанно","рядом с базой"],pr:"от 500–1 000 ₩ / игра",lat:37.5514,lng:126.9215,q:"짱오락실 홍대점 서울"},
+  {c:"seoul",k:"game",n:"Hero Board Game Cafe Hongdae",kr:"히어로보드게임카페 홍대1호점",a:"Хондэ",d:"Не просто полка с настолками: большой корейский board-game cafe с отдельными зонами, едой и дополнительными play-зонами. Хорошо оставить на дождь или на вечер, когда ноги уже умерли.",t:["настолки","вечер","на дождь","рядом с базой"],pr:"почасовая оплата + заказ",lat:37.5518,lng:126.9225,q:"히어로보드게임카페 홍대1호점 서울"},
+  {c:"seoul",k:"game",n:"Dice & Comics Cafe",kr:"Dice & Comics Cafe",a:"Тондэмун-гу",d:"Гибрид настолок, tabletop RPG, американских комиксов и кафе. Особенно полезен как English-friendly вариант, если хочется не просто туристического board-game cafe, а местного гиковского комьюнити.",t:["английский","настолки","комиксы","тихо"],pr:"уточнить на месте",lat:37.574,lng:127.038,q:"Dice & Comics Cafe 서울"},
+  {c:"seoul",k:"active",n:"Mapo Table Tennis Club",kr:"마포탁구클럽",a:"Мапхо / Кондок",d:"Настоящий районный клуб настольного тенниса, где можно арендовать стол и просто зарубиться вдвоём. Не аттракцион для туристов — поэтому как раз прикольно почувствовать обычный сеульский досуг.",t:["вдвоём","локальное","спорт","час"],pr:"почасовая аренда",lat:37.5448,lng:126.955,q:"마포탁구클럽 서울"},
+  {c:"seoul",k:"active",n:"Sinchon Table Tennis",kr:"신촌탁구장",a:"Синчхон",d:"Большой специализированный пинг-понг клуб с почасовыми столами и роботами для подачи. По отзывам, иностранцам комфортно; можно устроить мини-турнир после Хондэ/Ённам.",t:["вдвоём","пинг-понг","English-friendly","вечер"],pr:"уточнить на месте",lat:37.5549,lng:126.936,q:"신촌탁구장 서울"},
+  {c:"seoul",k:"active",n:"Hwanghakjeong Archery Gallery",kr:"황학정 국궁전시관",a:"Чонно / Инвансан",d:"Традиционная корейская стрельба из лука у подножия Инвансана: маленькая галерея плюс отдельные программы, где можно попробовать лук или сделать стрелу. Не ежедневный аттракцион — расписание программы надо проверить перед визитом.",t:["традиционное","пт / отдельные даты","рядом с Инвансаном"],pr:"музей бесплатно; опыт платный",lat:37.576,lng:126.968,q:"황학정 국궁전시관 서울"},
+  {c:"seoul",k:"active",n:"Sports 360",kr:"스포츠360",a:"Олимпийский парк",d:"Бесплатная выставочно-игровая площадка спортивных технологий: reaction games, AR-упражнения, лазерная стрельба, AI-гольф, VR-лошадь и другие странные тренажёры. Сеанс около 80 минут — идеально пристегнуть к Олимпийскому парку.",t:["бесплатно","интерактив","80 минут","пн-вт закрыто"],pr:"бесплатно",lat:37.5195,lng:127.1225,q:"스포츠360 서울"},
+  {c:"seoul",k:"game",n:"Breakout Escape Hongdae",kr:"브레이크아웃 홍대",a:"Хондэ",d:"Эскейп с английским сайтом и ролевой механикой: перед игрой выбираете персонажей со способностями, затем проходите одну из тематических комнат примерно за 50 минут. Более безопасный выбор для вас, чем корейскоязычные сюжетные эскейпы.",t:["английский","вдвоём","50 минут","вечер"],pr:"по выбранной комнате",lat:37.556,lng:126.9235,q:"브레이크아웃 홍대 서울"},
+  {c:"seoul",k:"craft",n:"Tiki Room",kr:"티키룸",a:"Синса / Апкучжон",d:"Кафе, где вы сами печёте 붕어빵 в форме рыбки: наливаете тесто в форму, выбираете начинку и готовите. По сути маленькая съедобная игра на свидание, а не очередное кафе ради кофе.",t:["сделать самим","вдвоём","новое 2026","фото"],pr:"по меню",lat:37.5255,lng:127.036,q:"티키룸 서울"},
+  {c:"seoul",k:"active",n:"JUMP Nowon",kr:"점프",a:"Новон",d:"Новый огромный крытый adventure-комплекс, открывшийся летом 2026: battle drift karts, sky glider, Clip ’n Climb, высотный Sky Trail, VR, RC-гонки и laser-tag survival. Это уже не детская игровая, а почти парк физических мини-аттракционов под крышей.",t:["новое 2026","картинг","RC","laser tag","полдня"],pr:"проверить тариф перед визитом",lat:37.655,lng:127.073,q:"점프 서울"},
+  {c:"seoul",k:"museum",n:"Seoul Future Lab",kr:"서울퓨처랩",a:"Магок",d:"Городская лаборатория будущего с короткими миссиями: гонка дронов по виртуальному Сеулу, battle-bots, робот-олимпиада, VR-исследование космической станции, digital-twin city planner и AI-fashion. На сайте города есть индивидуальные 50-минутные сеансы, включая взрослую аудиторию.",t:["дроны","роботы","VR","50 минут","по записи"],pr:"проверить бронирование",lat:37.5668,lng:126.8275,q:"서울퓨처랩 서울"},
+  {c:"seoul",k:"active",n:"Strike Pang Sinchon",kr:"스트라이크팡 신촌점",a:"Синчхон",d:"Подвальный спортивный игровой зал, где всё покупается маленькими раундами: batting, pitching, стрельба, лук, баскетбол, дартс и VR. Не надо брать час целиком — можно заскочить на 20–40 минут и устроить турнир из пяти дисциплин.",t:["до 02:00","дёшево","вдвоём","спорт-игры","спонтанно"],pr:"1 000–4 000 ₩ за игру",lat:37.5563,lng:126.9361,q:"스트라이크팡 신촌점 서울"},
+  {c:"seoul",k:"game",n:"Legend Heroes · Lotte World Mall",kr:"레전드히어로즈",a:"Чамсиль",d:"Screen-sports парк внутри Lotte World Mall: реальные движения и инвентарь превращаются в виртуальный бейсбол, футбол, стрельбу из лука и другие соревнования на сенсорных экранах. Удобно пристегнуть к Чамсилю без отдельной поездки.",t:["screen sports","в помещении","Чамсиль","на дождь"],pr:"проверить тариф на месте",lat:37.513,lng:127.1038,q:"레전드히어로즈 서울"},
+  {c:"seoul",k:"active",n:"Snake Shooting Range",kr:"뱀병장 슈팅레인지",a:"Синдориm",d:"Не боевой тир, а большой indoor airsoft/screen-shooting формат: пистолеты, необычные airsoft-модели и экранные IPSC-миссии. Работает допоздна, поэтому можно использовать как странный вечерний стоп после западной части города.",t:["airsoft","screen shooting","до 23:00","вт выходной"],pr:"по выбранной программе",lat:37.509,lng:126.887,q:"뱀병장 슈팅레인지 서울"},
+  {c:"seoul",k:"craft",n:"Recording Café",kr:"레코딩카페",a:"Сочхо / Синса",d:"Можно прийти вдвоём в настоящую студию и записать собственный трек как маленькую K-pop-сессию: микрофон, запись, работа со звуком и готовый результат. Смешнее всего выбрать песню заранее и сделать это как сувенир из поездки.",t:["запись песни","вдвоём","по записи","1–2 часа"],pr:"проверить пакет перед бронью",lat:37.5178,lng:127.0195,q:"레코딩카페 서울"},
+  {c:"seoul",k:"craft",n:"Muhwawon · свой парфюм",kr:"무화원",a:"Ангук / Пукчхон",d:"Парфюмерная мастерская с корейскими нотами: сначала разбираете композицию, потом смешиваете собственный аромат и уносите флакон. Не настолько безумно, как indoor fishing, зато хороший спокойный интерактив между музеями Ангука.",t:["сделать самим","сувенир","вдвоём","Ангук"],pr:"проверить выбранный класс",lat:37.5766,lng:126.9845,q:"무화원 서울"},
+  {c:"seoul",k:"game",n:"Netmarble Game Museum",kr:"넷마블게임박물관",a:"Куро",d:"Музей видеоигр прямо в штаб-квартире Netmarble: история игр, ранние машины вроде Computer Space, реконструкции Tennis for Two и Spacewar и ретро-зона, где в игры можно реально поиграть. Хороший вариант, если хочется не просто аркаду, а покопаться в игровой культуре Кореи.",t:["ретро-игры","интерактив","на дождь"],pr:"проверить перед визитом",lat:37.4824,lng:126.8969,q:"넷마블게임박물관 서울"},
+  {c:"seoul",k:"active",n:"Rotate Flight Simulator",kr:"로테이트",a:"Кансо / Кимпхо",d:"Почти настоящий Boeing 737-800: полноразмерный fixed-base cockpit simulator, которым пользуются и пилоты для тренировки. Можно выбрать аэропорт, погоду и сценарий и попробовать посадить пассажирский самолёт. Это уже скорее авиасим, чем VR-аттракцион.",t:["авиасимулятор","по записи","очень странное"],pr:"уточнить при брони",lat:37.5617,lng:126.8095,q:"로테이트 서울"},
+  {c:"seoul",k:"craft",n:"Watchmake Factory",kr:"워치메이크팩토리",a:"Ённам / Хондэ",d:"Мастерская, где собираешь собственные наручные часы: выбираешь детали и цвета, работаешь с механизмом и уходишь с часами, которые сам собрал. Намного прикольнее обычного сувенирного воркшопа.",t:["сделать самим","сувенир","по записи"],pr:"уточнить при брони",lat:37.5636,lng:126.9254,q:"워치메이크팩토리 서울"},
+  {c:"seoul",k:"craft",n:"SEOUL PIECE · перламутр",kr:"서울피스",a:"Мёндон / Ыльчиро",d:"Небольшая мастерская корейского najeonchilgi: делаешь вещь с настоящим перламутром и забираешь её в тот же день. Красивый способ попробовать традиционную технику без туристического костюмированного вайба.",t:["перламутр","сделать самим","сувенир"],pr:"уточнить при брони",lat:37.5612,lng:126.989,q:"서울피스 서울"},
+  {c:"seoul",k:"art",n:"반짝 깜빡 사르르 · интерактивная медиа-выставка",kr:"중랑아트센터 실감미디어 전시실",a:"Чуннан",d:"Бесплатная интерактивная медиа-выставка до июля 2027: двигаешься перед большим экраном — коты начинают танцевать; раскрашиваешь персонажа, сканируешь его, и он появляется внутри цифрового города. Маленькая и слегка абсурдная — именно как случайный прикольный стоп.",t:["бесплатно","интерактив","вт–сб"],pr:"бесплатно",lat:37.6063,lng:127.0927,q:"중랑아트센터 실감미디어 전시실 서울"},
+  {c:"seoul",k:"museum",n:"ROBOT CITY 2026 · ночной RAIM",kr:"서울로봇인공지능과학관",a:"Тобон",d:"Осенью 2026 фасад Seoul Robot & AI Museum по пятницам и субботам превращают в ночной Robot City. В ноябре идут короткие вечерние сеансы, а внутрь на hands-on программу пускают по предварительной записи. Хорошо совместить с самим музеем.",t:["до 5 декабря","пт–сб","по записи","вечером"],pr:"проверить Ticketlink",lat:37.6678,lng:127.043,q:"서울로봇인공지능과학관 서울"},
+  {c:"seoul",k:"local",n:"Hongdae R3 Fashion Street",kr:"홍대 R3 패션거리",a:"Хондэ",d:"Кусок Хондэ, который сам Visit Seoul выделяет как молодёжную fashion-зону: Y2K, balletcore, косметика и вирусные SNS-магазины. Не отдельная достопримечательность, а хорошая улица для бесцельного вечернего шатания.",t:["Y2K","balletcore","молодёжное","вечер"],pr:"бесплатно гулять",lat:37.5534,lng:126.9212,q:"홍대 R3 패션거리 서울"},
+  {c:"seoul",k:"local",n:"Cool Captures",kr:"쿨캡쳐스",a:"Хондэ / Синчхон",d:"Концептуальная self-photo студия с комнатами в эстетике 90s/Y2K и high-teen: не обычные четыре кадра на фоне, а маленькие декорации, реквизит и физические отпечатки. Очень в нашу визуальную папку.",t:["Y2K","high-teen","фото","вдвоём"],pr:"по выбранному пакету",lat:37.5572,lng:126.9297,q:"쿨캡쳐스 서울"},
+  {c:"seoul",k:"game",n:"DON'T LXXK UP",kr:"돈룩업",a:"Хондэ / Ённам",d:"Корейская фотобудка с камерой высоко в углу — получается нарочито широкий 0.5-like ракурс сверху, красные/синие комнаты и очень Gen-Z/Y2K результат. Хороший пятнадцатиминутный стоп ночью.",t:["фотобудка","Y2K","0.5","ночь"],pr:"~5–8 000 ₩",lat:37.5589,lng:126.9248,q:"돈룩업 서울"},
+  {c:"seoul",k:"game",n:"Eternalog Hongdae",kr:"이터널로그 홍대",a:"Хондэ",d:"Настоящая восстановленная аналоговая фотобудка 1960-х: четыре чёрно-белых кадра проявляются химически, без ретуши и фильтров. Не Y2K буквально, но идеально работает как корейская молодёжная obsession с физическими фотополосками.",t:["аналог","фото","ретро","15 минут"],pr:"~6 000 ₩",lat:37.5558,lng:126.929,q:"이터널로그 홍대 서울"},
+  {c:"seoul",k:"game",n:"BYTP Hongdae",kr:"BYTP 홍대",a:"Хондэ",d:"24/7 self-photo playground с декорациями вместо обычного фона: вагон/станция метро, лифт, граффити и другие немного дурацкие set-like зоны. Идти не ради идеального портрета, а ради процесса.",t:["24/7","фото","street","декорации"],pr:"уточнить на месте",lat:37.5527,lng:126.9234,q:"BYTP 홍대 서울"},
+  {c:"seoul",k:"craft",n:"Wappen House Hongdae",kr:"와펜하우스",a:"Хондэ",d:"Выбираешь сумку/мешочек или другую базу, набираешь из стены вышитых патчей и собираешь собственную вещь, которую потом припрессовывают. Очень корейское 꾸미기: не купить готовое, а обвесить и персонализировать самому.",t:["꾸미기","патчи","DIY","сувенир"],pr:"зависит от базы и патчей",lat:37.5554,lng:126.9227,q:"와펜하우스 서울"},
+  {c:"seoul",k:"craft",n:"CASEDBY Seongsu",kr:"케이스드바이",a:"Сонсу",d:"Самообслуживаемая мастерская кастомных чехлов: печатаешь свои фотографии на кейсе и отдельно собираешь phone strap из бусин и чармов. Прямое попадание в корейский 폰꾸 — культуру украшения телефона.",t:["폰꾸","чармы","DIY","Сонсу"],pr:"по выбранному кейсу",lat:37.5444,lng:127.0568,q:"케이스드바이 서울"},
+  {c:"seoul",k:"craft",n:"NYUNYU LAB+",kr:"뉴뉴랩+",a:"Сонсу",d:"Кастом-зона NYUNYU: можно украшать ручки, расчёски и зеркала разноцветными бусинами и деталями. Это не столько шопинг, сколько концентрат нынешней корейской bol-kku/꾸미기 культуры.",t:["꾸미기","бусины","girly","дёшево"],pr:"зависит от предмета",lat:37.5437,lng:127.0558,q:"뉴뉴랩+ 서울"},
+  {c:"seoul",k:"craft",n:"Taag charm bar",kr:"태그",a:"Сонсу",d:"Маленький charm-bar: собираешь собственный bag charm или цепочку на карабине из отдельных деталей. Для человека, который сам делает чармы, это почти профессиональная экскурсия по корейскому вкусу к обвесам.",t:["чармы","bag charm","DIY","girly"],pr:"по выбранным деталям",lat:37.5446,lng:127.0552,q:"태그 서울"},
+  {c:"seoul",k:"local",n:"Seongsu self-photo crawl",kr:"성수 셀프 포토부스",a:"Сонсу",d:"Не одна точка, а микро-квест: в Сонсу много концептуальных self-photo комнат — vintage, aqua, washing-machine, aviation и другие странные декорации. Выбрать две максимально разные и сделать серию как маленький Seoul zine.",t:["MZ","фото","квест","Сонсу"],pr:"обычно несколько тысяч ₩ за сет",lat:37.5445,lng:127.0557,q:"성수 셀프 포토부스 서울"},
+  {c:"seoul",k:"craft",n:"LEESLE · DIY norigae",kr:"리슬 홍대점",a:"Хондэ",d:"Современный hanbok-магазин с коротким DIY: примерно за 20 минут собираешь собственный norigae-keychain из цветных бусин, чармов и шёлковых кистей. Очень хороший гибрид 'девчачье сейчас' + реально корейская традиционная форма.",t:["norigae","чармы","20 минут","корейское"],pr:"уточнить на месте",lat:37.5559,lng:126.9296,q:"리슬 홍대점 서울"},
+  {c:"seoul",k:"craft",n:"Maple Custom Store",kr:"메이플 커스텀 스토어",a:"Сонсу",d:"Большое 24/7 пространство кастомизации: футболки, кепки, pouch, eco-bag, акриловые keyrings, card wallets и stickers; патчи, термопечать, UV и лазер. Есть фотобудка, снимок из неё можно сразу напечатать на футболке.",t:["24/7","custom","굿즈","фото"],pr:"по выбранному предмету",lat:37.545,lng:127.055,q:"메이플 커스텀 스토어 서울"},
+  {c:"seoul",k:"craft",n:"Made By Hongdae · 다꾸",kr:"메이드바이 홍대점",a:"Ённам / Хондэ",d:"Практически sticker heaven и хороший вход в 다꾸 — diary decorating. Два этажа с корейскими иллюстраторами, стикерами и мелочами; можно собрать и кастомный блокнот. Идти не как в магазин канцтоваров, а посмотреть, чем сейчас украшают ежедневники корейские девчонки.",t:["다꾸","стикеры","иллюстраторы","дневники"],pr:"вход свободный",lat:37.5613,lng:126.9258,q:"메이드바이 홍대점 서울"},
+  {c:"seoul",k:"craft",n:"Object Seogyo · 옵젵상가",kr:"오브젝트 서교본점",a:"Хондэ / Согё",d:"Многоэтажный магазин корейских дизайнерских мелочей: бумага, стикеры, открытки, аксессуары; на 4-м этаже работает отдельная customization/craft-зона. Хороший способ понять местную 소품샵-культуру — любовь к маленьким бесполезным, но очень хорошо нарисованным вещам.",t:["소품샵","дизайн","стикеры","кастом"],pr:"вход свободный",lat:37.5554,lng:126.9294,q:"오브젝트 서교본점 서울"},
+  {c:"seoul",k:"craft",n:"THENCE ARCHIVE",kr:"덴스 아카이브",a:"Ённам",d:"Шоурум корейского stationery/lifestyle-бренда THENCE: сезонные коллекции, дневники, стикеры и очень собранный визуальный мир. Есть фото-зона/webcam. Скорее посмотреть на актуальный корейский graphic-cute, чем закупаться канцтоварами.",t:["stationery","graphic cute","Ённам","фото"],pr:"вход свободный",lat:37.5653,lng:126.9233,q:"덴스 아카이브 서울"},
+  {c:"seoul",k:"craft",n:"Rihoon Mansion",kr:"리훈맨션",a:"Ённам",d:"Шоурум бренда ежедневников, где всё построено вокруг планирования, journaling и персонализации. Хорошо показывает более аккуратную сторону 다꾸: не максималистичные наклейки, а система + красивое оформление.",t:["다꾸","планеры","персонализация","тихо"],pr:"вход свободный",lat:37.5639,lng:126.923,q:"리훈맨션 서울"},
+  {c:"seoul",k:"craft",n:"Nemamdaero · decoden phone case",kr:"내맘대로 폰케이스",a:"Хондэ",d:"DIY-декоден: берёшь чехол и сам заливаешь/украшаешь его кремом, фигурками и максимально kitsch-декором. Это уже не просто 폰꾸, а его намеренно перегруженная версия — отличный Y2K souvenir activity.",t:["폰꾸","decoden","Y2K","DIY"],pr:"около 19 000 ₩",lat:37.5517,lng:126.922,q:"내맘대로 폰케이스 서울"},
+  {c:"seoul",k:"local",n:"VICXXO Gallery Hongdae",kr:"빅쏘갤러리 홍대점",a:"Хондэ",d:"Микс маленькой галереи и phone-decoration магазина: кейсы, сменные skins, straps, стикеры, чармы и работы корейских локальных художников. Хорошая точка, чтобы увидеть 폰꾸 уже не как мастер-класс, а как повседневный аксессуар.",t:["폰꾸","локальные художники","кейсы","чармы"],pr:"вход свободный",lat:37.5531,lng:126.9217,q:"빅쏘갤러리 홍대점 서울"},
+  {c:"seoul",k:"craft",n:"Lily Daisy · Dongdaemun parts hunt",kr:"릴리데이지",a:"Тондэмун",d:"Магазин деталей внутри Dongdaemun Comprehensive Market: бусины, straps, чармы и фурнитура для phone straps, keyrings и bag charms. Для нас это уже не сувенирный магазин, а поход на корейскую базу материалов и возможность посмотреть, из чего здесь собирают 백꾸/폰꾸.",t:["фурнитура","폰꾸","백꾸","чармы"],pr:"по деталям",lat:37.5704,lng:127.009,q:"릴리데이지 서울"},
+  {c:"seoul",k:"craft",n:"Customfilm Seongsu",kr:"커스텀필름 성수",a:"Сонсу / Ттуксом",d:"Self-photo studio с большим количеством реквизита и возможностью превратить снимки в фотокарточки, keyring или открытку с рукописным письмом. Хороший мост между корейской photo-booth культурой и 포카꾸 — жизнью фотографий после съёмки.",t:["self-photo","포카","keyring","вдвоём"],pr:"по пакету",lat:37.547,lng:127.0454,q:"커스텀필름 성수 서울"},
+  {c:"seoul",k:"local",n:"VINYL Seongsu",kr:"바이닐 성수",a:"Сонсу",d:"Современный listening café: покупаешь вход, выбираешь из примерно 10 тысяч LP — pop, K-pop, OST, jazz — и слушаешь за своим столом на отдельном проигрывателе в наушниках. Очень нынешний корейский формат свидания: не бар и не концерт, а совместное 'послушать пластинку'.",t:["LP","데이트","Сонсу","музыка"],pr:"входной билет",lat:37.5447,lng:127.0558,q:"바이닐 성수 서울"},
+  {c:"seoul",k:"local",n:"Wanita Music Listening Room",kr:"와니타음악감상실",a:"Сонсу",d:"Музыкальная 감상실 нового поколения: на столах проигрыватели, можно самому ставить корейские и западные LP; два часа сидеть, слушать альбомы и есть десерт. Современная версия старой корейской культуры music listening rooms.",t:["음악감상실","LP","데이트","ретро"],pr:"около 16 500 ₩",lat:37.5426,lng:127.0633,q:"와니타음악감상실 서울"},
+  {c:"seoul",k:"local",n:"Surokgok Giroksil",kr:"수록곡 기록실",a:"Тэхын / Мапхо",d:"Книжный бар про корейские песни и тексты: у каждого места можно слушать LP, CD и кассеты, читать и записывать. Очень корейская смесь 기록 — 'записывать/сохранять воспоминания' — и нынешней любви молодых к физическим носителям.",t:["кассеты","LP","книги","тихо"],pr:"по меню",lat:37.5473,lng:126.9421,q:"수록곡 기록실 서울"},
+  {c:"seoul",k:"local",n:"Seoul Record Fair 2026",kr:"서울레코드페어",a:"Сонсу",d:"Ежегодняя ярмарка винила как раз совпадает с поездкой: 31 октября — 1 ноября 2026 в PUBG Seongsu. Корейские лейблы, продавцы, ограниченные издания и толпа людей, для которых физическая музыка снова стала объектом коллекционирования. Работает 10:00–18:00; утренние слоты предварительной регистрации уже заполнены, условия посещения без брони уточнить на сайте.",t:["31.10–01.11","винил","Сонсу","ивент","10:00–18:00"],pr:"проверить условия входа",lat:37.5453,lng:127.0556,q:"PUBG 성수 서울 성동구 왕십리로4길 5",url:"https://recordfair.kr/"},
+  {c:"seoul",k:"local",n:"Crayon Shin-chan · Space-Time Adventure",kr:"짱구는 못말려 체험전 놀자! 시공간 대모험",a:"Сонсу",d:"Большая интерактивная выставка по Crayon Shin-chan, открытая с 17 октября 2026 до января 2027. Не 'музей аниме', а актуальный character-experience попап — хороший пример того, как в Сеуле молодёжь ходит в персонажные пространства ради игры, фото и мерча.",t:["character","попап","фото","идёт всю поездку"],pr:"проверить билет",lat:37.5445,lng:127.0557,q:"짱구는 못말려 체험전 놀자! 시공간 대모험 서울"},
+  {c:"seoul",k:"local",n:"Coach · LIVE YOUR STORY popup",kr:"코치 LIVE YOUR STORY",a:"Seoul Forest / Сонсу",d:"Осенний fashion-experience попап Coach до 7 ноября: listening booth, story wall и специальная версия Tabby. Интересен не ради Coach как бренда, а как пример нынешнего сеульского формата, где fashion-магазин превращают в фотогеничный интерактивный сценарий.",t:["до 07.11","fashion","listening booth","попап"],pr:"проверить вход",lat:37.5465,lng:127.0417,q:"코치 LIVE YOUR STORY 서울"},
+  {c:"seoul",k:"local",n:"SKT Runmate Camp",kr:"SKT 런메이트 캠프",a:"Сонсу",d:"Попап до 1 ноября, где AI анализирует стиль бега и даёт персональный разбор/коучинг; часть experience-зоны доступна свободно, диагностика требует записи. Очень 2026 Korea: tech + wellness + pop-up как развлечение.",t:["до 01.11","AI","running","experience"],pr:"experience zone бесплатно / запись на диагностику",lat:37.5437,lng:127.0526,q:"SKT 런메이트 캠프 서울"},
+  {c:"seoul",k:"craft",n:"Atelier Hosoo Seongsu · couple rings",kr:"반지공방 아뜰리에호수 성수",a:"Seoul Forest / Сонсу",d:"Один из классических корейских 이색데이트: вдвоём руками сделать серебряные кольца, выбрать дизайн и добавить гравировку. Не обязательно делать 'couple rings' — можно каждому собрать своё как сувенир из поездки.",t:["이색데이트","кольца","DIY","вдвоём"],pr:"от ~58 000 ₩ по классу",lat:37.5463,lng:127.043,q:"반지공방 아뜰리에호수 성수 서울"},
+  {c:"seoul",k:"craft",n:".NOTE Seongsu · perfume lab",kr:"성수향수공방 닷노트",a:"Сонсу",d:"Самостоятельная perfume-lab примерно на 1–1.5 часа: выбираете ноты и формулу по tablet-инструкции, смешиваете и уносите свой аромат. Очень типичный one-day-class/date формат у корейских двадцатилетних.",t:["원데이클래스","향수","데이트","на дождь"],pr:"около 49 000 ₩ / 50 ml",lat:37.548,lng:127.0478,q:"성수향수공방 닷노트 서울"},
+  {c:"seoul",k:"craft",n:"All Day Baking Seongsu",kr:"올데이베이킹 성수점",a:"Сонсу",d:"Self-paced baking date: выбираете, например, Hello Kitty madeleines, cookies или cake drawing, смотрите онлайн-инструкцию, сами печёте и потом ещё украшаете упаковку. Очень 'сделали фигню вместе и унесли домой', а не серьёзный кулинарный курс.",t:["베이킹","Hello Kitty","데이트","DIY"],pr:"зависит от меню",lat:37.547,lng:127.055,q:"올데이베이킹 성수점 서울"},
+  {c:"seoul",k:"craft",n:"Craft Practice · marble pottery",kr:"크래프트 프랙티스",a:"Сонсу",d:"Современная керамическая one-day class с цветным мраморным эффектом: можно делать тарелки/небольшие предметы без академического вайба. Хороший пример того, что в корейской выдаче постоянно всплывает как '이색데이트'.",t:["도자기","원데이클래스","цвет","вдвоём"],pr:"~45–57 000 ₩",lat:37.5449,lng:127.056,q:"크래프트 프랙티스 서울"},
+  {c:"seoul",k:"local",n:"Because Friends Hongdae",kr:"비코즈프렌즈 셀프사진관 홍대점",a:"Ённам / Хондэ",d:"Не four-cut booth, а полноценная private self-photo studio: вы сами жмёте пульт и снимаете друг друга без фотографа. У сеульской молодёжи это отдельный жанр date/friend activity; у точки в Хондэ очень много отзывов.",t:["셀프사진관","вдвоём","фото","데이트"],pr:"по выбранному пакету",lat:37.5599,lng:126.9207,q:"비코즈프렌즈 셀프사진관 홍대점 서울"},
+  {c:"seoul",k:"local",n:"Odity Mode Hongdae",kr:"오디티모드 홍대 1호점",a:"Ённам / Хондэ",d:"Ещё одна популярная private self-photo studio, но более 'редакционная': закрытая комната, свет, пульт и вы сами режиссируете съёмку. Хорошо делать не вместо фотобудки, а один раз за поездку как полноценный корейский self-shoot.",t:["셀프사진관","portrait","MZ","вдвоём"],pr:"по пакету",lat:37.5588,lng:126.9255,q:"오디티모드 홍대 1호점 서울"},
+  {c:"seoul",k:"local",n:"Point of View Seongsu",kr:"포인트오브뷰 성수",a:"Сонсу",d:"Трёхэтажная stationery/design точка, которую местные описывают скорее как музей инструментов для творчества: бумага, ручки, печати, редкие мелкие объекты. Если Object показывает cute/illustrator сторону 소품샵, Point of View — взрослую obsessive-design сторону той же культуры.",t:["문구","дизайн","stationery","Сонсу"],pr:"вход свободный",lat:37.5443,lng:127.0555,q:"포인트오브뷰 성수 서울"},
+  {c:"seoul",k:"local",n:"AKEHOMU666",kr:"아케호무666",a:"Хондэ",d:"Маленький curated vintage не про базовый thrift: Y2K, gyaru/hime-gyaru, lolita, punk/goth и японский street-fashion. Намного точнее по вайбу, чем очередной огромный 'винтажный склад'.",t:["gyaru","Y2K","J-fashion","subculture"],pr:"смотреть на месте",lat:37.5545,lng:126.9233,q:"아케호무666 서울"},
+  {c:"seoul",k:"local",n:"Hongdae otaku crawl",kr:"홍대 오타쿠 투어",a:"Хондэ → Хапчон",d:"Не одна точка, а местный микро-жанр прогулки: гача, куji, фигурки, doujin/character goods и коллаб-кафе между Хондэ и Хапчоном. В 2026 вокруг Хондэ работает около двух десятков гача-точек, поэтому лучше просто нырять в подвалы и верхние этажи по дороге.",t:["서브컬처","오타쿠","가챠","рандом"],pr:"сколько проиграете автоматам",lat:37.555,lng:126.922,q:"홍대 오타쿠 투어 서울"},
+  {c:"seoul",k:"game",n:"Hello Sumiko",kr:"헬로수미코",a:"Хондэ",d:"Не безликий capsule-toy hall: магазин специализируется на гаче, миниатюрной мебели масштаба 1:12, одежде и аксессуарах для 10-см кукол, art toys и странных мелких коллекционных объектах. Очень хороший вход в корейскую kidult/인형꾸 культуру.",t:["가챠","миниатюры","인형꾸","kidult"],pr:"капсулы обычно ~4–6 000 ₩",lat:37.5569,lng:126.9206,q:"헬로수미코 서울"},
+  {c:"seoul",k:"game",n:"Kukje Electronics Center · hobby floors",kr:"국제전자센터",a:"Намбу-терминал",d:"Старый многоэтажный электронный центр, верхние этажи которого превратились в плотный лабиринт ретро-игр, фигурок, Gunpla, куji и гачи. Гораздо менее 'cute tourist Seoul', больше ощущение локального коллекционерского муравейника.",t:["ретро-игры","фигурки","국전","collector"],pr:"вход свободный",lat:37.4841,lng:127.0164,q:"국제전자센터 서울"},
+  {c:"seoul",k:"local",n:"YOUR-MIND",kr:"유어마인드",a:"Ёнхи",d:"Одна из опор сеульской independent-publishing сцены с 2009 года: artist books, маленькие тиражи, зины и печатные объекты. Это не 'красивая книжная', а магазин людей, которые сами делают книги и ежегодно собирают Unlimited Edition.",t:["zines","indie publishing","artist books","graphic"],pr:"вход свободный",lat:37.5681,lng:126.9303,q:"유어마인드 서울"},
+  {c:"seoul",k:"local",n:"Storage Book & Film",kr:"스토리지북앤필름",a:"Хэбанчхон",d:"Крошечный независимый книжный с упором на зины, small press, фотографию и film-культуру. Хороший антидот большим concept stores: тихий, локальный и с вещами, которые реально трудно случайно увидеть в mainstream-магазинах.",t:["zines","фото","small press","HBC"],pr:"вход свободный",lat:37.5442,lng:126.9857,q:"스토리지북앤필름 서울"},
+  {c:"seoul",k:"art",n:"Unlimited Edition 18 · Seoul Art Book Fair",kr:"언리미티드 에디션 18",a:"Новон · Buk-Seoul Museum of Art",d:"Приоритет на пятницу 6 ноября: независимые артбуки, зины, принты и small press. Ярмарка проходит 6–8 ноября; 6-го — с 12:00 до 19:00, вход до 18:30. В первый день можно собрать календарь «2027 달력만들기» из листов участников. План: приехать к 11:00–11:20, сначала уточнить условия календарной мастерской, затем оставить 3–4 часа на ярмарку. Регистрацию на мастерскую, стоимость и наличие наборов проверить у организаторов.",t:["06.11","12:00–19:00","календарь","zines","graphic design","MUST","приехать к 11:00"],pr:"вход бесплатно · календарь TBD",lat:37.6408,lng:127.0668,q:"서울시립 북서울미술관 서울 노원구 동일로 1238",url:"https://unlimited-edition.org/"},
+  {c:"seoul",k:"local",n:"SUPER SONIC Halloween Show",kr:"SUPER SONIC Halloween Show",a:"Хондэ",d:"31 октября в Saenggi Studio: не гигантская Itaewon Halloween-толпа, а маленький Halloween gig с несколькими корейскими группами. Намного интереснее как способ попасть внутрь локальной музыкальной сцены.",t:["31.10","Halloween","indie","live","20:00"],pr:"33 000 ₩ заранее / 38 000 ₩ на входе",lat:37.5505,lng:126.9225,q:"생기스튜디오 서울 마포구 와우산로 137 5층",url:"https://sonicboom-live-show.com/"},
+  {c:"seoul",k:"local",n:"캇코이 vs 카와이",kr:"캇코이 vs 카와이",a:"Синчхон · Infinity Club",d:"8 ноября, Infinity Club. Само название 'kakkoii vs kawaii' уже достаточно смешное, чтобы положить в список: небольшой локальный лайв вместо туристического вечернего шоу. Проверить лайнап ближе к дате и идти, если постер нравится.",t:["08.11","kawaii","live","локальное","14:00–20:00"],pr:"~20 000 ₩ presale",lat:37.5507,lng:126.922,q:"인피니티클럽 서울 서대문구 연세로7안길 34-3",url:"https://www.instagram.com/1nfntclb/"},
+  {c:"seoul",k:"local",n:"ROOT Hongdae · late-night vintage dig",kr:"루트홍대",a:"Хондэ",d:"Огромный подвальный vintage dig, открытый до 02:00. Ценность не в 'шопинге', а в ночном рытье среди тысяч вещей: старые ТВ/камеры в интерьере, дешёвые рейлы и шанс вытащить максимально 2000s вещь после полуночи.",t:["до 02:00","Y2K","ночь","dig"],pr:"есть дешёвые price-tier рейлы",lat:37.556,lng:126.9221,q:"루트홍대 서울"},
+
+  // ===== BUSAN · 48-HOUR CITY GUIDE =====
+  {c:"busan",k:"local",n:"Намчхон · Namcheon",kr:"남천동",a:"Суён",d:"Жилая сторона рядом с Кванналли. Пройти обычные улицы, посмотреть дома, магазины, метро, кофейни и реальный путь к морю. Удобно рассматривать вместе с Кванналли как возможную базу на две ночи.",t:["ядро 48 часов","жильё","повседневность"],pr:"бесплатно гулять",lat:null,lng:null,q:"남천동 부산"},
+  {c:"busan",k:"local",n:"Суён / Мангми",kr:"수영동 망미동",a:"Суён",d:"Окрестности F1963: культурное пространство, жилые кварталы и обычная городская инфраструктура. После выставки пройти сам район, чтобы увидеть Пусан между заметными точками на карте.",t:["район","прогулка","после F1963"],pr:"бесплатно гулять",lat:null,lng:null,q:"수영동 망미동 부산"},
+  {c:"busan",k:"nature",n:"Centum + Marine City",kr:"센텀시티 마린시티",a:"Хэундэ",d:"Современный Пусан: крупные здания, высотки и прогулки у воды. Для вечера второго дня — контраст к старым портовым кварталам, затем возвращение на Кванналли. Это маршрут по двум районам, а не одна точка.",t:["районы","вечер","архитектура","море"],pr:"бесплатно гулять",lat:null,lng:null,q:"센텀시티 마린시티 부산"},
+  {c:"busan",k:"food",n:"Millak Fisherman’s Market",kr:"민락어민활어직판장",a:"Миллак / Суён",d:"Живой рыбный рынок рядом с Кванналли. Выбрать морепродукты у продавца и уточнить, где их подадут и сколько отдельно стоит приготовление или сервировка. Зайти по дороге к воде как необязательный вариант ужина.",t:["морепродукты","рынок","местный быт"],pr:"по весу · приготовление отдельно",lat:null,lng:null,q:"민락어민활어직판장 부산 수영구 광안해변로312번길 60"},
+  {c:"busan",k:"nature",n:"Набережная Миллак · Millac waterfront",kr:"민락수변공원",a:"Миллак / Суён",d:"Продолжение вечерней прогулки от Кванналли в сторону Миллака: вода, мост и городская жизнь. Millac The Market — возможность сделать тёплую остановку по пути. Возвращаться к морю, а не строить весь вечер вокруг фуд-холла.",t:["прогулка","вечер","мост"],pr:"бесплатно гулять",lat:null,lng:null,q:"민락수변공원 부산"},
+  {c:"busan",k:"art",n:"Busan Museum of Art",kr:"부산시립미술관",a:"Centum / Хэундэ",d:"Городской художественный музей, вновь открывшийся после реконструкции в сентябре 2026. Во время поездки идут Future Museology и Dear All The Yesterdays — до 14 марта 2027, а выставка Still We are Borne on These Waves: 1945–1953 — до 14 февраля. Выбрать конкретную выставку по интересу, чтобы музей не занял весь двухдневный визит.",t:["искусство","Centum","запасной вариант"],pr:"проверить условия выставки",lat:null,lng:null,q:"부산시립미술관 부산 해운대구 APEC로 58",url:"https://art.busan.go.kr/tblTsite07Display/listNowClient.nm"},
+  {c:"busan",k:"art",n:"Space Lee Ufan",kr:"이우환 공간",a:"Кампус Busan Museum of Art",d:"Отдельное пространство Ли Уфана на музейном кампусе: короткая остановка для минималистичного искусства вместо большого музейного дня. Постоянная экспозиция; актуальный режим работы проверить у музея.",t:["минимализм","тихо","короткий визит"],pr:"проверить условия входа",lat:null,lng:null,q:"이우환 공간 부산 해운대구 APEC로 58",url:"https://art.busan.go.kr/07_info/info02.jsp"},
+  {c:"busan",k:"art",n:"Busan Intangible Heritage Art Fair 2026",kr:"부산 무형유산 아트페어",a:"BIFF Hill / Centum",d:"Ярмарка нематериального культурного наследия в BIFF Hill, 1-й этаж Cinema Center. 31 октября — 8 ноября: работы мастеров и ремесленные программы. Запасной вариант, если программа заинтересует; часы и условия мастер-классов уточнить перед визитом.",t:["31.10–08.11","ремёсла","запасной вариант"],pr:"проверить программу",lat:null,lng:null,q:"영화의전당 비프힐 부산 해운대구 수영강변대로 120",url:"https://nexilife.co.kr/festivals/ae9b79f1-849a-4316-991f-052194a2af78"},
+  {c:"busan",k:"art",n:"Busan Illustration Fair V.7",kr:"부산일러스트레이션페어 V.7",a:"BEXCO / Centum",d:"Иллюстрация, графический дизайн, независимые издания и авторский мерч. BEXCO, второй выставочный комплекс, зал 4; 6–8 ноября 2026. 6–7 ноября 10:00–18:00, 8 ноября до 17:00, вход прекращают за 30 минут до закрытия. Не входит в основной маршрут 4–5 ноября; оставить как дополнительный вариант при других датах.",t:["06–08.11","иллюстрация","запасной вариант"],pr:"билет · проверить цену",lat:null,lng:null,q:"벡스코 제2전시장 4홀 부산",url:"https://busanillustrationfair.co.kr/"},
 ];
 
 const BOUNDS = {
@@ -669,8 +732,9 @@ function proj(lng, lat, b){
   return [x, y];
 }
 function inBounds(p, b){
-  return p.lat >= b.minLat && p.lat <= b.maxLat && p.lng >= b.minLng && p.lng <= b.maxLng;
+  return hasCoordinates(p) && p.lat >= b.minLat && p.lat <= b.maxLat && p.lng >= b.minLng && p.lng <= b.maxLng;
 }
+function hasCoordinates(p){ return Number.isFinite(p.lat) && Number.isFinite(p.lng); }
 const esc = s => String(s).replace(/[&<>"]/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
 
 function visible(p){
@@ -688,7 +752,7 @@ function renderChips(){
   const el = document.getElementById("chips");
   el.innerHTML = used.map(k =>
     '<button type="button" class="chip" data-cat="' + k + '" aria-pressed="' + (active.has(k) ? "true" : "false") + '"' +
-    ' style="' + (active.has(k) ? "background:" + CATS[k].color + ";" : "color:" + CATS[k].color + ";") + '">' +
+    '>' +
     '<i class="dot"></i>' + esc(CATS[k].label) + '</button>'
   ).join("") + (active.size ? '<button type="button" class="chip reset" data-reset="1">сбросить</button>' : "");
 }
@@ -739,10 +803,11 @@ function renderMap(){
   svg.innerHTML = s;
   document.getElementById("mapTitle").textContent = b.title;
 
-  const off = P.filter(p => p.c === city && !inBounds(p, b)).length;
-  document.getElementById("mapHint").textContent = off
-    ? "Нажми на точку — откроется карточка. " + off + " мест за городом, они только в списке."
-    : "Нажми на точку — откроется карточка.";
+  const off = P.filter(p => p.c === city && hasCoordinates(p) && !inBounds(p, b)).length;
+  const unmapped = P.filter(p => p.c === city && !hasCoordinates(p)).length;
+  document.getElementById("mapHint").textContent = "Нажми на точку — откроется карточка."
+    + (off ? " Вне схемы: " + off + "." : "")
+    + (unmapped ? " Без точной метки: " + unmapped + ". Открывай карту из карточки." : "");
 
   svg.querySelectorAll(".mk").forEach(g => {
     const go = () => {
@@ -767,7 +832,7 @@ function renderGrid(){
     const gimg  = "https://www.google.com/search?tbm=isch&q=" + term;
     const insta = "https://www.instagram.com/explore/tags/" + encodeURIComponent(p.kr.replace(/[^\p{L}\p{N}]/gu, ""));
     return '<article class="card" id="c' + i + '">' +
-      '<div class="thumb" data-kr="' + esc(p.kr) + '" style="background:linear-gradient(135deg,' + col + ',color-mix(in srgb,' + col + ' 62%,#000))">' +
+      '<div class="thumb" data-kr="' + esc(p.kr) + '">' +
         '<div class="ph"><svg width="30" height="30" viewBox="0 0 24 24" aria-hidden="true">' + ICONS[p.k] + '</svg></div>' +
         '<span class="droptip">перетащи сюда фото</span>' +
       '</div>' +
@@ -777,13 +842,14 @@ function renderGrid(){
         '<p class="desc">' + esc(p.d) + '</p>' +
         '<div class="tags">' + p.t.map(t => '<span class="tag">' + esc(t) + '</span>').join("") + '</div>' +
         '<div class="links">' +
+          (p.url ? '<a target="_blank" rel="noopener" href="' + esc(p.url) + '">Сайт</a>' : '') +
           '<a class="primary" target="_blank" rel="noopener" href="' + naver + '">Ещё фото</a>' +
           '<a target="_blank" rel="noopener" href="' + gimg + '">Google</a>' +
           '<a target="_blank" rel="noopener" href="' + insta + '">Instagram</a>' +
         '</div>' +
         '<div class="card-foot">' +
           '<span class="price">' + esc(p.pr) + '</span>' +
-          '<a class="gmap" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=' + p.lat + ',' + p.lng + '">на карте →</a>' +
+          '<a class="gmap" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=' + encodeURIComponent(p.q || (p.lat + ',' + p.lng)) + '">на карте →</a>' +
         '</div>' +
       '</div>' +
     '</article>';
@@ -796,66 +862,111 @@ function renderGrid(){
     : "показано " + items.length + " из " + total;
 }
 
-// ---- photo carousel: baked URLs (live only outside the artifact sandbox) + your own dropped images ----
+// Local photo assets and per-image sources; personal uploads stay in this browser.
 const BAKED = window.__BAKED || {};
 const PIC = "kpic:";
-const full = u => /^(https?:|data:)/.test(u) ? u : "https://upload.wikimedia.org/wikipedia/" + u;
 function myPic(kr){ try { return localStorage.getItem(PIC + kr); } catch(e){ return null; } }
 function setPic(kr, v){ try { v ? localStorage.setItem(PIC + kr, v) : localStorage.removeItem(PIC + kr); return true; } catch(e){ return false; } }
 
 function shotsFor(kr){
-  const rec = BAKED[kr];
-  const list = rec ? (Array.isArray(rec) ? [rec[0]] : rec.u).slice() : [];
+  const photos = BAKED[kr] ? BAKED[kr].photos.slice() : [];
   const mine = myPic(kr);
-  return { urls: mine ? [mine, ...list] : list, tier: rec && !Array.isArray(rec) ? rec.t : "place", mine: !!mine };
+  if (mine) photos.unshift({src:mine, alt:"Ваше фото", kind:"personal"});
+  return {photos, mine:!!mine};
 }
 
 function buildThumb(box){
-  const kr = box.dataset.kr;
-  const { urls, tier, mine } = shotsFor(kr);
-  box.querySelectorAll(".slide,.dots,.nav,.vibe,.clearpic").forEach(n => n.remove());
+  const {photos, mine} = shotsFor(box.dataset.kr);
+  box.querySelectorAll(".slide,.dots,.nav,.vibe,.photo-source,.photo-label,.clearpic").forEach(n => n.remove());
   box.classList.toggle("mine", mine);
-  if (!urls.length) return;
+  if (!photos.length) return;
 
-  urls.forEach((u, i) => {
+  let at = 0;
+  const slides = [];
+  const marks = [];
+  const source = document.createElement("a");
+  source.className = "photo-source";
+  source.textContent = "Источник ↗";
+  source.target = "_blank";
+  source.rel = "noopener noreferrer";
+  source.addEventListener("click", e => e.stopPropagation());
+  const label = document.createElement("span");
+  label.className = "photo-label";
+  const labels = {activity:"Пример формата", route:"Маршрут", archive:"Архив", poster:"Афиша", exterior:"Здание", personal:"Ваше фото"};
+
+  function updateMeta(){
+    const photo = photos[at];
+    source.hidden = !photo.source || slides[at].dataset.dead === "1";
+    if (photo.source){
+      source.href = photo.source;
+      source.title = photo.credit + (photo.author ? " · " + photo.author : "");
+      source.setAttribute("aria-label", "Источник изображения: " + photo.alt);
+    }
+    label.hidden = !labels[photo.kind] || slides[at].dataset.dead === "1";
+    label.textContent = labels[photo.kind] || "";
+    label.title = photo.note || "";
+  }
+  function go(step){
+    let next = at;
+    for (let n = 0; n < slides.length; n++){
+      next = (next + step + slides.length) % slides.length;
+      if (slides[next].dataset.dead !== "1") break;
+    }
+    at = next;
+    slides.forEach((im, i) => im.classList.toggle("on", i === at && im.dataset.dead !== "1"));
+    marks.forEach((m, i) => m.classList.toggle("on", i === at));
+    slides[at].loading = "eager";
+    updateMeta();
+  }
+
+  const firstCard = document.getElementById("grid").firstElementChild;
+  photos.forEach((photo, i) => {
     const img = document.createElement("img");
-    img.className = "slide" + (i === 0 ? " on" : "");
-    img.alt = ""; img.loading = i === 0 ? "eager" : "lazy";
-    img.addEventListener("error", () => { img.dataset.dead = "1"; }, {once:true});
-    img.src = full(u);
+    img.className = "slide" + (i === 0 ? " on" : "") + (photo.kind === "poster" ? " poster" : "");
+    img.alt = photo.alt;
+    img.width = photo.width || 1000;
+    img.height = photo.height || 750;
+    img.decoding = "async";
+    img.loading = i === 0 && box.parentElement === firstCard ? "eager" : "lazy";
+    img.addEventListener("error", () => {
+      img.dataset.dead = "1";
+      img.classList.remove("on");
+      if (marks[i]) marks[i].hidden = true;
+      if (at === i) go(1);
+    }, {once:true});
+    slides.push(img);
+    img.src = photo.src;
     box.appendChild(img);
   });
+  box.append(label, source);
+  updateMeta();
 
-  if (!mine && tier === "vibe"){
-    const b = document.createElement("span");
-    b.className = "vibe"; b.textContent = "вайб";
-    b.title = "Похожее место, не именно оно";
-    box.appendChild(b);
-  }
   if (mine){
     const b = document.createElement("button");
     b.type = "button"; b.className = "clearpic"; b.textContent = "убрать";
-    b.addEventListener("click", e => { e.preventDefault(); e.stopPropagation(); setPic(kr, null); buildThumb(box); });
+    b.addEventListener("click", e => { e.preventDefault(); e.stopPropagation(); setPic(box.dataset.kr, null); buildThumb(box); });
     box.appendChild(b);
   }
 
-  if (urls.length < 2) return;
+  // Replace swipe callbacks when rebuilding after a personal photo upload.
+  let x0 = null;
+  box.ontouchstart = e => { x0 = e.touches[0].clientX; };
+  box.ontouchend = e => {
+    if (x0 === null) return;
+    const dx = e.changedTouches[0].clientX - x0;
+    if (Math.abs(dx) > 35 && photos.length > 1) go(dx < 0 ? 1 : -1);
+    x0 = null;
+  };
+  if (photos.length < 2) return;
 
   const dots = document.createElement("div");
   dots.className = "dots";
-  urls.forEach((_, i) => { const d = document.createElement("i"); if (!i) d.className = "on"; dots.appendChild(d); });
+  photos.forEach((_, i) => {
+    const d = document.createElement("i");
+    if (!i) d.className = "on";
+    marks.push(d); dots.appendChild(d);
+  });
   box.appendChild(dots);
-
-  let at = 0;
-  const go = step => {
-    const slides = [...box.querySelectorAll(".slide")];
-    const marks = [...dots.children];
-    at = (at + step + slides.length) % slides.length;
-    slides.forEach((im, i) => im.classList.toggle("on", i === at));
-    marks.forEach((m, i) => m.classList.toggle("on", i === at));
-    const cur = slides[at];
-    if (cur && !cur.complete) cur.loading = "eager";
-  };
   [["prev", -1, "‹"], ["next", 1, "›"]].forEach(([cls, step, ch]) => {
     const btn = document.createElement("button");
     btn.type = "button"; btn.className = "nav " + cls;
@@ -864,14 +975,6 @@ function buildThumb(box){
     btn.addEventListener("click", e => { e.preventDefault(); e.stopPropagation(); go(step); });
     box.appendChild(btn);
   });
-  let x0 = null;
-  box.addEventListener("touchstart", e => { x0 = e.touches[0].clientX; }, {passive:true});
-  box.addEventListener("touchend", e => {
-    if (x0 === null) return;
-    const dx = e.changedTouches[0].clientX - x0;
-    if (Math.abs(dx) > 35) go(dx < 0 ? 1 : -1);
-    x0 = null;
-  }, {passive:true});
 }
 
 function shrink(file, cb){
@@ -916,7 +1019,10 @@ function wireThumbs(){
 }
 new MutationObserver(wireThumbs).observe(document.getElementById("grid"), {childList:true});
 
-function render(){ renderChips(); renderMap(); renderGrid(); wireThumbs(); }
+function render(){
+  document.getElementById("busan-guide").hidden = city !== "busan";
+  renderChips(); renderMap(); renderGrid(); wireThumbs();
+}
 
 document.querySelectorAll(".cities button").forEach(btn => {
   btn.addEventListener("click", () => {
