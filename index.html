@@ -276,7 +276,7 @@ footer{margin-top:80px;border-top:1px solid var(--line);padding:24px 0 36px;max-
   <section class="mapwrap" id="map-section" aria-label="Интерактивная карта мест">
     <div class="map-toolbar">
       <h2>Карта · <b id="mapTitle">Сеул</b></h2>
-      <div class="map-actions"><button type="button" id="fit-map">Все найденные точки</button><button type="button" id="toggle-map" aria-expanded="true" aria-controls="map-body">Свернуть карту</button></div>
+      <div class="map-actions"><button type="button" id="fit-map">Все точки города</button><button type="button" id="toggle-map" aria-expanded="true" aria-controls="map-body">Свернуть карту</button></div>
     </div>
     <p id="mapHint" class="map-hint" aria-live="polite"></p>
     <div id="map-body">
@@ -414,33 +414,14 @@ footer{margin-top:80px;border-top:1px solid var(--line);padding:24px 0 36px;max-
 <script src="assets/vendor/leaflet/leaflet.js"></script>
 <script src="assets/vendor/markercluster/leaflet.markercluster.js"></script>
 <script src="assets/categories.js"></script>
+<script src="assets/place-icons.js"></script>
 <script src="assets/place-map.js"></script>
 <script src="assets/photos.js"></script>
 <script>
 const CATALOG = window.KOREA_CATALOG;
 const CATS = CATALOG.categories;
 
-const ICONS = {
-  art:'<path d="M3 17 9 7l4 6 2-3 4 7Z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/>',
-  museum:'<path d="M3 9 12 4l9 5M5 9v8m4-8v8m6-8v8m4-8v8M3 18h18" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>',
-  active:'<circle cx="12" cy="12" r="8" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M12 4v16M4 12h16" stroke="currentColor" stroke-width="1.6"/>',
-  game:'<rect x="3" y="7" width="18" height="11" rx="3.5" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M7.5 11v3M6 12.5h3M15.5 12h.01M17.5 14h.01" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/>',
-  nature:'<path d="M3 19h18M6 19c0-6 3-9 6-9s6 3 6 9" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>',
-  hike:'<path d="M2 19 9 6l4.5 8M11 19l5-9 6 9Z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/>',
-  craft:'<path d="M5 19 15 9m0 0 4-4-2-2-4 4m2 2-2-2M5 19l-1 1" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>',
-  food:'<path d="M6 3v8a2.5 2.5 0 0 0 5 0V3M8.5 11v10M17 3c-1.5 2-2 4-2 6s.7 2.5 2 2.5V21" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>',
-  spa:'<path d="M4 16c2.5-2 5.5-2 8 0s5.5 2 8 0M4 20c2.5-2 5.5-2 8 0s5.5 2 8 0M12 3c2.5 2.5 2.5 6 0 8-2.5-2-2.5-5.5 0-8Z" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>',
-  local:'<path d="M12 2.5 13.9 8l5.6 1.9-5.6 1.9L12 17.5 10.1 11.8 4.5 9.9 10.1 8Z" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/><path d="M18 16.5l.8 2.2 2.2.8-2.2.8-.8 2.2-.8-2.2-2.2-.8 2.2-.8Z" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linejoin="round"/>'
-};
-
-Object.keys(CATS).forEach(k => { ICONS[k] = ICONS[CATS[k].icon]; });
-Object.assign(ICONS, {
-  cycling:'<g fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="6" cy="17" r="4"/><circle cx="18" cy="17" r="4"/><path d="m6 17 5-9 7 9h-8l-4-9h4m5-4h3l2 4M9 8l3 9"/></g>',
-  climbing:'<g fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="m3 21 4-8 3 2 4-11 7 17M10 15l3 6M7 13l-2-3M14 4l3 7"/><path d="M9 5h2M16 15h2M4 18h2"/></g>',
-  walks:'<g fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="14" cy="4" r="2"/><path d="m10 22 3-8-3-4 4-3 3 5 4 1M7 13l3-3M13 14l5 8M10 10l-2 7-5 2"/></g>',
-  photo:'<g fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"><path d="M3 7h4l2-3h6l2 3h4v13H3Z"/><circle cx="12" cy="13" r="4"/></g>',
-  escape:'<g fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 21V3h14v18M2 21h20M14 12h2M9 3v18"/></g>'
-});
+const ICONS = window.KOREA_PLACE_ICONS;
 
 // city, category, name, korean, area, description, tags, price, lat, lng; optional url and map query q
 const P = [
@@ -699,6 +680,11 @@ function mapUrl(p){
 }
 
 function showCard(index){
+  // A map point stays available even when its card is outside the list filters.
+  if (!visible(P[index])) {
+    active.clear(); query = ''; document.getElementById('q').value = '';
+    render();
+  }
   const card = document.getElementById('c' + index);
   if (!card) return;
   document.querySelectorAll('.card.flash').forEach(c => c.classList.remove('flash'));
@@ -709,9 +695,14 @@ function showCard(index){
   setTimeout(() => card.classList.remove('flash'),2200);
 }
 
+function mapSelection(){
+  const items = P.map((p,i) => ({p,i})).filter(({p}) => p.c === city);
+  const matchedIds = items.filter(({p}) => visible(p)).map(({i}) => i);
+  return {city,items,matchedIds,filterActive:active.size > 0 || query.length > 0};
+}
+
 function renderMap(){
-  const items = P.map((p,i) => ({p,i})).filter(({p}) => visible(p));
-  placeMap.update({city,items});
+  placeMap.update(mapSelection());
 }
 
 function renderGrid(){

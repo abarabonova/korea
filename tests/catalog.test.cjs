@@ -73,3 +73,37 @@ test('route and format anchors are labelled, and external maps search a real nam
   assert.equal(cycle.mapKind,'route');
   assert.equal(places.find(p=>p.kr==='PC방').mapKind,'format');
 });
+
+const selectionStart = html.indexOf('function mapSelection()');
+vm.runInContext(html.slice(selectionStart,html.indexOf('\nfunction renderMap()',selectionStart)),context);
+
+test('map retains every city point when categories or search narrow the cards', () => {
+  find({active:['climbing']});
+  let selection=context.mapSelection();
+  assert.equal(selection.items.length,185);
+  assert.equal(selection.matchedIds.length,3);
+  assert.equal(selection.filterActive,true);
+  find({query:'не существующее место 999999'});
+  selection=context.mapSelection();
+  assert.equal(selection.items.length,185);
+  assert.equal(selection.matchedIds.length,0);
+  for (const [city,total] of [['seoul',185],['busan',25],['doha',5]]) {
+    find({city});
+    selection=context.mapSelection();
+    assert.equal(selection.items.length,total);
+    assert.equal(selection.matchedIds.length,total);
+    assert.equal(selection.filterActive,false);
+  }
+});
+
+test('every detailed category has its own local pictogram', () => {
+  const iconContext={window:{}};
+  vm.runInNewContext(fs.readFileSync(path.join(root,'assets/place-icons.js'),'utf8'),iconContext);
+  const icons=iconContext.window.KOREA_PLACE_ICONS;
+  assert.deepEqual(Object.keys(icons).sort(),Object.keys(categories).sort());
+  assert.equal(new Set(Object.values(icons)).size,Object.keys(categories).length);
+  for (const icon of Object.values(icons)) {
+    assert.ok(icon.includes('currentColor'));
+    assert.ok(!/<script|href=|on\w+=/.test(icon));
+  }
+});
