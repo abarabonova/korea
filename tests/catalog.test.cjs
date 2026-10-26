@@ -10,7 +10,7 @@ vm.runInNewContext(fs.readFileSync(path.join(root, 'assets/categories.js'), 'utf
 const categories = catalogContext.window.KOREA_CATALOG.categories;
 const start = html.indexOf('const P = [');
 const end = html.indexOf('\n];', start) + 3;
-const context = vm.createContext({CATS:categories, city:'seoul', active:new Set(), query:'', encodeURIComponent});
+const context = vm.createContext({CATS:categories, city:'seoul', active:new Set(), query:'', topOnly:false, encodeURIComponent});
 vm.runInContext(html.slice(start,end) + '\nthis.places = P;',context);
 const places = context.places;
 const visibleStart = html.indexOf('function visible(p)');
@@ -18,8 +18,8 @@ vm.runInContext(html.slice(visibleStart,html.indexOf('\nfunction renderChips()',
 const urlStart = html.indexOf('function mapUrl(p)');
 vm.runInContext(html.slice(urlStart,html.indexOf('\nfunction showCard(',urlStart)),context);
 
-function find({city='seoul', active=[], query=''}) {
-  context.city=city; context.active=new Set(active); context.query=query;
+function find({city='seoul', active=[], query='', topOnly=false}) {
+  context.city=city; context.active=new Set(active); context.query=query; context.topOnly=topOnly;
   return places.filter(p => context.visible(p));
 }
 
@@ -80,14 +80,14 @@ vm.runInContext(html.slice(selectionStart,html.indexOf('\nfunction renderMap()',
 test('map retains every city point when categories or search narrow the cards', () => {
   find({active:['climbing']});
   let selection=context.mapSelection();
-  assert.equal(selection.items.length,192);
+  assert.equal(selection.items.length,195);
   assert.equal(selection.matchedIds.length,3);
   assert.equal(selection.filterActive,true);
   find({query:'не существующее место 999999'});
   selection=context.mapSelection();
-  assert.equal(selection.items.length,192);
+  assert.equal(selection.items.length,195);
   assert.equal(selection.matchedIds.length,0);
-  for (const [city,total] of [['seoul',192],['busan',25],['doha',5]]) {
+  for (const [city,total] of [['seoul',195],['busan',25],['doha',5]]) {
     find({city});
     selection=context.mapSelection();
     assert.equal(selection.items.length,total);
@@ -116,6 +116,32 @@ test('coat hunt includes each named shop once and keeps designer stores outside 
   for (const kr of names) assert.equal(hunt.filter(p=>p.kr===kr).length,1,kr);
   assert.equal(hunt.find(p=>p.kr==='무신사 엠프티 성수').k,'shops');
   const selection=context.mapSelection();
-  assert.equal(selection.items.length,192);
+  assert.equal(selection.items.length,195);
   assert.equal(selection.matchedIds.length,9);
+});
+
+
+test('the first twenty cards follow the user ranking and every remaining place appears once', () => {
+  find({});
+  const ordered=context.catalogItems();
+  const expected=['리움미술관','언리미티드 에디션 18','국립현대미술관','홍대 R3 패션거리','힙지로','팝업스토어','액티브모드 홍대','서울시립미술관 서소문본관','문래창작촌','서울숲 → 뚝섬 → 반포 → 노들섬','피크닉','문화비축기지','아모레퍼시픽미술관','북한산 대남문 코스','잠실 → 석촌호수 → 올림픽공원','서서울미술관','릴리데이지','코인노래방','선유도공원','송은'];
+  assert.deepEqual(Array.from(ordered.slice(0,20),([p])=>p.kr),expected);
+  assert.deepEqual(Array.from(ordered.slice(0,20),([p])=>p.priority.rank),Array.from({length:20},(_,i)=>i+1));
+  assert.equal(new Set(ordered.map(([,i])=>i)).size,195);
+  assert.equal(places.filter(p=>p.priority).length,20);
+});
+
+test('top twenty filter intersects with categories without dropping city map points or renumbering', () => {
+  assert.equal(find({topOnly:true}).length,20);
+  let selection=context.mapSelection();
+  assert.equal(selection.items.length,195);
+  assert.equal(selection.matchedIds.length,20);
+  assert.equal(selection.filterActive,true);
+  find({topOnly:true,active:['galleries']});
+  assert.deepEqual(Array.from(context.catalogItems(),([p])=>p.priority.rank),[11,12,20]);
+  selection=context.mapSelection();
+  assert.equal(selection.items.length,195);
+  assert.equal(selection.matchedIds.length,3);
+  find({city:'busan'});
+  assert.ok(context.catalogItems().every(([p])=>!p.priority));
 });
