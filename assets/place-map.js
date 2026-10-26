@@ -134,7 +134,14 @@ window.createPlaceMap = function ({places, categories, icons, photos, onShowCard
       const marker = L.marker([p.lat,p.lng],{icon,title:p.n,alt:p.n,keyboard:true,riseOnHover:true,placeCategory:p.k,placeMatched:filterActive && matched.has(i)});
       marker.bindTooltip('<strong>' + escape(p.n) + '</strong><br>' + escape(cat.label) + '<br>' + escape(p.pr)
         + (approximate ? '<br><small>Ориентир · уточни адрес</small>' : ''), {direction:'top',offset:[0,-15],className:'place-tooltip',opacity:1});
-      marker.bindPopup(() => popup(p,i), {maxWidth:300,minWidth:225,maxHeight:Math.max(220,host.clientHeight-70),autoPanPadding:[18,18]});
+      marker.on('tooltipopen', event => {
+        const tooltip = event.tooltip;
+        const width = tooltip.getElement().getBoundingClientRect().width;
+        const point = map.latLngToContainerPoint(marker.getLatLng());
+        const x = Math.max(width/2+10,Math.min(host.clientWidth-width/2-10,point.x));
+        tooltip.setLatLng(map.containerPointToLatLng([x,point.y]));
+      });
+      marker.bindPopup(() => popup(p,i), {maxWidth:Math.min(440,host.clientWidth-44),minWidth:Math.min(340,host.clientWidth-44),maxHeight:Math.max(220,host.clientHeight-70),autoPanPadding:[18,18]});
       marker.on('popupopen', event => {
         marker.closeTooltip();
         const close = event.popup.getElement().querySelector('.leaflet-popup-close-button');
