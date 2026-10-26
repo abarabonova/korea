@@ -76,6 +76,7 @@ summary::-webkit-details-marker{display:none}
 .section-title{display:flex;align-items:baseline;justify-content:space-between;gap:20px;padding-top:42px;margin-bottom:22px}
 .section-title h2{font-size:24px;letter-spacing:-.04em}
 .section-title p{font-size:12px;color:var(--fg-dim)}
+.shopping-note{border-bottom:1px solid var(--line);padding:22px 0 20px;max-width:800px}.shopping-note h2{font-size:22px;letter-spacing:-.035em;margin-bottom:10px}.shopping-note p{font-size:13px;line-height:1.7;color:var(--fg-dim)}.shopping-note p+p{margin-top:10px}
 .museum-guide-link{font-size:13px;color:var(--fg-dim);margin-bottom:14px}
 .controls{position:sticky;top:env(safe-area-inset-top,0px);z-index:30;background:#fff;border-bottom:1px solid var(--line);padding:12px 0}
 .ctl-row{display:flex;gap:28px;align-items:center;justify-content:space-between}
@@ -223,7 +224,7 @@ footer{margin-top:80px;border-top:1px solid var(--line);padding:24px 0 36px;max-
     <div class="kicker">28 октября — 11 ноября 2026</div>
     <h1>Корея<br>во второй раз.</h1>
     <p class="lede">Музеи, маленькие галереи, игры и долгие прогулки. Сеул и Пусан в осенней листве — и один день в Дохе по дороге.</p>
-    <div class="intro-meta"><span>Сеул · Пусан · Доха</span><span>14 дней</span><span id="totalFact"><b>—</b> мест и маршрутов</span></div>
+    <div class="intro-meta"><span>Сеул · Пусан · Доха</span><span>14 дней</span><span id="totalFact">Мест и маршрутов: <b>—</b></span></div>
     </div>
     <details class="trip-details">
       <summary>Детали поездки</summary>
@@ -247,7 +248,7 @@ footer{margin-top:80px;border-top:1px solid var(--line);padding:24px 0 36px;max-
         <div class="leg"><b>~5–10.11</b><span>Клёны в самом Сеуле на пике: Пукаксан, Наксан, Пуам-дон</span></div>
       </div>
     </div>
-    <div class="localbar"><b>153 изображения для 135 из 215 карточек.</b> Листай стрелками или свайпом. Для новых мест фотографии пока не добавлены. В подборке отмечены архивные снимки, примеры форматов и афиша. Источник каждого изображения — по ссылке на фото. Обновлено 24 октября 2026. Можно перетащить на карточку свою картинку мышкой — она встанет первой и сохранится.</div>
+    <div class="localbar"><b>153 изображения для 135 из 222 карточек.</b> Листай стрелками или свайпом. Для новых мест фотографии пока не добавлены. В подборке отмечены архивные снимки, примеры форматов и афиша. Источник каждого изображения — по ссылке на фото. Обновлено 24 октября 2026. Можно перетащить на карточку свою картинку мышкой — она встанет первой и сохранится.</div>
       </div>
     </details>
   </header>
@@ -277,6 +278,11 @@ footer{margin-top:80px;border-top:1px solid var(--line);padding:24px 0 36px;max-
     <div class="count" id="count" aria-live="polite"></div>
   </div>
 
+  <aside class="shopping-note" id="coat-hunt-note" aria-label="Маршрут по винтажным магазинам" hidden>
+    <h2>За яркой шубой.</h2>
+    <p>Хондэ на 2–3 часа: AKEHOMU666 → Archive X → Yuko Vintage → Vintage B1 → ROOT. Начать с отобранного Y2K и gyaru, затем порыться в больших магазинах.</p>
+    <p>За дизайнерским винтажем — BALBAL и Fox в Синса / Апкучжоне. Something Vintage удобно совместить с Leeum. За новой необычной вещью — MUSINSA EMPTY в Сонсу. Наличие нужного цвета и размера проверь перед визитом.</p>
+  </aside>
   <section class="mapwrap" id="map-section" aria-label="Интерактивная карта мест">
     <div class="map-toolbar">
       <h2>Карта · <b id="mapTitle">Сеул</b></h2>
@@ -708,7 +714,7 @@ const P = [
   {c:"seoul",k:"photo",n:"Because Friends Hongdae",kr:"비코즈프렌즈 셀프사진관 홍대점",a:"Ённам / Хондэ",d:"Не four-cut booth, а полноценная private self-photo studio: вы сами жмёте пульт и снимаете друг друга без фотографа. У сеульской молодёжи это отдельный жанр date/friend activity; у точки в Хондэ очень много отзывов.",t:["셀프사진관","вдвоём","фото","데이트"],pr:"по выбранному пакету",lat:37.5599,lng:126.9207,q:"비코즈프렌즈 셀프사진관 홍대점 서울",mapKind:"approximate",mapNote:"Ориентировочная точка из подборки. Перед поездкой проверь адрес по корейскому названию."},
   {c:"seoul",k:"photo",n:"Odity Mode Hongdae",kr:"오디티모드 홍대 1호점",a:"Ённам / Хондэ",d:"Ещё одна популярная private self-photo studio, но более 'редакционная': закрытая комната, свет, пульт и вы сами режиссируете съёмку. Хорошо делать не вместо фотобудки, а один раз за поездку как полноценный корейский self-shoot.",t:["셀프사진관","portrait","MZ","вдвоём"],pr:"по пакету",lat:37.5588,lng:126.9255,q:"오디티모드 홍대 1호점 서울",mapKind:"approximate",mapNote:"Ориентировочная точка из подборки. Перед поездкой проверь адрес по корейскому названию."},
   {c:"seoul",k:"stationery",n:"Point of View Seongsu",kr:"포인트오브뷰 성수",a:"Сонсу",d:"Трёхэтажная stationery/design точка, которую местные описывают скорее как музей инструментов для творчества: бумага, ручки, печати, редкие мелкие объекты. Если Object показывает cute/illustrator сторону 소품샵, Point of View — взрослую obsessive-design сторону той же культуры.",t:["문구","дизайн","stationery","Сонсу"],pr:"вход свободный",lat:37.5443,lng:127.0555,q:"포인트오브뷰 성수 서울",mapKind:"approximate",mapNote:"Ориентировочная точка из подборки. Перед поездкой проверь адрес по корейскому названию."},
-  {c:"seoul",k:"vintage",n:"AKEHOMU666",kr:"아케호무666",a:"Хондэ",d:"Маленький curated vintage не про базовый thrift: Y2K, gyaru/hime-gyaru, lolita, punk/goth и японский street-fashion. Намного точнее по вайбу, чем очередной огромный 'винтажный склад'.",t:["gyaru","Y2K","J-fashion","subculture"],pr:"смотреть на месте",lat:37.5545,lng:126.9233,q:"아케호무666 서울",mapKind:"approximate",mapNote:"Ориентировочная точка из подборки. Перед поездкой проверь адрес по корейскому названию."},
+  {"c":"seoul","k":"vintage","n":"AKEHOMU666","kr":"아케호무666","a":"Хондэ","d":"Curated vintage с Y2K, gyaru/hime-gyaru, lolita, punk/goth и японским street-fashion. Первый кандидат на яркую пушистую шубу в маршруте по Хондэ; затем Archive X → Yuko → Vintage B1 → ROOT. Наличие конкретной вещи проверить по свежим поступлениям.","t":["gyaru","Y2K","J-fashion","subculture","шуба","fur hunt"],"pr":"смотреть на месте","lat":37.5538865,"lng":126.9246229,"q":"아케호무666 서울 마포구 와우산로23길 18-8 1층","mapKind":"approximate","mapNote":"Ориентир здания по адресу магазина. Вход и этаж уточни перед визитом.","geoSource":"https://www.openstreetmap.org/way/358988909","url":"https://akehomu666.com/shopinfo/company.html","source":"https://akehomu666.com/shopinfo/company.html"},
   {c:"seoul",k:"districts",n:"Hongdae otaku crawl",kr:"홍대 오타쿠 투어",a:"Хондэ → Хапчон",d:"Не одна точка, а местный микро-жанр прогулки: гача, куji, фигурки, doujin/character goods и коллаб-кафе между Хондэ и Хапчоном. В 2026 вокруг Хондэ работает около двух десятков гача-точек, поэтому лучше просто нырять в подвалы и верхние этажи по дороге.",t:["서브컬처","오타쿠","가챠","рандом"],pr:"сколько проиграете автоматам",lat:37.555,lng:126.922,q:"홍대 오타쿠 투어 서울",mapKind:"area",mapNote:"Ориентир района или территории, не адрес конкретного входа."},
   {c:"seoul",k:"toys",n:"Hello Sumiko",kr:"헬로수미코",a:"Хондэ",d:"Не безликий capsule-toy hall: магазин специализируется на гаче, миниатюрной мебели масштаба 1:12, одежде и аксессуарах для 10-см кукол, art toys и странных мелких коллекционных объектах. Очень хороший вход в корейскую kidult/인형꾸 культуру.",t:["가챠","миниатюры","인형꾸","kidult"],pr:"капсулы обычно ~4–6 000 ₩",lat:37.5569,lng:126.9206,q:"헬로수미코 서울",mapKind:"approximate",mapNote:"Ориентировочная точка из подборки. Перед поездкой проверь адрес по корейскому названию."},
   {c:"seoul",k:"toys",n:"Kukje Electronics Center · hobby floors",kr:"국제전자센터",a:"Намбу-терминал",d:"Старый многоэтажный электронный центр, верхние этажи которого превратились в плотный лабиринт ретро-игр, фигурок, Gunpla, куji и гачи. Гораздо менее 'cute tourist Seoul', больше ощущение локального коллекционерского муравейника.",t:["ретро-игры","фигурки","국전","collector"],pr:"вход свободный",lat:37.4841,lng:127.0164,q:"국제전자센터 서울",mapKind:"approximate",mapNote:"Ориентировочная точка из подборки. Перед поездкой проверь адрес по корейскому названию."},
@@ -717,7 +723,7 @@ const P = [
   {c:"seoul",k:"fairs",n:"Unlimited Edition 18 · Seoul Art Book Fair",kr:"언리미티드 에디션 18",a:"Новон · Buk-Seoul Museum of Art",d:"Приоритет на пятницу 6 ноября: независимые артбуки, зины, принты и small press. Ярмарка проходит 6–8 ноября; 6-го — с 12:00 до 19:00, вход до 18:30. В первый день можно собрать календарь «2027 달력만들기» из листов участников. План: приехать к 11:00–11:20, сначала уточнить условия календарной мастерской, затем оставить 3–4 часа на ярмарку. Регистрацию на мастерскую, стоимость и наличие наборов проверить у организаторов.",t:["06.11","12:00–19:00","календарь","zines","graphic design","MUST","приехать к 11:00"],pr:"вход бесплатно · календарь TBD",lat:37.6408,lng:127.0668,q:"서울시립 북서울미술관 서울 노원구 동일로 1238",url:"https://unlimited-edition.org/",mapKind:"approximate",mapNote:"Ориентировочная точка из подборки. Перед поездкой проверь адрес по корейскому названию."},
   {c:"seoul",k:"concerts",n:"SUPER SONIC Halloween Show",kr:"SUPER SONIC Halloween Show",a:"Хондэ",d:"31 октября в Saenggi Studio: не гигантская Itaewon Halloween-толпа, а маленький Halloween gig с несколькими корейскими группами. Намного интереснее как способ попасть внутрь локальной музыкальной сцены.",t:["31.10","Halloween","indie","live","20:00"],pr:"33 000 ₩ заранее / 38 000 ₩ на входе",lat:37.5505,lng:126.9225,q:"생기스튜디오 서울 마포구 와우산로 137 5층",url:"https://sonicboom-live-show.com/",mapKind:"approximate",mapNote:"Ориентировочная точка из подборки. Перед поездкой проверь адрес по корейскому названию."},
   {c:"seoul",k:"concerts",n:"캇코이 vs 카와이",kr:"캇코이 vs 카와이",a:"Синчхон · Infinity Club",d:"8 ноября, Infinity Club. Само название 'kakkoii vs kawaii' уже достаточно смешное, чтобы положить в список: небольшой локальный лайв вместо туристического вечернего шоу. Проверить лайнап ближе к дате и идти, если постер нравится.",t:["08.11","kawaii","live","локальное","14:00–20:00"],pr:"~20 000 ₩ presale",lat:37.5507,lng:126.922,q:"인피니티클럽 서울 서대문구 연세로7안길 34-3",url:"https://www.instagram.com/1nfntclb/",mapKind:"approximate",mapNote:"Ориентировочная точка из подборки. Перед поездкой проверь адрес по корейскому названию."},
-  {c:"seoul",k:"vintage",n:"ROOT Hongdae · late-night vintage dig",kr:"루트홍대",a:"Хондэ",d:"Огромный подвальный vintage dig, открытый до 02:00. Ценность не в 'шопинге', а в ночном рытье среди тысяч вещей: старые ТВ/камеры в интерьере, дешёвые рейлы и шанс вытащить максимально 2000s вещь после полуночи.",t:["до 02:00","Y2K","ночь","dig"],pr:"есть дешёвые price-tier рейлы",lat:37.556,lng:126.9221,q:"루트홍대 서울",mapKind:"approximate",mapNote:"Ориентировочная точка из подборки. Перед поездкой проверь адрес по корейскому названию."},
+  {"c":"seoul","k":"vintage","n":"ROOT Hongdae · late-night vintage dig","kr":"루트홍대","a":"Хондэ","d":"Огромный подвальный vintage dig с большим выбором верхней одежды. Последняя остановка охоты за яркой шубой после AKEHOMU666, Archive X, Yuko и Vintage B1. Поздний режим до 02:00 указан в подборке; перед ночным заходом проверь часы.","t":["до 02:00","Y2K","ночь","dig","шуба","fur hunt"],"pr":"есть дешёвые price-tier рейлы","lat":37.5550261,"lng":126.9220538,"q":"루트홍대 서울 마포구 양화로 140 지하1층","mapKind":"approximate","mapNote":"Ориентир здания по адресу магазина. Вход и этаж уточни перед визитом.","geoSource":"https://www.openstreetmap.org/way/298530915","url":"https://www.instagram.com/root.hongdae/","source":"https://www.gujemap.com/area/hongdae"},
   {c:"busan",k:"districts",n:"Намчхон · Namcheon",kr:"남천동",a:"Суён",d:"Жилая сторона рядом с Кванналли. Пройти обычные улицы, посмотреть дома, магазины, метро, кофейни и реальный путь к морю. Удобно рассматривать вместе с Кванналли как возможную базу на две ночи.",t:["ядро 48 часов","жильё","повседневность"],pr:"бесплатно гулять",lat:35.1446789,lng:129.1100882,q:"남천동 부산",mapKind:"area",mapNote:"Ориентир района или территории, не адрес конкретного входа.",geoSource:"https://www.openstreetmap.org/node/415145041"},
   {c:"busan",k:"districts",n:"Суён / Мангми",kr:"수영동 망미동",a:"Суён",d:"Окрестности F1963: культурное пространство, жилые кварталы и обычная городская инфраструктура. После выставки пройти сам район, чтобы увидеть Пусан между заметными точками на карте.",t:["район","прогулка","после F1963"],pr:"бесплатно гулять",lat:35.1717526,lng:129.1075228,q:"수영동 망미동 부산",mapKind:"area",mapNote:"Ориентир района или территории, не адрес конкретного входа.",geoSource:"https://www.openstreetmap.org/node/355173973"},
   {c:"busan",k:"districts",n:"Centum + Marine City",kr:"센텀시티 마린시티",a:"Хэундэ",d:"Современный Пусан: крупные здания, высотки и прогулки у воды. Для вечера второго дня — контраст к старым портовым кварталам, затем возвращение на Кванналли. Это маршрут по двум районам, а не одна точка.",t:["районы","вечер","архитектура","море"],pr:"бесплатно гулять",lat:35.156649,lng:129.1465509,q:"센텀시티 마린시티 부산",mapKind:"area",mapNote:"Ориентир района или территории, не адрес конкретного входа.",geoSource:"https://www.openstreetmap.org/way/37401559"},
@@ -727,6 +733,13 @@ const P = [
   {c:"busan",k:"art",n:"Space Lee Ufan",kr:"이우환 공간",a:"Кампус Busan Museum of Art",d:"Отдельное пространство Ли Уфана на музейном кампусе: короткая остановка для минималистичного искусства вместо большого музейного дня. Постоянная экспозиция; актуальный режим работы проверить у музея.",t:["минимализм","тихо","короткий визит"],pr:"проверить условия входа",lat:35.1667888,lng:129.1369848,q:"이우환 공간 부산 해운대구 APEC로 58",url:"https://art.busan.go.kr/07_info/info02.jsp",mapKind:"campus",mapNote:"Ориентир музейного кампуса; отдельный вход уточни на месте.",geoSource:"https://www.openstreetmap.org/way/458811965"},
   {c:"busan",k:"fairs",n:"Busan Intangible Heritage Art Fair 2026",kr:"부산 무형유산 아트페어",a:"BIFF Hill / Centum",d:"Ярмарка нематериального культурного наследия в BIFF Hill, 1-й этаж Cinema Center. 31 октября — 8 ноября: работы мастеров и ремесленные программы. Запасной вариант, если программа заинтересует; часы и условия мастер-классов уточнить перед визитом.",t:["31.10–08.11","ремёсла","запасной вариант"],pr:"проверить программу",lat:35.1712188,lng:129.1266587,q:"영화의전당 비프힐 부산 해운대구 수영강변대로 120",url:"https://nexilife.co.kr/festivals/ae9b79f1-849a-4316-991f-052194a2af78",mapKind:"place",mapNote:"Место найдено в OpenStreetMap.",geoSource:"https://www.openstreetmap.org/node/5478364332"},
   {c:"busan",k:"fairs",n:"Busan Illustration Fair V.7",kr:"부산일러스트레이션페어 V.7",a:"BEXCO / Centum",d:"Иллюстрация, графический дизайн, независимые издания и авторский мерч. BEXCO, второй выставочный комплекс, зал 4; 6–8 ноября 2026. 6–7 ноября 10:00–18:00, 8 ноября до 17:00, вход прекращают за 30 минут до закрытия. Не входит в основной маршрут 4–5 ноября; оставить как дополнительный вариант при других датах.",t:["06–08.11","иллюстрация","запасной вариант"],pr:"билет · проверить цену",lat:35.1656908,lng:129.1351162,q:"벡스코 제2전시장 4홀 부산",url:"https://busanillustrationfair.co.kr/",mapKind:"place",mapNote:"Место найдено в OpenStreetMap.",geoSource:"https://www.openstreetmap.org/way/308672919"},
+  {"c":"seoul","k":"vintage","n":"Archive X · archivex","kr":"아카이브엑스","a":"Хондэ","d":"Curated Y2K, gyaru и дизайнерский archive vintage. Кандидат на необычную верхнюю одежду, меховые детали и яркую шубу. После AKEHOMU666 продолжить маршрут сюда, затем в Yuko. Нужный цвет и размер лучше проверить по свежим поступлениям.","t":["шуба","fur hunt","Y2K","archive","верхняя одежда"],"pr":"цены на вещи на месте","lat":37.55562,"lng":126.9248264,"q":"아카이브엑스 서울 마포구 와우산로27길 74 지하층","url":"https://archivex.kr/","mapKind":"approximate","mapNote":"Ориентир по адресу магазина. Вход и этаж уточни перед визитом.","geoSource":"https://www.openstreetmap.org/way/355943293","source":"https://archivex.kr/"},
+  {"c":"seoul","k":"vintage","n":"Yuko Vintage","kr":"유코빈티지","a":"Хондэ","d":"Более girly/cute винтаж: рюши, кружево и японские вещи. Для поиска девчачьей пушистой куртки или шубы вместо тяжёлого oversize. Удобно зайти после Archive X; наличие меха и размеры уточнять по текущей коллекции.","t":["шуба","fur hunt","girly","cute Y2K","японский винтаж"],"pr":"цены на вещи на месте","lat":37.555289,"lng":126.9254158,"q":"유코빈티지 서울 마포구 와우산로27길 62 지하 1층","url":"https://yukovintage.com/","mapKind":"approximate","mapNote":"Ориентир по адресу магазина. Вход и этаж уточни перед визитом.","geoSource":"https://www.openstreetmap.org/way/355943304","source":"https://yukovintage.com/"},
+  {"c":"seoul","k":"vintage","n":"Hongdae Vintage B1","kr":"홍대빈티지B1","a":"Хондэ","d":"Большой подвальный магазин с широким выбором винтажа и Y2K. Здесь уже стоит порыться в рейлах с верхней одеждой после небольших curated-магазинов: шуба — возможная находка, а не гарантированное наличие.","t":["шуба","fur hunt","Y2K","подвал","большой выбор"],"pr":"цены на вещи на месте","lat":37.5525199,"lng":126.9217988,"q":"홍대빈티지B1 서울 마포구 와우산로21길 36-3 B1","url":"https://gujemap.com/shop/824","mapKind":"approximate","mapNote":"Ориентир по адресу магазина. Вход и этаж уточни перед визитом.","geoSource":"https://www.openstreetmap.org/way/300491043","source":"https://gujemap.com/shop/824"},
+  {"c":"seoul","k":"vintage","n":"BALBAL Vintage · Garosu-gil","kr":"발발빈티지 가로수길","a":"Синса / Гаросу-гиль","d":"Отобранный дизайнерский винтаж на Garosu-gil. Вариант для более собранной statement-вещи: смотреть верхнюю одежду, пальто и необычные фактуры. Если нужна конкретно цветная шуба, сначала уточнить поступления.","t":["шуба","fur hunt","designer vintage","верхняя одежда","Гаросу-гиль"],"pr":"цены на вещи на месте","lat":37.52072,"lng":127.0228458,"q":"발발빈티지 가로수길 서울 강남구 가로수길 41 B1","url":"https://www.balbalvintage.com/","mapKind":"approximate","mapNote":"Ориентир по адресу магазина. Вход и этаж уточни перед визитом.","geoSource":"https://www.openstreetmap.org/node/12754234801","source":"https://production.fruitsfamily.com/seller/1mr9/balbalvintage"},
+  {"c":"seoul","k":"vintage","n":"Fox Vintage · Dosan / Apgujeong","kr":"폭스빈티지 압구정","a":"Досан / Апкучжон","d":"Дизайнерский винтаж для заметной верхней одежды и необычной шубы. Выбирать один удобный филиал: у сети есть также Garosu-gil, Seongsu и Myeongdong. Наличие нужного цвета и меха проверить по коллекции.","t":["шуба","fur hunt","designer vintage","statement pieces"],"pr":"дизайнерский винтаж · цены на месте","lat":37.5248184,"lng":127.036808,"q":"fox vintage 압구정 서울 선릉로153길","url":"https://vintagefox.kr/","mapKind":"approximate","mapNote":"Ориентир филиала у Seolleung-ro 153-gil. Перед поездкой уточни вход и выбранный филиал.","geoSource":"https://www.google.com/maps/search/?api=1&query=37.5248184,127.036808&query_place_id=ChIJnd20E-ijfDURBw4diKfj7vM","source":"https://www.corner.inc/place/pbX6AdBeroKT"},
+  {"c":"seoul","k":"vintage","n":"Something Vintage · Hannam","kr":"썸띵 빈티지","a":"Ханнам","d":"Винтаж с акцентом на пальто, жакеты и заметную верхнюю одежду. В подборке есть и натуральный мех — состав понравившейся шубы лучше уточнить. Совместить с Leeum и прогулкой по Hannam.","t":["шуба","fur hunt","пальто","statement outerwear","рядом с Leeum"],"pr":"цены на вещи на месте","lat":37.5370464,"lng":127.0016648,"q":"썸띵 빈티지 서울 용산구 이태원로54가길 13","url":"https://somethingvtg.com/","mapKind":"approximate","mapNote":"Ориентир улицы Itaewon-ro 54ga-gil; магазин — дом 13. Точный вход проверь перед поездкой.","geoSource":"https://www.openstreetmap.org/way/440239522","source":"https://somethingvtg.com/"},
+  {"c":"seoul","k":"shops","n":"MUSINSA EMPTY · Seongsu","kr":"무신사 엠프티 성수","a":"Сонсу","d":"Если хочется новую необычную шубу: мультибренд с экспериментальными корейскими и международными дизайнерами. Начать здесь и продолжить по fashion-пространствам Сонсу. По официальному сайту: пн–пт 11:00–20:00, сб–вс 10:30–20:30; нужная модель зависит от коллекции.","t":["шуба","fur hunt","новые вещи","дизайнеры","Сонсу"],"pr":"цены на вещи на месте","lat":37.5436285,"lng":127.0566158,"q":"무신사 엠프티 성수 서울 성동구 성수이로 97","url":"https://www.empty.seoul.kr/about.html","mapKind":"approximate","mapNote":"Ориентир по адресу магазина. Вход и этаж уточни перед визитом.","geoSource":"https://www.openstreetmap.org/node/13946958917","source":"https://www.empty.seoul.kr/about.html"}
 ];
 
 let city = "seoul";
@@ -752,7 +765,8 @@ function renderChips(){
   const quick = [...new Set([...active, 'climbing','cycling','walks','hike','photo','escape','art'])].filter(k => counts[k]);
   const shortLabels = {cycling:'Велосипеды',walks:'Прогулки',hike:'Хайкинг',photo:'Фото',escape:'Квесты',art:'Искусство'};
   const button = (k,compact=false) => '<button type="button" class="chip" data-cat="' + k + '" aria-pressed="' + active.has(k) + '">' + esc(compact ? (shortLabels[k] || CATS[k].label) : CATS[k].label) + ' <span class="category-count">' + counts[k] + '</span></button>';
-  document.getElementById('chips').innerHTML = quick.map(k => button(k,true)).join('')
+  const coatCount = P.filter(p => p.c === city && p.t.includes('шуба')).length;
+  document.getElementById('chips').innerHTML = (coatCount ? '<button type="button" class="chip" data-coat-hunt aria-pressed="' + (query === 'шуба' && !active.size) + '">За шубой <span class="category-count">' + coatCount + '</span></button>' : '') + quick.map(k => button(k,true)).join('')
     + (active.size ? '<button type="button" class="chip reset" data-reset="1">Сбросить</button>' : '');
   document.getElementById('category-summary').textContent = 'Все категории · ' + used.length + (active.size ? ' / выбрано ' + active.size : '');
   document.getElementById('category-menu').innerHTML = CATALOG.groups.map(group => {
@@ -793,6 +807,7 @@ function renderMap(){
 }
 
 function renderGrid(){
+  document.getElementById('coat-hunt-note').hidden = city !== 'seoul' || query !== 'шуба';
   const items = P.map((p, i) => [p, i]).filter(([p]) => visible(p));
   document.getElementById("grid").innerHTML = items.map(([p, i]) => {
     const col = CATS[p.k].color;
@@ -828,7 +843,7 @@ function renderGrid(){
   document.getElementById("empty").hidden = items.length > 0;
   const total = P.filter(p => p.c === city).length;
   document.getElementById("count").textContent = items.length === total
-    ? total + " мест в этом городе"
+    ? "Мест в этом городе: " + total
     : "показано " + items.length + " из " + total;
 }
 
@@ -1007,6 +1022,10 @@ document.querySelectorAll(".cities button").forEach(btn => {
   });
 });
 document.querySelector(".controls").addEventListener("click", e => {
+  if (e.target.closest('button[data-coat-hunt]')) {
+    query = query === 'шуба' && !active.size ? '' : 'шуба';
+    active.clear(); document.getElementById('q').value = query; render(); return;
+  }
   const b = e.target.closest("button[data-cat],button[data-reset]");
   if (!b) return;
   if (b.dataset.reset){ active.clear(); }
@@ -1018,7 +1037,7 @@ document.querySelector(".controls").addEventListener("click", e => {
 });
 document.getElementById("q").addEventListener("input", e => {
   query = e.target.value.trim().toLowerCase();
-  renderMap(); renderGrid();
+  renderChips(); renderMap(); renderGrid();
 });
 
 document.getElementById('category-done').addEventListener('click', () => { document.getElementById('category-picker').open = false; });

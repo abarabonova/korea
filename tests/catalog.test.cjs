@@ -80,14 +80,14 @@ vm.runInContext(html.slice(selectionStart,html.indexOf('\nfunction renderMap()',
 test('map retains every city point when categories or search narrow the cards', () => {
   find({active:['climbing']});
   let selection=context.mapSelection();
-  assert.equal(selection.items.length,185);
+  assert.equal(selection.items.length,192);
   assert.equal(selection.matchedIds.length,3);
   assert.equal(selection.filterActive,true);
   find({query:'не существующее место 999999'});
   selection=context.mapSelection();
-  assert.equal(selection.items.length,185);
+  assert.equal(selection.items.length,192);
   assert.equal(selection.matchedIds.length,0);
-  for (const [city,total] of [['seoul',185],['busan',25],['doha',5]]) {
+  for (const [city,total] of [['seoul',192],['busan',25],['doha',5]]) {
     find({city});
     selection=context.mapSelection();
     assert.equal(selection.items.length,total);
@@ -106,4 +106,16 @@ test('every detailed category has its own local pictogram', () => {
     assert.ok(icon.includes('currentColor'));
     assert.ok(!/<script|href=|on\w+=/.test(icon));
   }
+});
+
+
+test('coat hunt includes each named shop once and keeps designer stores outside the vintage category', () => {
+  const hunt=find({query:'шуба'});
+  assert.equal(hunt.length,9);
+  const names=['아케호무666','루트홍대','아카이브엑스','유코빈티지','홍대빈티지B1','발발빈티지 가로수길','폭스빈티지 압구정','썸띵 빈티지','무신사 엠프티 성수'];
+  for (const kr of names) assert.equal(hunt.filter(p=>p.kr===kr).length,1,kr);
+  assert.equal(hunt.find(p=>p.kr==='무신사 엠프티 성수').k,'shops');
+  const selection=context.mapSelection();
+  assert.equal(selection.items.length,192);
+  assert.equal(selection.matchedIds.length,9);
 });
