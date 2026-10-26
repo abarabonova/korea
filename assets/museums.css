@@ -1,0 +1,42 @@
+/* Museum programme is an independent section of the main guide. */
+.museum-guide{--muted:var(--fg-dim);margin-top:80px;border-top:1px solid var(--line);padding-top:32px;scroll-margin-top:-140px}
+#museums [id]{scroll-margin-top:-90px}
+.museum-guide h2,.museum-guide h3,.museum-guide h4,.museum-guide h5{font-weight:500;margin:0}
+.museum-guide .eyebrow{font-size:12px;color:var(--muted);margin-bottom:18px}
+.museum-guide-head>h2{font-size:clamp(34px,4.5vw,56px);line-height:1.08;letter-spacing:-.055em}
+.museum-guide-intro{max-width:630px;margin-top:22px;font-size:16px;line-height:1.7;color:var(--muted)}
+.museum-guide-meta{display:flex;flex-wrap:wrap;gap:8px 28px;margin:24px 0 30px;font-size:12px;color:var(--muted)}
+.museum-section-nav{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;background:#fff;display:flex;gap:28px;overflow:auto;padding:17px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line);font-size:13px;white-space:nowrap;scrollbar-width:none}
+.museum-section-nav a{text-decoration:none}.museum-section-nav a:hover{text-decoration:underline}.museum-section-nav span{color:var(--muted);font-size:10px;margin-left:5px}
+.museum-guide .museum-section{padding-top:44px;scroll-margin-top:0}
+.museum-guide .section-intro h3,.museum-guide .planning>h3{font-size:32px;line-height:1.15;letter-spacing:-.045em}
+.museum-guide .section-intro>p:last-child{max-width:650px;font-size:14px;color:var(--muted);margin:18px 0 30px}
+.museum-guide .museum-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));column-gap:64px;row-gap:44px}
+.museum-guide .museum{min-width:0;border-top:1px solid var(--fg);padding-top:18px;scroll-margin-top:0}
+.museum-guide .museum-top{display:flex;align-items:center;justify-content:space-between;gap:18px;color:var(--muted);font-size:11px;margin-bottom:16px}
+.museum-guide .number{font-variant-numeric:tabular-nums}
+.museum-guide .museum>h4{font-size:30px;line-height:1.15;letter-spacing:-.045em;overflow-wrap:anywhere}
+.museum-guide .identity{font-size:11px;color:var(--muted);margin-top:10px}
+.museum-guide .museum-lead{font-size:18px;line-height:1.45;margin-top:24px;letter-spacing:-.015em}
+.museum-guide .why{font-size:13px;color:var(--muted);margin-top:12px}
+.museum-guide .exhibitions{padding:0;margin:26px 0 0;list-style:none}
+.museum-guide .exhibitions li{border-top:1px solid var(--line);padding:16px 0}
+.museum-guide .exhibitions h5{font-size:15px;line-height:1.45}
+.museum-guide .exhibitions .date{font-size:11px;color:var(--fg);margin:6px 0 8px}
+.museum-guide .exhibitions li>p:last-child{font-size:13px;color:var(--muted)}
+.museum-guide .practical{margin:0;border-top:1px solid var(--line);font-size:12px;line-height:1.65}
+.museum-guide .practical>div{display:grid;grid-template-columns:60px 1fr;gap:14px;margin-top:14px}
+.museum-guide .practical dt{color:var(--muted)}.museum-guide .practical dd{margin:0}
+.museum-guide .plan{font-size:13px;line-height:1.7;margin-top:22px;padding-left:16px;border-left:1px solid var(--fg)}
+.museum-guide .museum-links{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px 20px;margin-top:24px;font-size:11px}
+.museum-guide .planning{margin-top:64px;padding-top:32px;border-top:1px solid var(--line);scroll-margin-top:0}
+.museum-guide .planning-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:30px 64px;margin-top:30px}
+.museum-guide .planning-grid h4{font-size:17px;margin-bottom:10px}.museum-guide .planning-grid p{font-size:13px;color:var(--muted)}
+.museum-source{border-top:1px solid var(--line);margin-top:40px;padding-top:20px;max-width:760px;font-size:11px;line-height:1.7;color:var(--muted)}
+@media(max-width:900px){.museum-guide .museum-grid{column-gap:32px}.museum-guide .museum>h4{font-size:28px}.museum-guide .section-intro h3,.museum-guide .planning>h3{font-size:28px}}
+@media(max-width:600px){
+ .museum-guide{margin-top:56px;padding-top:26px}.museum-guide .eyebrow{font-size:11px;margin-bottom:16px}.museum-guide-intro{font-size:14px;margin-top:20px}.museum-guide-meta{gap:6px 18px;font-size:11px;margin:20px 0 24px}
+ .museum-section-nav{gap:18px;font-size:11px;padding:14px 0}.museum-guide .museum-section{padding-top:32px}.museum-guide .section-intro h3,.museum-guide .planning>h3{font-size:26px}.museum-guide .section-intro>p:last-child{font-size:13px;margin:16px 0 26px}
+ .museum-guide .museum-grid{grid-template-columns:minmax(0,1fr);row-gap:36px}.museum-guide .museum>h4{font-size:28px}.museum-guide .museum-top{margin-bottom:14px}.museum-guide .museum-lead{font-size:18px;margin-top:20px}.museum-guide .exhibitions{margin-top:22px}
+ .museum-guide .practical>div{grid-template-columns:48px 1fr;gap:12px}.museum-guide .museum-links{font-size:11px;gap:10px 14px}.museum-guide .planning{margin-top:44px;padding-top:26px}.museum-guide .planning-grid{grid-template-columns:minmax(0,1fr);gap:24px}
+}
