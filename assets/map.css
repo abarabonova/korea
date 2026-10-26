@@ -86,3 +86,23 @@
 .popup-actions{position:sticky;bottom:0;background:#fff;margin-top:10px;padding-bottom:4px}
 
 @media(max-width:600px){.category-row{display:block}.category-picker{display:inline-block}.category-picker>summary{padding:5px 0}.category-row .chips{width:100%}}
+
+/* Personal ranking stays yellow independently of ordinary category colours. */
+.top20-note{border-bottom:1px solid var(--line);padding:22px 0 20px;max-width:800px}
+.top20-note h2{font-size:24px;letter-spacing:-.04em;margin-bottom:10px}
+.top20-note p{font-size:13px;line-height:1.7;color:var(--fg-dim)}
+.top20-note .trip-details{margin-top:16px;border-bottom:0}.top20-note .trip-content p+p{margin-top:12px}
+.priority-label{display:flex;align-items:center;gap:9px;font-size:11px;color:#665321}
+.priority-label b{display:grid;place-items:center;min-width:27px;height:27px;padding:0 5px;background:#ffe174;color:#30280f;font-size:13px;font-weight:500;border-radius:2px}
+.priority-reason{font-size:13px;line-height:1.7;color:#38342a}
+.map-priority-legend{font-size:11px;line-height:1.6;color:#737373;margin:0 0 12px}
+.map-priority-legend>span{display:inline-block;vertical-align:-1px;width:11px;height:11px;background:#ffe174;border:1px solid #947218;border-radius:50%;margin-right:4px}
+.place-pin.priority-pin>span{position:relative;background:#ffe174;border-color:#947218;color:#30280f}
+.place-pin.priority-pin .pin-rank{position:absolute;right:-7px;top:-8px;display:grid;place-items:center;min-width:18px;height:18px;padding:0 3px;background:#30280f;border:1px solid #fff9;border-radius:10px;color:#fff;font:500 10px/1 "Helvetica Neue",Helvetica,Arial,sans-serif}
+.place-cluster.priority-cluster{background:#ffe174;border-color:#947218;color:#30280f}
+.priority-cluster .cluster-count{border-color:#ac8b35;font-size:10px;white-space:nowrap}
+.priority-cluster .cluster-symbols svg{color:#30280f!important}
+.place-pin.priority-pin.filter-other,.place-cluster.priority-cluster.filter-other{filter:none;opacity:.8}
+.popup-heading .popup-priority-label{font-size:10px;color:#665321;background:#fff2bc;display:inline-block;padding:2px 5px;margin:0 0 7px}
+.popup-copy .popup-priority-reason{display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;font-size:12px;line-height:1.55;color:#4d4430;margin:0 0 8px}
+.place-tooltip .tooltip-priority{color:#4d4430}
