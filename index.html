@@ -10,6 +10,7 @@
 <link rel="stylesheet" href="assets/vendor/leaflet/leaflet.css">
 <link rel="stylesheet" href="assets/vendor/markercluster/MarkerCluster.css">
 <link rel="stylesheet" href="assets/map.css">
+<link rel="stylesheet" href="assets/museums.css">
 <style>
 :root{color-scheme:light;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
 body{margin:0;font:14px/1.4 system-ui,-apple-system,sans-serif}
@@ -215,7 +216,7 @@ footer{margin-top:80px;border-top:1px solid var(--line);padding:24px 0 36px;max-
     <div class="mast-top">
       <a class="wordmark" href="#">Korea<span> / 2026</span></a>
       <nav class="mast-nav" aria-label="Разделы">
-        <a href="#places">Места</a><a href="museums.html">Музеи</a><a href="#dates">Планы</a><a href="#notes">Заметки</a>
+        <a href="#places">Места</a><a href="#museums">Музеи</a><a href="#dates">Планы</a><a href="#notes">Заметки</a>
       </nav>
     </div>
     <div class="intro">
@@ -251,8 +252,9 @@ footer{margin-top:80px;border-top:1px solid var(--line);padding:24px 0 36px;max-
     </details>
   </header>
 
-  <div class="section-title" id="places"><h2>Места</h2><p>Выбирай по настроению.</p></div>
-  <p class="museum-guide-link"><a href="museums.html">Музеи отдельно: выставки, часы и приоритеты ↗</a></p>
+  <section id="places" aria-labelledby="places-title">
+  <div class="section-title"><h2 id="places-title">Места</h2><p>Выбирай по настроению.</p></div>
+  <p class="museum-guide-link"><a href="#museums">Раздел «Музеи»: выставки, часы и приоритеты ↓</a></p>
   <div class="controls">
     <div class="ctl-row">
       <div class="cities" role="group" aria-label="Город">
@@ -327,6 +329,89 @@ footer{margin-top:80px;border-top:1px solid var(--line);padding:24px 0 36px;max-
 
   <div class="grid" id="grid"></div>
   <div class="empty" id="empty" hidden>Под эти фильтры ничего не попало. Сбрось пару тегов.</div>
+
+  </section>
+
+  <section class="museum-guide" id="museums" aria-labelledby="museums-title">
+    <header class="museum-guide-head"><p class="eyebrow">Сеул · 28 октября — 11 ноября 2026</p><h2 id="museums-title">Музеи и выставки.</h2><p class="museum-guide-intro">Пространство у Do Ho Suh, системы Левитта, виртуальные личности у Lynn Hershman Leeson. Вся арт-программа поездки: что выбрать, когда идти и что бронировать.</p><p class="museum-guide-meta"><span>9 мест</span><span>4 главных музея</span><span>Выставки, часы, билеты</span></p></header>
+    <nav class="museum-section-nav" aria-label="Раздел музеев"><a href="#museum-must">Главные <span>4</span></a><a href="#museum-choose">На выбор <span>2</span></a><a href="#museum-nearby">По пути <span>3</span></a><a href="#museum-planning">Практика</a><a href="#places">← Места</a></nav>
+<section class="museum-section" id="museum-must" aria-labelledby="museum-must-title"><div class="section-intro"><p class="eyebrow">01 / Главные музеи</p><h3 id="museum-must-title">Начать с этих четырёх.</h3><p>Leeum, MMCA и SeMA — главные приоритеты. APMA — следующий обязательный кандидат, особенно ради Левитта и архитектуры.</p></div><div class="museum-grid"><article class="museum" id="museum-leeum" aria-labelledby="museum-leeum-title">
+      <div class="museum-top"><span class="number">01</span><span>Обязательно</span></div>
+      <h4 id="museum-leeum-title">Leeum</h4><p class="identity">Leeum Museum of Art · Ханнам</p>
+      <p class="museum-lead">Искусство, внутрь которого заходишь.</p><p class="why">Пространство, цвет, свет, звук и движение вместо привычных картин на стене. Самый высокий приоритет в подборке: 10/10.</p>
+      <ul class="exhibitions"><li><h5>Inside Other Spaces: Environments by Women Artists 1956–1976</h5><p class="date">до 29 ноября 2026</p><p>Исторические environments женщин-художниц: работы, которые воспринимаешь всем телом, перемещаясь внутри.</p></li><li><h5>Koo Jeong A: OUSSSS</h5><p class="date">до 27 декабря 2026</p><p>Свет и темнота, запах, температура, исчезающие и изменяющиеся материалы.</p></li><li><h5>Idea Museum, After Tomorrow</h5><p class="date">до 29 ноября 2026</p><p>Ещё одна выставка, которую можно застать в эту поездку.</p></li></ul>
+      <dl class="practical"><div><dt>Когда</dt><dd>Вт–вс 10:00–18:00. Понедельник — выходной.</dd></div><div><dt>Билет</dt><dd>25 000 ₩ за обе специальные выставки; по отдельности — 18 000 ₩.</dd></div><div><dt>Бронь</dt><dd>Бронь открывается за 14 дней. Возможна покупка на месте.</dd></div></dl>
+      <p class="plan">Выделить около трёх часов, затем продолжить прогулку по Hannam.</p>
+      <div class="museum-links"><a href="https://search.naver.com/search.naver?query=%EB%A6%AC%EC%9B%80%EB%AF%B8%EC%88%A0%EA%B4%80%20Inside%20Other%20Spaces%3A%20Environments%20by%20Women%20Artists%201956%E2%80%931976" target="_blank" rel="noopener noreferrer">Программа и билеты в Naver ↗</a><a href="https://www.google.com/maps/search/?api=1&amp;query=%EB%A6%AC%EC%9B%80%EB%AF%B8%EC%88%A0%EA%B4%80%20%EC%84%9C%EC%9A%B8" target="_blank" rel="noopener noreferrer">Маршрут ↗</a></div>
+    </article><article class="museum" id="museum-mmca" aria-labelledby="museum-mmca-title">
+      <div class="museum-top"><span class="number">02</span><span>Обязательно</span></div>
+      <h4 id="museum-mmca-title">MMCA Seoul</h4><p class="identity">National Museum of Modern and Contemporary Art, Seoul · Самчхон</p>
+      <p class="museum-lead">Дом, память и архитектура у Do Ho Suh.</p><p class="why">Архитектура, масштаб и физическое ощущение помещения — одна из самых подходящих выставок поездки.</p>
+      <ul class="exhibitions"><li><h5>Do Ho Suh</h5><p class="date">до 9 февраля 2027</p><p>Работы о доме, памяти, пространстве и масштабе.</p></li><li><h5>Korea Artist Prize 2026</h5><p class="date">до 6 декабря 2026</p><p>Параллельная программа музея.</p></li><li><h5>MMCA × LG OLED Series 2026</h5><p class="date">до 29 ноября 2026</p><p>Ещё одна выставка на даты поездки.</p></li></ul>
+      <dl class="practical"><div><dt>Когда</dt><dd>Пн, вт, чт, пт, вс 10:00–18:00. Ср и сб 10:00–21:00. В понедельник открыт.</dd></div><div><dt>Билет</dt><dd>Стоимость выбранной выставки уточнить при бронировании.</dd></div><div><dt>Бронь</dt><dd>На Do Ho Suh лучше бронировать заранее: онлайн-слоты могут закончиться. Часть билетов ежедневно оставляют для продажи на месте; возможны очереди.</dd></div></dl>
+      <p class="plan">Хороший вариант на понедельник, 2 или 9 ноября: MMCA + Samcheong. В другие дни удобно совместить с Bukchon и Музеем ремёсел.</p>
+      <div class="museum-links"><a href="https://search.naver.com/search.naver?query=%EA%B5%AD%EB%A6%BD%ED%98%84%EB%8C%80%EB%AF%B8%EC%88%A0%EA%B4%80%20%EC%84%9C%EC%9A%B8%20Do%20Ho%20Suh" target="_blank" rel="noopener noreferrer">Программа и билеты в Naver ↗</a><a href="https://www.google.com/maps/search/?api=1&amp;query=%EA%B5%AD%EB%A6%BD%ED%98%84%EB%8C%80%EB%AF%B8%EC%88%A0%EA%B4%80%20%EC%84%9C%EC%9A%B8%20%EC%84%9C%EC%9A%B8" target="_blank" rel="noopener noreferrer">Маршрут ↗</a></div>
+    </article><article class="museum" id="museum-sema" aria-labelledby="museum-sema-title">
+      <div class="museum-top"><span class="number">03</span><span>Обязательно</span></div>
+      <h4 id="museum-sema-title">SeMA</h4><p class="identity">Seoul Museum of Art · Сеул</p>
+      <p class="museum-lead">Идентичность, интернет, AI и человек рядом с машиной.</p><p class="why">Первая музейная персональная выставка Lynn Hershman Leeson в Азии: около 200 работ за шесть десятилетий. По приоритету — рядом с APMA.</p>
+      <ul class="exhibitions"><li><h5>Lynn Hershman Leeson: First Person Plural</h5><p class="date">21 октября 2026 — 21 февраля 2027</p><p>Наблюдение, технологии, виртуальные личности, генетическая инженерия и отношения человека с машиной. Среди работ — интерактивная Lorna (1979–84), где зритель вмешивается в жизнь персонажа, и чат-агент Agent Ruby конца 1990-х — начала 2000-х.</p></li><li><h5>Beneath Technology: Scenes at the Threshold</h5><p class="date">до 22 ноября 2026</p><p>Живопись, печатная графика, new media и фотография.</p></li></ul>
+      <dl class="practical"><div><dt>Когда</dt><dd>Вт–чт 10:00–20:00, пт 10:00–21:00. В ноябре сб–вс 10:00–18:00. Понедельник — выходной.</dd></div><div><dt>Билет</dt><dd>Бесплатно.</dd></div><div><dt>Бронь</dt><dd>Условия входа и программу проверить перед посещением.</dd></div></dl>
+      <p class="plan">Выделить отдельное музейное посещение. SeMA и Seo-Seoul Museum of Art — разные музеи.</p>
+      <div class="museum-links"><a href="https://search.naver.com/search.naver?query=%EC%84%9C%EC%9A%B8%EC%8B%9C%EB%A6%BD%EB%AF%B8%EC%88%A0%EA%B4%80%20Lynn%20Hershman%20Leeson%3A%20First%20Person%20Plural" target="_blank" rel="noopener noreferrer">Программа и билеты в Naver ↗</a><a href="https://www.google.com/maps/search/?api=1&amp;query=%EC%84%9C%EC%9A%B8%EC%8B%9C%EB%A6%BD%EB%AF%B8%EC%88%A0%EA%B4%80%20%EC%84%9C%EC%9A%B8" target="_blank" rel="noopener noreferrer">Маршрут ↗</a></div>
+    </article><article class="museum" id="museum-apma" aria-labelledby="museum-apma-title">
+      <div class="museum-top"><span class="number">04</span><span>Очень стоит</span></div>
+      <h4 id="museum-apma-title">APMA</h4><p class="identity">Amorepacific Museum of Art · Ёнсан</p>
+      <p class="museum-lead">Sol LeWitt: от идеи и правила к пространству.</p><p class="why">Для человека из дизайна: идея → правило → система → исполнение → пространство. Всё это внутри штаб-квартиры Amorepacific Дэвида Чипперфильда. Приоритет из подборки: 9/10.</p>
+      <ul class="exhibitions"><li><h5>Sol LeWitt: Open Structure</h5><p class="date">1 сентября 2026 — 28 февраля 2027</p><p>Первая большая персональная выставка Левитта в Корее: 45 работ и 13 wall drawings, структуры, принты, фотографии и архив. Настенные рисунки выполняются по инструкциям художника под конкретное пространство: идея важнее физического «оригинала».</p></li></ul>
+      <dl class="practical"><div><dt>Когда</dt><dd>Вт–вс 10:00–18:00. Понедельник — выходной.</dd></div><div><dt>Билет</dt><dd>18 000 ₩.</dd></div><div><dt>Бронь</dt><dd>Нужна предварительная бронь. Для зарубежных посетителей предусмотрена ограниченная продажа билетов на месте.</dd></div></dl>
+      <p class="plan">Один из четырёх главных музеев поездки. Сначала выбрать время посещения и забронировать билет.</p>
+      <div class="museum-links"><a href="https://search.naver.com/search.naver?query=%EC%95%84%EB%AA%A8%EB%A0%88%ED%8D%BC%EC%8B%9C%ED%94%BD%EB%AF%B8%EC%88%A0%EA%B4%80%20Sol%20LeWitt%3A%20Open%20Structure" target="_blank" rel="noopener noreferrer">Программа и билеты в Naver ↗</a><a href="https://www.google.com/maps/search/?api=1&amp;query=%EC%95%84%EB%AA%A8%EB%A0%88%ED%8D%BC%EC%8B%9C%ED%94%BD%EB%AF%B8%EC%88%A0%EA%B4%80%20%EC%84%9C%EC%9A%B8" target="_blank" rel="noopener noreferrer">Маршрут ↗</a></div>
+    </article></div></section><section class="museum-section" id="museum-choose" aria-labelledby="museum-choose-title"><div class="section-intro"><p class="eyebrow">02 / На выбор</p><h3 id="museum-choose-title">Фотография или digital.</h3><p>Добавить один из двух, чтобы поездка не превратилась в бесконечные музеи. У Piknic важны даты кино, у Seo-Seoul — окончание выставки 8 ноября.</p></div><div class="museum-grid"><article class="museum" id="museum-piknic" aria-labelledby="museum-piknic-title">
+      <div class="museum-top"><span class="number">05</span><span>Если хочется фотографии</span></div>
+      <h4 id="museum-piknic-title">Piknic</h4><p class="identity">Piknic · Хвехён</p>
+      <p class="museum-lead">Deborah Turbeville и немое кино с живой музыкой.</p><p class="why">Странная, размытая, кинематографичная fashion/editorial photography. Выставка — 8,5/10; вместе с немым кино — 9/10.</p>
+      <ul class="exhibitions"><li><h5>Deborah Turbeville: Atmosphere</h5><p class="date">с 23 октября 2026</p><p>Первая персональная выставка фотографа в Корее: около 200 работ, в том числе 102 винтажных отпечатка и коллажа.</p></li><li><h5>Silent Film Theater: The Hands of Orlac</h5><p class="date">30–31 октября 2026</p><p>Немое кино с живой современной музыкой. Всего 50 мест на сеанс.</p></li><li><h5>Silent Film Theater: The Docks of New York</h5><p class="date">6–7 ноября 2026</p><p>Вторая программа немого кино на даты поездки, также с живой музыкой.</p></li></ul>
+      <dl class="practical"><div><dt>Когда</dt><dd>Вт–вс 10:00–18:00. Понедельник — выходной.</dd></div><div><dt>Билет</dt><dd>Выставка + фильм — 39 000 ₩. Отдельный билет на выставку уточнить.</dd></div><div><dt>Бронь</dt><dd>На кино лучше выбрать сеанс заранее: зал рассчитан на 50 человек.</dd></div></dl>
+      <p class="plan">Выбрать вместо ещё одного большого музея, если хочется фотографии, атмосферы и необычного вечера.</p>
+      <div class="museum-links"><a href="https://search.naver.com/search.naver?query=%ED%94%BC%ED%81%AC%EB%8B%89%20%EC%84%9C%EC%9A%B8%20Deborah%20Turbeville%3A%20Atmosphere" target="_blank" rel="noopener noreferrer">Программа и билеты в Naver ↗</a><a href="https://www.google.com/maps/search/?api=1&amp;query=%ED%94%BC%ED%81%AC%EB%8B%89%20%EC%84%9C%EC%9A%B8%20%EC%84%9C%EC%9A%B8" target="_blank" rel="noopener noreferrer">Маршрут ↗</a></div>
+    </article><article class="museum" id="museum-seo-seoul" aria-labelledby="museum-seo-seoul-title">
+      <div class="museum-top"><span class="number">06</span><span>Если хочется digital / new media</span></div>
+      <h4 id="museum-seo-seoul-title">Seo-Seoul Museum of Art</h4><p class="identity">Seo-Seoul Museum of Art · Кымчхон / Geumcheon</p>
+      <p class="museum-lead">Игровые движки и видео у Kim Heecheon.</p><p class="why">Новый музей new media и междисциплинарного искусства. Содержание — 8,5/10, логистика — 5/10: сюда нужно ехать специально. Это не «Сеульский музей фотографии».</p>
+      <ul class="exhibitions"><li><h5>Kim Heecheon: Moles</h5><p class="date">до 8 ноября 2026</p><p>Game engines, видео, фотография и инсталляция. Новая работа Lemon (2026) и более ранние автоматические игры и фильмы на Unity.</p></li></ul>
+      <dl class="practical"><div><dt>Когда</dt><dd>Вт–пт 10:00–20:00. В ноябре сб–вс 10:00–18:00. Понедельник — выходной.</dd></div><div><dt>Билет</dt><dd>Бесплатно.</dd></div><div><dt>Бронь</dt><dd>Проверить режим работы перед отдельной поездкой в Geumcheon.</dd></div></dl>
+      <p class="plan">Успеть до 8 ноября. Выбрать, если интерес к digital-искусству перевешивает дорогу; не путать с SeMA.</p>
+      <div class="museum-links"><a href="https://search.naver.com/search.naver?query=%EC%84%9C%EC%84%9C%EC%9A%B8%EB%AF%B8%EC%88%A0%EA%B4%80%20Kim%20Heecheon%3A%20Moles" target="_blank" rel="noopener noreferrer">Программа и билеты в Naver ↗</a><a href="https://www.google.com/maps/search/?api=1&amp;query=%EC%84%9C%EC%84%9C%EC%9A%B8%EB%AF%B8%EC%88%A0%EA%B4%80%20%EC%84%9C%EC%9A%B8" target="_blank" rel="noopener noreferrer">Маршрут ↗</a></div>
+    </article></div></section><section class="museum-section" id="museum-nearby" aria-labelledby="museum-nearby-title"><div class="section-intro"><p class="eyebrow">03 / По пути</p><h3 id="museum-nearby-title">Оказались рядом — зайти.</h3><p>SongEun и Музей ремёсел вписать в прогулку по району. DDP оставить по интересу к Тибо или ради вечерней архитектуры.</p></div><div class="museum-grid"><article class="museum" id="museum-songeun" aria-labelledby="museum-songeun-title">
+      <div class="museum-top"><span class="number">07</span><span>Когда будете в Чхондаме</span></div>
+      <h4 id="museum-songeun-title">SongEun</h4><p class="identity">SongEun · Чхондам / Cheongdam</p>
+      <p class="museum-lead">Современное искусство и здание Herzog &amp; de Meuron.</p><p class="why">Половина причины зайти — сама архитектура. Приоритет 7/10: не строить день вокруг музея, но заглянуть, оказавшись в Cheongdam.</p>
+      <ul class="exhibitions"><li><h5>LIGHT, FORM AND VISION: Roman Heritage in Dialogue with Korean Contemporary Art</h5><p class="date">29 октября — 14 ноября 2026</p><p>Bulgari и SongEun: корейские художники переосмысливают язык B.zero1 и римскую архитектуру через скульптуру, видео, звук, инсталляцию и живопись. В подземном bunker room — ретроспективная часть.</p></li></ul>
+      <dl class="practical"><div><dt>Когда</dt><dd>Пн–сб 11:00–18:30. Воскресенье — выходной. Экскурсии с доцентом — в 15:00 и 17:00.</dd></div><div><dt>Билет</dt><dd>Бесплатно.</dd></div><div><dt>Бронь</dt><dd>На эту выставку нужна предварительная запись через Naver.</dd></div></dl>
+      <p class="plan">Совместить с прогулкой по Cheongdam. В отличие от большинства музеев этой подборки, открыт в понедельник.</p>
+      <div class="museum-links"><a href="https://search.naver.com/search.naver?query=%EC%86%A1%EC%9D%80%20LIGHT%2C%20FORM%20AND%20VISION%3A%20Roman%20Heritage%20in%20Dialogue%20with%20Korean%20Contemporary%20Art" target="_blank" rel="noopener noreferrer">Программа и билеты в Naver ↗</a><a href="https://www.google.com/maps/search/?api=1&amp;query=%EC%86%A1%EC%9D%80%20%EC%84%9C%EC%9A%B8" target="_blank" rel="noopener noreferrer">Маршрут ↗</a></div>
+    </article><article class="museum" id="museum-craft" aria-labelledby="museum-craft-title">
+      <div class="museum-top"><span class="number">08</span><span>Лёгкий вечер по пути</span></div>
+      <h4 id="museum-craft-title">Музей ремёсел</h4><p class="identity">Seoul Museum of Craft Art · Анкук / Samcheong</p>
+      <p class="museum-lead">Корейское ремесло после прогулки и ужина.</p><p class="why">Не обязательно выделять музейный день: сюда удобно зайти вечером после Samcheong, Bukchon или MMCA.</p>
+      <ul class="exhibitions"><li><h5>Equinox: Autumn Equinox_Spring Equinox</h5><p class="date">до марта 2027</p><p>Современное ремесло из музейных даров.</p></li><li><h5>Andong Byeolgung, Layers of Time</h5><p class="date">на даты поездки</p><p>Дополнить постоянными выставками по корейскому ремеслу.</p></li></ul>
+      <dl class="practical"><div><dt>Когда</dt><dd>До 30 ноября 2026 Exhibition Building 1: вт, ср, пт, сб, вс до 21:00; чт до 18:00. Понедельник — выходной. Время открытия и часы других корпусов уточнить.</dd></div><div><dt>Билет</dt><dd>Бесплатно.</dd></div><div><dt>Бронь</dt><dd>Для вечернего посещения ориентироваться именно на Exhibition Building 1.</dd></div></dl>
+      <p class="plan">Samcheong / Bukchon → MMCA → прогулка → ужин → Музей ремёсел около 19:00. Для позднего захода выбрать вт, ср, пт, сб или вс.</p>
+      <div class="museum-links"><a href="https://search.naver.com/search.naver?query=%EC%84%9C%EC%9A%B8%EA%B3%B5%EC%98%88%EB%B0%95%EB%AC%BC%EA%B4%80%20Equinox%3A%20Autumn%20Equinox_Spring%20Equinox" target="_blank" rel="noopener noreferrer">Программа и билеты в Naver ↗</a><a href="https://www.google.com/maps/search/?api=1&amp;query=%EC%84%9C%EC%9A%B8%EA%B3%B5%EC%98%88%EB%B0%95%EB%AC%BC%EA%B4%80%20%EC%84%9C%EC%9A%B8" target="_blank" rel="noopener noreferrer">Маршрут ↗</a></div>
+    </article><article class="museum" id="museum-ddp" aria-labelledby="museum-ddp-title">
+      <div class="museum-top"><span class="number">09</span><span>Если останется время</span></div>
+      <h4 id="museum-ddp-title">DDP</h4><p class="identity">Dongdaemun Design Plaza · Тондэмун</p>
+      <p class="museum-lead">Wayne Thiebaud — по интересу. Архитектура — вечером.</p><p class="why">Если нравится Тибо — идти на выставку. Иначе вечерняя архитектура DDP интереснее; не жертвовать ради него Leeum, MMCA или APMA.</p>
+      <ul class="exhibitions"><li><h5>Wayne Thiebaud: The Order of Things</h5><p class="date">до 21 февраля 2027</p><p>Выставка для тех, кому интересен именно этот художник.</p></li></ul>
+      <dl class="practical"><div><dt>Когда</dt><dd>Часы выставки и последний вход уточнить отдельно.</dd></div><div><dt>Билет</dt><dd>Стоимость билета уточнить при бронировании.</dd></div><div><dt>Бронь</dt><dd>Проверить выставочную площадку внутри DDP и условия билета.</dd></div></dl>
+      <p class="plan">Вечерняя прогулка вокруг DDP или выставка как дополнительный вариант, когда основные музеи уже выбраны.</p>
+      <div class="museum-links"><a href="https://search.naver.com/search.naver?query=%EB%8F%99%EB%8C%80%EB%AC%B8%EB%94%94%EC%9E%90%EC%9D%B8%ED%94%8C%EB%9D%BC%EC%9E%90%20Wayne%20Thiebaud%3A%20The%20Order%20of%20Things" target="_blank" rel="noopener noreferrer">Программа и билеты в Naver ↗</a><a href="https://www.google.com/maps/search/?api=1&amp;query=%EB%8F%99%EB%8C%80%EB%AC%B8%EB%94%94%EC%9E%90%EC%9D%B8%ED%94%8C%EB%9D%BC%EC%9E%90%20%EC%84%9C%EC%9A%B8" target="_blank" rel="noopener noreferrer">Маршрут ↗</a></div>
+    </article></div></section>
+<section class="planning" id="museum-planning" aria-labelledby="museum-planning-title"><p class="eyebrow">04 / Практика</p><h3 id="museum-planning-title">Оставить время на город.</h3><div class="planning-grid"><article><h4>Понедельник — для MMCA</h4><p>2 и 9 ноября MMCA можно совместить с Samcheong. Leeum, APMA, SeMA, Piknic, Seo-Seoul и Музей ремёсел по понедельникам закрыты. SongEun открыт, но находится в другом районе.</p></article><article><h4>Сначала забронировать</h4><p>Leeum — за 14 дней; MMCA / Do Ho Suh — заранее из-за спроса; APMA — предварительная бронь; SongEun — запись в Naver. На немое кино в Piknic всего 50 мест на сеанс.</p></article><article><h4>Не пропустить короткие окна</h4><p>Kim Heecheon в Seo-Seoul — до 8 ноября. Кино в Piknic — 30–31 октября и 6–7 ноября. Выставка SongEun открывается 29 октября и идёт до 14 ноября.</p></article><article><h4>Вечерний музей</h4><p>MMCA работает до 21:00 по средам и субботам. В Музее ремёсел до 30 ноября по вт, ср, пт, сб и вс до 21:00 открыт Exhibition Building 1. С четвергом этот план не работает.</p></article></div></section>
+
+    <p class="museum-source">Программа, приоритеты, часы и цены перенесены из твоей обновлённой подборки на даты поездки. Перед визитом проверь расписание и наличие билетов. Даты января–марта после осени 2026 указаны как 2027 год.</p>
+  </section>
 
   <section class="block" id="dates">
     <h2>Две даты, под которые стоит построить дни</h2>
