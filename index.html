@@ -75,6 +75,7 @@ summary::-webkit-details-marker{display:none}
 .section-title{display:flex;align-items:baseline;justify-content:space-between;gap:20px;padding-top:42px;margin-bottom:22px}
 .section-title h2{font-size:24px;letter-spacing:-.04em}
 .section-title p{font-size:12px;color:var(--fg-dim)}
+.museum-guide-link{font-size:13px;color:var(--fg-dim);margin-bottom:14px}
 .controls{position:sticky;top:env(safe-area-inset-top,0px);z-index:30;background:#fff;border-bottom:1px solid var(--line);padding:12px 0}
 .ctl-row{display:flex;gap:28px;align-items:center;justify-content:space-between}
 .cities{display:flex;gap:26px;flex-shrink:0}
@@ -169,7 +170,7 @@ footer{margin-top:80px;border-top:1px solid var(--line);padding:24px 0 36px;max-
   .mast{padding-top:22px}
   .mast-top{padding-bottom:18px}
   .wordmark{font-size:16px}
-  .mast-nav{gap:17px;font-size:11px}
+  .mast-nav{gap:13px;font-size:11px}.mast-top{flex-wrap:wrap;gap:12px 20px}
   .intro{padding:44px 0 30px}
   .kicker{font-size:11px;margin-bottom:18px}
   .mast h1{font-size:clamp(40px,11vw,64px);line-height:1.07;letter-spacing:-.06em}
@@ -214,7 +215,7 @@ footer{margin-top:80px;border-top:1px solid var(--line);padding:24px 0 36px;max-
     <div class="mast-top">
       <a class="wordmark" href="#">Korea<span> / 2026</span></a>
       <nav class="mast-nav" aria-label="Разделы">
-        <a href="#places">Места</a><a href="#dates">Планы</a><a href="#notes">Заметки</a>
+        <a href="#places">Места</a><a href="museums.html">Музеи</a><a href="#dates">Планы</a><a href="#notes">Заметки</a>
       </nav>
     </div>
     <div class="intro">
@@ -240,7 +241,7 @@ footer{margin-top:80px;border-top:1px solid var(--line);padding:24px 0 36px;max-
         <div class="leg accent"><b>28.10 · ср</b><span>Доха, одна ночь. Музей исламского искусства закрыт по средам — идём в Национальный и на Сук-Вакиф</span></div>
         <div class="leg"><b>29.10 · чт</b><span>Прилёт в Инчхон 17:15. Вечер — дорога до квартиры</span></div>
         <div class="leg accent"><b>31.10 · сб</b><span>Хэллоуин, и он в субботу. Костюмы в Хондэ прямо у вашей базы</span></div>
-        <div class="leg"><b>02.11 · пн</b><span>Понедельник: музеи закрыты. День под гору, рынок или спа</span></div>
+        <div class="leg"><b>02.11 · пн</b><span>Большинство музеев закрыто; MMCA открыт. Можно совместить его с Samcheong или выбрать гору, рынок, спа</span></div>
         <div class="leg accent"><b>03.11 · вт</b><span>День рождения. Вторник — всё открыто, и это почти пик клёнов в городе</span></div>
         <div class="leg"><b>~5–10.11</b><span>Клёны в самом Сеуле на пике: Пукаксан, Наксан, Пуам-дон</span></div>
       </div>
@@ -251,6 +252,7 @@ footer{margin-top:80px;border-top:1px solid var(--line);padding:24px 0 36px;max-
   </header>
 
   <div class="section-title" id="places"><h2>Места</h2><p>Выбирай по настроению.</p></div>
+  <p class="museum-guide-link"><a href="museums.html">Музеи отдельно: выставки, часы и приоритеты ↗</a></p>
   <div class="controls">
     <div class="ctl-row">
       <div class="cities" role="group" aria-label="Город">
@@ -427,7 +429,7 @@ const ICONS = window.KOREA_PLACE_ICONS;
 const P = [
   {c:"seoul",k:"art",n:"Leeum",kr:"리움미술관",a:"Ханнам",d:"Три здания от Botta, Nouvel и Кулхаса. До 29 ноября — средовые инсталляции женщин-художниц 1956–76, внутрь которых буквально заходишь. Параллельно Ку Джон А до 27 декабря.",t:["до 29 ноября","пн выходной","полдня"],pr:"от 18 000 ₩",lat:37.5384,lng:126.999,mapKind:"approximate",mapNote:"Ориентировочная точка из подборки. Перед поездкой проверь адрес по корейскому названию."},
   {c:"seoul",k:"art",n:"Amorepacific Museum of Art",kr:"아모레퍼시픽미술관",a:"Ёнсан",d:"Штаб-квартира Чипперфильда с огромным внутренним двором. Большая монография Сола Левитта идёт до февраля.",t:["до февраля","архитектура"],pr:"от 10 000 ₩",lat:37.5272,lng:126.9728,mapKind:"approximate",mapNote:"Ориентировочная точка из подборки. Перед поездкой проверь адрес по корейскому названию."},
-  {c:"seoul",k:"art",n:"MMCA Seoul",kr:"국립현대미술관",a:"Самчхон",d:"Главный музей современного искусства страны, низкие корпуса во дворах рядом с дворцом. Расписание выставок меняется каждые пару месяцев.",t:["пн выходной","рядом с дворцами"],pr:"2 000 ₩",lat:37.5786,lng:126.98,mapKind:"approximate",mapNote:"Ориентировочная точка из подборки. Перед поездкой проверь адрес по корейскому названию."},
+  {c:"seoul",k:"art",n:"MMCA Seoul",kr:"국립현대미술관",a:"Самчхон",d:"Главный музей современного искусства страны, низкие корпуса во дворах рядом с дворцом. Расписание выставок меняется каждые пару месяцев.",t:["открыт в понедельник","рядом с дворцами"],pr:"2 000 ₩",lat:37.5786,lng:126.98,mapKind:"approximate",mapNote:"Ориентировочная точка из подборки. Перед поездкой проверь адрес по корейскому названию."},
   {c:"seoul",k:"art",n:"Seo-Seoul Museum of Art",kr:"서서울미술관",a:"Кымчхон",d:"Городской музей нового медиаискусства, открывшийся в марте 2026 года в парке Кымнарэ. Серебристый фасад отражает деревья и небо, а стеклянные проходы соединяют музей с парком.",t:["бесплатно","медиаискусство","архитектура"],pr:"бесплатно",lat:37.466,lng:126.896,q:"서서울미술관 서울 금천구",mapKind:"approximate",mapNote:"Ориентировочная точка из подборки. Перед поездкой проверь адрес по корейскому названию."},
   {c:"seoul",k:"galleries",n:"SongEun",kr:"송은",a:"Чхондам",d:"Здание Herzog & de Meuron: бетонный клин, сужающийся кверху. Показывают молодых корейских художников, вход свободный.",t:["бесплатно","архитектура","час"],pr:"бесплатно",lat:37.523,lng:127.047,mapKind:"approximate",mapNote:"Ориентировочная точка из подборки. Перед поездкой проверь адрес по корейскому названию."},
   {c:"seoul",k:"galleries",n:"Piknic",kr:"피크닉",a:"Хвехён",d:"Старое офисное здание под Намсаном, переделанное под кураторские выставки. Сад на крыше с видом на центр, внизу кафе и магазин.",t:["крыша","вечер","час-два"],pr:"от 15 000 ₩",lat:37.557,lng:126.9781,mapKind:"approximate",mapNote:"Ориентировочная точка из подборки. Перед поездкой проверь адрес по корейскому названию."},
