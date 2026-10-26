@@ -116,7 +116,7 @@ window.createPlaceMap = function ({places, categories, icons, photos, onShowCard
     host.dataset.totalPlaces = String(total);
     host.dataset.matchedPlaces = String(matched.size);
     host.dataset.filterActive = String(filterActive);
-    hint.textContent = 'На карте все ' + total + ' мест.'
+    hint.textContent = 'На карте все точки города: ' + total + '.'
       + (filterActive ? ' Выделено по фильтрам: ' + matched.size + '. Остальные точки тоже доступны.' : '')
       + ' Значок — тип места, число — группа точек: нажми, чтобы приблизить. Пунктир — ориентир; уточни адрес перед поездкой.';
     fitButton.disabled = !items.length;
